@@ -52,6 +52,7 @@ final class MovieManager {
             DispatchQueue.main.async {
                 completion(.success(image))
             }
+            return
         }
         let request = URLRequest(url: TmdbAPI.tmdbImageURL(forSize: size, path: movie.posterPath))
         let task = session.dataTask(with: request) { (data, response, error) in
