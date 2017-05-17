@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		2292062E1ECC6E210090E78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292062D1ECC6E210090E78C /* AppDelegate.swift */; };
-		229206301ECC6E210090E78C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292062F1ECC6E210090E78C /* ViewController.swift */; };
 		229206331ECC6E210090E78C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229206311ECC6E210090E78C /* Main.storyboard */; };
 		229206351ECC6E210090E78C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229206341ECC6E210090E78C /* Assets.xcassets */; };
 		229206381ECC6E210090E78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229206361ECC6E210090E78C /* LaunchScreen.storyboard */; };
+		22EE56F01ECC6FDA00790E71 /* MoviesResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2292062A1ECC6E210090E78C /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2292062D1ECC6E210090E78C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2292062F1ECC6E210090E78C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		229206321ECC6E210090E78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		229206341ECC6E210090E78C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229206371ECC6E210090E78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229206391ECC6E210090E78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesResultViewController.swift; path = Controller/MoviesResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,45 @@
 			isa = PBXGroup;
 			children = (
 				2292062D1ECC6E210090E78C /* AppDelegate.swift */,
-				2292062F1ECC6E210090E78C /* ViewController.swift */,
+				22EE56EB1ECC6F0000790E71 /* Model */,
+				22EE56EC1ECC6F0800790E71 /* View */,
+				22EE56ED1ECC6F0D00790E71 /* Controller */,
+				22EE56EE1ECC6F3A00790E71 /* Assets */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		22EE56EB1ECC6F0000790E71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		22EE56EC1ECC6F0800790E71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		22EE56ED1ECC6F0D00790E71 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		22EE56EE1ECC6F3A00790E71 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				229206311ECC6E210090E78C /* Main.storyboard */,
 				229206341ECC6E210090E78C /* Assets.xcassets */,
 				229206361ECC6E210090E78C /* LaunchScreen.storyboard */,
 				229206391ECC6E210090E78C /* Info.plist */,
 			);
-			path = MVC;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229206301ECC6E210090E78C /* ViewController.swift in Sources */,
+				22EE56F01ECC6FDA00790E71 /* MoviesResultViewController.swift in Sources */,
 				2292062E1ECC6E210090E78C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +333,7 @@
 				2292063C1ECC6E210090E78C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
