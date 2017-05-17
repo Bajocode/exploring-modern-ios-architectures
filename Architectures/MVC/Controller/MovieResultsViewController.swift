@@ -1,5 +1,5 @@
 //
-//  MoviesResultViewController.swift
+//  MovieResultsViewController.swift
 //  Architectures
 //
 //  Created by Fabijan Bajo on 17/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesResultViewController: UIViewController {
+class MovieResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

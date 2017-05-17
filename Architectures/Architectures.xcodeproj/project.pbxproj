@@ -11,11 +11,11 @@
 		229206331ECC6E210090E78C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229206311ECC6E210090E78C /* Main.storyboard */; };
 		229206351ECC6E210090E78C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229206341ECC6E210090E78C /* Assets.xcassets */; };
 		229206381ECC6E210090E78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229206361ECC6E210090E78C /* LaunchScreen.storyboard */; };
-		22EE56F01ECC6FDA00790E71 /* MoviesResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */; };
 		22EE56F21ECC70CA00790E71 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F11ECC70CA00790E71 /* MovieCollectionViewCell.swift */; };
 		22EE56F41ECC74BA00790E71 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F31ECC74BA00790E71 /* Movie.swift */; };
 		22EE56F61ECC753E00790E71 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F51ECC753E00790E71 /* MovieManager.swift */; };
 		22EE56F81ECC755E00790E71 /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F71ECC755E00790E71 /* TmdbAPI.swift */; };
+		22EE56FA1ECC78C900790E71 /* MovieResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +25,11 @@
 		229206341ECC6E210090E78C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229206371ECC6E210090E78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229206391ECC6E210090E78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesResultViewController.swift; path = Controller/MoviesResultViewController.swift; sourceTree = "<group>"; };
 		22EE56F11ECC70CA00790E71 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCollectionViewCell.swift; path = View/MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		22EE56F31ECC74BA00790E71 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Model/Movie.swift; sourceTree = "<group>"; };
 		22EE56F51ECC753E00790E71 /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieManager.swift; path = Model/MovieManager.swift; sourceTree = "<group>"; };
 		22EE56F71ECC755E00790E71 /* TmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TmdbAPI.swift; path = Model/TmdbAPI.swift; sourceTree = "<group>"; };
+		22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsViewController.swift; path = Controller/MovieResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 		22EE56ED1ECC6F0D00790E71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				22EE56EF1ECC6FDA00790E71 /* MoviesResultViewController.swift */,
+				22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 			files = (
 				22EE56F21ECC70CA00790E71 /* MovieCollectionViewCell.swift in Sources */,
 				22EE56F81ECC755E00790E71 /* TmdbAPI.swift in Sources */,
-				22EE56F01ECC6FDA00790E71 /* MoviesResultViewController.swift in Sources */,
 				22EE56F61ECC753E00790E71 /* MovieManager.swift in Sources */,
 				22EE56F41ECC74BA00790E71 /* Movie.swift in Sources */,
+				22EE56FA1ECC78C900790E71 /* MovieResultsViewController.swift in Sources */,
 				2292062E1ECC6E210090E78C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

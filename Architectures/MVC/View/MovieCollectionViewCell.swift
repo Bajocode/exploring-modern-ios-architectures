@@ -34,9 +34,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Methods
     
-    func configure(withMovie movie: Movie) {
-        titleLabel.text = movie.title
-        ratingLabel.text = movie.rating
+    func configure(withTitle title: String, rating: String) {
+        self.titleLabel.text = title
+        self.ratingLabel.text = rating
     }
     
     // Start spinnning when image is being fetched
