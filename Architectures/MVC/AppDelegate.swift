@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use property injection to inject the movieManager into root
         let navC = window!.rootViewController as! UINavigationController
-        let movieResultsVC = navC.topViewController as! MoviesResultViewController
+        let movieResultsVC = navC.topViewController as! MovieResultsViewController
+        movieResultsVC.movieManager = MovieManager()
         
         return true
     }

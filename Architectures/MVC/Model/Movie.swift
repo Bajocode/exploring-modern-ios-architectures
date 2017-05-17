@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 17/05/2017.
 //
 //
+/*
+    Task: represent a single Movie
+*/
 
 import Foundation
 

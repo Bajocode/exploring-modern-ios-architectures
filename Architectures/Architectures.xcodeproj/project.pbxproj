@@ -16,6 +16,10 @@
 		22EE56F61ECC753E00790E71 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F51ECC753E00790E71 /* MovieManager.swift */; };
 		22EE56F81ECC755E00790E71 /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F71ECC755E00790E71 /* TmdbAPI.swift */; };
 		22EE56FA1ECC78C900790E71 /* MovieResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */; };
+		22EE56FC1ECC795200790E71 /* MovieResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */; };
+		22EE56FE1ECC7D5C00790E71 /* tmdbAPIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */; };
+		22EE57001ECC7E3800790E71 /* moviedata.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FF1ECC7E3800790E71 /* moviedata.json */; };
+		22EE57021ECC7F8500790E71 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE57011ECC7F8500790E71 /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		22EE56F51ECC753E00790E71 /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieManager.swift; path = Model/MovieManager.swift; sourceTree = "<group>"; };
 		22EE56F71ECC755E00790E71 /* TmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TmdbAPI.swift; path = Model/TmdbAPI.swift; sourceTree = "<group>"; };
 		22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsViewController.swift; path = Controller/MovieResultsViewController.swift; sourceTree = "<group>"; };
+		22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsDataSource.swift; path = Controller/MovieResultsDataSource.swift; sourceTree = "<group>"; };
+		22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tmdbAPIKey.plist; sourceTree = "<group>"; };
+		22EE56FF1ECC7E3800790E71 /* moviedata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moviedata.json; sourceTree = "<group>"; };
+		22EE57011ECC7F8500790E71 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,8 @@
 		2292061F1ECC6E040090E78C = {
 			isa = PBXGroup;
 			children = (
+				22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */,
+				22EE56FF1ECC7E3800790E71 /* moviedata.json */,
 				2292062C1ECC6E210090E78C /* MVC */,
 				2292062B1ECC6E210090E78C /* Products */,
 			);
@@ -76,6 +86,7 @@
 			children = (
 				22EE56F31ECC74BA00790E71 /* Movie.swift */,
 				22EE56F51ECC753E00790E71 /* MovieManager.swift */,
+				22EE57011ECC7F8500790E71 /* ImageStore.swift */,
 				22EE56F71ECC755E00790E71 /* TmdbAPI.swift */,
 			);
 			name = Model;
@@ -93,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				22EE56F91ECC78C900790E71 /* MovieResultsViewController.swift */,
+				22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -167,7 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EE56FE1ECC7D5C00790E71 /* tmdbAPIKey.plist in Resources */,
 				229206381ECC6E210090E78C /* LaunchScreen.storyboard in Resources */,
+				22EE57001ECC7E3800790E71 /* moviedata.json in Resources */,
 				229206351ECC6E210090E78C /* Assets.xcassets in Resources */,
 				229206331ECC6E210090E78C /* Main.storyboard in Resources */,
 			);
@@ -182,6 +196,8 @@
 			files = (
 				22EE56F21ECC70CA00790E71 /* MovieCollectionViewCell.swift in Sources */,
 				22EE56F81ECC755E00790E71 /* TmdbAPI.swift in Sources */,
+				22EE56FC1ECC795200790E71 /* MovieResultsDataSource.swift in Sources */,
+				22EE57021ECC7F8500790E71 /* ImageStore.swift in Sources */,
 				22EE56F61ECC753E00790E71 /* MovieManager.swift in Sources */,
 				22EE56F41ECC74BA00790E71 /* Movie.swift in Sources */,
 				22EE56FA1ECC78C900790E71 /* MovieResultsViewController.swift in Sources */,

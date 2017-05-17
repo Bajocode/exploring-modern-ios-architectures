@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Results View Controller-->
         <scene sceneID="6FW-hc-MbA">
             <objects>
-                <viewController id="x4u-kT-ub2" sceneMemberID="viewController">
+                <viewController id="x4u-kT-ub2" customClass="MovieResultsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U5r-qD-wbZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cqN-TU-GRf"/>
@@ -104,6 +104,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LRw-gJ-YPn"/>
+                    <connections>
+                        <outlet property="collectionView" destination="e1u-ZU-rfQ" id="Ga0-rf-L5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWD-5D-1j0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

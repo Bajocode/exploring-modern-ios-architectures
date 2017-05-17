@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 17/05/2017.
 //
 //
+/*
+    Task: construct endpoints and offer json processors specific to Tmdb
+*/
 
 import Foundation
 
@@ -16,7 +19,17 @@ struct TmdbAPI {
     
     private static let baseURLString = "https://api.themoviedb.org/3"
     private static let baseImageURLString = "https://image.tmdb.org/t/p"
-    private static let apiKey = "91e3a1fc957cde9192fede75cedb96e2"
+    private static var apiKey: String? { // Return key if provided in plist
+        guard
+            let path = Bundle.main.path(forResource: "tmdbAPIKey", ofType: "plist"),
+            let plistDict = NSDictionary(contentsOfFile: path),
+            let apiKey = plistDict["apiKey"] as? String,
+            apiKey != "API KEY HERE" else {
+                return nil
+        }
+        print(apiKey)
+        return apiKey
+    }
     private static let tmdbDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-mm-dd"

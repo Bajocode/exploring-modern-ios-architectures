@@ -5,11 +5,14 @@
 //  Created by Fabijan Bajo on 17/05/2017.
 //
 //
+/*
+    Task: make network requests and manage the image store of movie posters
+*/
 
 import UIKit
 
 
-final class MovieStore {
+final class MovieManager {
     
     
     // MARK: - Properties
