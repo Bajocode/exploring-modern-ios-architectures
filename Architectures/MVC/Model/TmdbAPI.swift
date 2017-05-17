@@ -19,15 +19,14 @@ struct TmdbAPI {
     
     private static let baseURLString = "https://api.themoviedb.org/3"
     private static let baseImageURLString = "https://image.tmdb.org/t/p"
-    private static var apiKey: String? { // Return key if provided in plist
+    static var apiKey: String? { // Return key if provided in plist
         guard
             let path = Bundle.main.path(forResource: "tmdbAPIKey", ofType: "plist"),
             let plistDict = NSDictionary(contentsOfFile: path),
             let apiKey = plistDict["apiKey"] as? String,
-            apiKey != "API KEY HERE" else {
+            apiKey != "API KEY HERE" && apiKey != "" else {
                 return nil
         }
-        print(apiKey)
         return apiKey
     }
     private static let tmdbDateFormatter: DateFormatter = {
@@ -38,8 +37,8 @@ struct TmdbAPI {
     static var nowPlayingMoviesURL: URL {
         return constructTmdbURL(forMethod: .nowPlayingMovies)
     }
-    static var popularActorsURL: URL {
-        return constructTmdbURL(forMethod: .popularActors)
+    static var nowPlayingLocalURL: URL {
+        return localJSONURL(forFileName: "moviedata")
     }
     
     
@@ -110,6 +109,10 @@ struct TmdbAPI {
         }
         components.queryItems = queryItems
         return components.url!
+    }
+    
+    private static func localJSONURL(forFileName fileName: String) -> URL {
+        return Bundle.main.url(forResource: fileName, withExtension: "json")!
     }
 }
 

@@ -28,14 +28,27 @@ final class MovieManager {
     
     // Fetch now playing movies and dispatch on main
     func fetchNowPlayingMovies(completion: @escaping (MoviesResult) -> Void) {
-        let request = URLRequest(url: TmdbAPI.nowPlayingMoviesURL)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            let result = self.processMoviesRequest(data: data, error: error)
+        if TmdbAPI.apiKey == nil {
+            // No key provided, use local JSON
+            var localData: Data?, localError: Error?
+            do {
+                localData = try Data(contentsOf: TmdbAPI.nowPlayingLocalURL, options:[])
+            } catch { localError = error }
+            let result = self.processMoviesRequest(data: localData, error: localError)
             DispatchQueue.main.async {
                 completion(result)
             }
+        } else {
+            // Key provided, fetch new movies
+            let request = URLRequest(url: TmdbAPI.nowPlayingMoviesURL)
+            let task = session.dataTask(with: request) { (data, response, error) in
+                let result = self.processMoviesRequest(data: data, error: error)
+                DispatchQueue.main.async {
+                    completion(result)
+                }
+            }
+            task.resume()
         }
-        task.resume()
     }
     private func processMoviesRequest(data: Data?, error: Error?) -> MoviesResult {
         guard let jsonData = data else {
@@ -54,8 +67,10 @@ final class MovieManager {
             }
             return
         }
+        // Make a new request
         let request = URLRequest(url: TmdbAPI.tmdbImageURL(forSize: size, path: movie.posterPath))
         let task = session.dataTask(with: request) { (data, response, error) in
+            print("Called Fetch")
             // Store in cache and dispatch back on main thread
             let result = self.processImageRequest(data: data, error: error)
             if case let .success(image) = result {

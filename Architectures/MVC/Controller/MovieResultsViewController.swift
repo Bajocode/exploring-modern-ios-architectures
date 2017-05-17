@@ -46,9 +46,7 @@ extension MovieResultsViewController: UICollectionViewDelegate {
         
         // Download image data for cell asynchronously
         movieManager.fetchImage(forMovie: movie, size: .thumb) { (result) in
-            print("Called fetchImage")
-            
-            // Make sure that we are dealing with same movie object (fetching takes time)
+            // Make sure it's the same movie object (fetching async)
             guard let movieIndex = self.dataSource.movies.index(of: movie),
                 case let .success(image) = result else {
                     return
