@@ -3,7 +3,7 @@
 #### :movie_camera: About
 In this project I'm structuring my knowledge about modern architectural patterns,
 showcasing the main features through a simple Movie app. The app makes use of
-the Tmdb API which recuiers an API key. However, static
+the Tmdb API which requires an API key. However, static
 `JSON` files are also included for quick usage.
 
 #### :nut_and_bolt: Setup
