@@ -45,7 +45,7 @@ extension MovieResultsViewController: UICollectionViewDelegate {
         let movie = dataSource.movies[indexPath.item]
         
         // Download image data for cell asynchronously
-        movieManager.fetchImage(for: movie.posterPath, size: .thumb) { (result) in
+        movieManager.fetchImage(forMovie: movie, size: .thumb) { (result) in
             print("Called fetchImage")
             
             // Make sure that we are dealing with same movie object (fetching takes time)

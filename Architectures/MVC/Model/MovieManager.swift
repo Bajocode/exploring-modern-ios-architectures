@@ -17,6 +17,7 @@ final class MovieManager {
     
     // MARK: - Properties
     
+    let imageStore = ImageStore()
     private let session: URLSession = {
         let configuration = URLSessionConfiguration.default
         return URLSession(configuration: configuration)
@@ -44,10 +45,21 @@ final class MovieManager {
     }
     
     // Fetch image for movie and dispatch on main
-    func fetchImage(for path: String, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
-        let request = URLRequest(url: TmdbAPI.tmdbImageURL(forSize: size, path: path))
+    func fetchImage(forMovie movie: Movie, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
+        // Return early if found in local cache or docs dir
+        let movieID = String(movie.movieID)
+        if let image = imageStore.image(forKey: movieID) {
+            DispatchQueue.main.async {
+                completion(.success(image))
+            }
+        }
+        let request = URLRequest(url: TmdbAPI.tmdbImageURL(forSize: size, path: movie.posterPath))
         let task = session.dataTask(with: request) { (data, response, error) in
+            // Store in cache and dispatch back on main thread
             let result = self.processImageRequest(data: data, error: error)
+            if case let .success(image) = result {
+                self.imageStore.setImage(image, forKey: movieID)
+            }
             DispatchQueue.main.async {
                 completion(result)
             }
@@ -72,7 +84,7 @@ final class MovieManager {
 
 // MARK: - Movie types
 
-enum MovieError: Error {
+fileprivate enum MovieError: Error {
     case imageCreationError
 }
 
