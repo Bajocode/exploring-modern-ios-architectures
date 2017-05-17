@@ -17,7 +17,7 @@ final class MovieManager {
     
     // MARK: - Properties
     
-    let imageStore = ImageStore()
+    private let imageStore = ImageStore()
     private let session: URLSession = {
         let configuration = URLSessionConfiguration.default
         return URLSession(configuration: configuration)

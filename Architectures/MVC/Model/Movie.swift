@@ -12,7 +12,7 @@
 import Foundation
 
 
-class Movie {
+final class Movie {
     
     
     // MARK: - Properties
