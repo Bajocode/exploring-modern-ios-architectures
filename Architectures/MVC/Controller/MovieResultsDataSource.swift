@@ -24,6 +24,8 @@ class MovieResultsDataSource: NSObject, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MovieCollectionViewCell
+        let movie = movies[indexPath.row]
+        cell.configure(withTitle: movie.title, rating: String(format: "%.1f", movie.averageRating))
         return cell
     }
 }

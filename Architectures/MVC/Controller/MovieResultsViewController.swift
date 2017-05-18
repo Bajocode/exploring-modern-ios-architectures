@@ -56,7 +56,6 @@ extension MovieResultsViewController: UICollectionViewDelegate {
             // Update cell when image request finishes, if cell still visible on screen
             if let cell = self.collectionView.cellForItem(at: movieIndexPath) as? MovieCollectionViewCell {
                 cell.updateImageView(with: image)
-                cell.configure(withTitle: movie.title, rating: String(format: "%.1f", movie.averageRating))
             }
         }
     }

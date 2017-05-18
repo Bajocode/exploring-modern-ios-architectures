@@ -11,7 +11,6 @@
 
 import UIKit
 
-
 final class MovieManager {
     
     
