@@ -25,6 +25,10 @@ class MovieResultsDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MovieCollectionViewCell
         let movie = movies[indexPath.row]
+        
+        // Download the image data for only the cells that the user is attempting to view.
+        // collectionView(_:willDisplay:forItemAt:), called every time a cell is getting displayed onscreen.
+        // Add fetch completed movie data here
         cell.configure(withTitle: movie.title, rating: String(format: "%.1f", movie.averageRating))
         return cell
     }

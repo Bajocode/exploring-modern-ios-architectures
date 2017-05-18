@@ -25,7 +25,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         updateImageView(with: nil)
     }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         updateImageView(with: nil)
