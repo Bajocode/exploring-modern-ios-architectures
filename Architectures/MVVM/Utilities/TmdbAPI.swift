@@ -69,7 +69,8 @@ struct TmdbAPI {
             if !jsonObjectsArray.isEmpty && parsedMovies.isEmpty {
                 return .failure(TmdbError.other(string: "!jsonObjectsArray.isEmpty && parsedMovies.isEmpty"))
             }
-            return .success(parsedMovies)
+            let movieViewModels = parsedMovies.map { MovieViewModel(movie: $0) }
+            return .success(movieViewModels)
         } catch let serializationError {
             return .failure(serializationError)
         }

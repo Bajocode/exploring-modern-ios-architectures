@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Results View Controller-->
         <scene sceneID="mfu-qw-qgW">
             <objects>
-                <viewController id="Bo0-7r-GfT" sceneMemberID="viewController">
+                <viewController id="Bo0-7r-GfT" customClass="MovieResultsViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdg-Qu-9Zh"/>
                         <viewControllerLayoutGuide type="bottom" id="v1k-L2-qZG"/>
@@ -32,7 +32,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="WJd-XA-eqx">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="WJd-XA-eqx" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -85,6 +85,12 @@
                                             <constraint firstAttribute="bottom" secondItem="Z2w-3D-YLd" secondAttribute="bottom" id="gqi-sd-NtU"/>
                                             <constraint firstItem="TtF-9c-gKn" firstAttribute="centerY" secondItem="WJd-XA-eqx" secondAttribute="centerY" id="jlm-FB-Yv9"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="TtF-9c-gKn" id="7aF-nu-wCq"/>
+                                            <outlet property="ratingLabel" destination="IJC-hc-L49" id="6ks-hR-NIA"/>
+                                            <outlet property="thumbImageView" destination="Z2w-3D-YLd" id="3v0-3x-ayB"/>
+                                            <outlet property="titleLabel" destination="nPR-R9-K2e" id="8Gl-Pi-KLS"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -98,6 +104,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="atu-9A-Vjo"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ruf-O8-ZHc" id="47n-rE-wtm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SK-Ux-cVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

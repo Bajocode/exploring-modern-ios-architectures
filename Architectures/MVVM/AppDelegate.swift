@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+        // Use property injection to inject the movieManager into root
+        let navC = window!.rootViewController as! UINavigationController
+        let movieResultsVC = navC.topViewController as! MovieResultsViewController
+        movieResultsVC.movieManager = MovieManager()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
