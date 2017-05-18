@@ -15,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Use property injection to inject the movieManager into root
-        let navC = window!.rootViewController as! UINavigationController
-        let movieResultsVC = navC.topViewController as! MovieResultsViewController
-        movieResultsVC.movieManager = MovieManager()
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

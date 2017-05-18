@@ -13,13 +13,13 @@ class ImageManager {
     
     // MARK: - Properties
     
-    private let imageStore = ImageStore()
+    private static let imageStore = ImageStore()
     
     
     // MARK: - Methods
     
     // Fetch image for movie and dispatch on main
-    func fetchImage(forMovie movie: Movie, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
+    static func fetchImage(forMovie movie: Movie, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
         // Return early if found in local cache or docs dir
         let movieID = String(movie.movieID)
         if let image = imageStore.image(forKey: movieID) {
@@ -44,7 +44,7 @@ class ImageManager {
         task.resume()
     }
 
-    private func processImageRequest(data: Data?, error: Error?) -> ImageResult {
+    private static func processImageRequest(data: Data?, error: Error?) -> ImageResult {
         guard
             let imageData = data,
             let image = UIImage(data: imageData) else {
