@@ -56,7 +56,7 @@ struct TmdbAPI {
             guard
                 let jsonDict = jsonFoundationObject as? [AnyHashable:Any],
                 let jsonObjectsArray = jsonDict["results"] as? [[String:Any]] else {
-                    return .failure(TmdbError.invalidJSONData)
+                    return .failure(TmdbError.invalidJSONData(key: "results", dictionary: jsonFoundationObject))
             }
             // Parse individual movies
             var parsedMovies = [Movie]()
@@ -67,7 +67,7 @@ struct TmdbAPI {
             }
             // If not able to parse movies, perhaps because JSON format changed
             if !jsonObjectsArray.isEmpty && parsedMovies.isEmpty {
-                return .failure(TmdbError.invalidJSONData)
+                return .failure(TmdbError.other(string: "!jsonObjectsArray.isEmpty && parsedMovies.isEmpty"))
             }
             return .success(parsedMovies)
         } catch let serializationError {
@@ -116,15 +116,27 @@ struct TmdbAPI {
 }
 
 
-// MARK: - Tmdb related types
+// MARK: - Tmdb related help types
 
 enum TmdbImageSize: String {
     case full = "original"
     case thumb = "w300"
 }
 
-fileprivate enum TmdbError: Error {
-    case invalidJSONData
+fileprivate enum TmdbError: CustomStringConvertible, Error {
+    case invalidJSONData(key: String, dictionary: Any)
+    case serializationError(error: Error)
+    case other(string: String)
+    var description: String {
+        switch self {
+        case .invalidJSONData(let key, let dict):
+            return "Could not find key '\(key)' in JSON dictionary:\n \(dict)"
+        case .serializationError(let error):
+            return "JSON serialization failed with error:\n \(error)"
+        case .other(let string):
+            return string
+        }
+    }
 }
 
 fileprivate enum TmdbMethod: String {
