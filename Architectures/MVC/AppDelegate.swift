@@ -16,19 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Initialize the window (not using Storyboards)
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        
-        // Allocate navigation controller and root
-        let movieResultsVC = MovieResultsViewController()
+        // Allocate navigation controller and inject MovieManager
+        let navC = window?.rootViewController as! UINavigationController
+        let movieResultsVC = navC.topViewController as! MovieResultsViewController
         movieResultsVC.movieManager = MovieManager()
-        let navC = UINavigationController(rootViewController: movieResultsVC)
-        navC.navigationBar.barStyle = .black
-        
-        // Set window's root and make visible
-        window!.rootViewController = navC
-        window!.makeKeyAndVisible()
         
         return true
     }

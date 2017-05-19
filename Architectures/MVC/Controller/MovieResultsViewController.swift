@@ -16,7 +16,13 @@ class MovieResultsViewController: UIViewController {
     var movieManager: MovieManager!
     let dataSource = MovieResultsDataSource()
     @IBOutlet var collectionView: UICollectionView!
-    
+    fileprivate struct Storyboard {
+        struct Segue {
+            static let showDetailVC = "ShowDetailVC"
+        }
+        struct Unwind {
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -26,8 +32,6 @@ class MovieResultsViewController: UIViewController {
         // Configure collectionview
         collectionView.dataSource = dataSource
         collectionView.delegate = self
-        let cellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: dataSource.cellID)
         
         // Start the movie fetch asynchronously and update the datasource
         movieManager.fetchNowPlayingMovies { (result) in
@@ -39,6 +43,21 @@ class MovieResultsViewController: UIViewController {
                 self.dataSource.movies.removeAll()
             }
             self.collectionView.reloadSections(IndexSet(integer: 0))
+        }
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.Segue.showDetailVC {
+            let detailVC = segue.destination as! MovieDetailViewController
+            // Grab selected movie instance and pass along manager to DetailVC
+            if let selectedIndex = collectionView.indexPathsForSelectedItems?.first?.row {
+                let movie = dataSource.movies[selectedIndex]
+                detailVC.movie = movie
+                detailVC.movieManager = movieManager
+            }
         }
     }
 }
@@ -62,13 +81,6 @@ extension MovieResultsViewController: UICollectionViewDelegate {
                 cell.updateImageView(with: image)
             }
         }
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movie = dataSource.movies[indexPath.row]
-        let movieDetailVC = MovieDetailViewController()
-        movieDetailVC.movie = movie
-        movieDetailVC.movieManager = movieManager
-        navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }
 
