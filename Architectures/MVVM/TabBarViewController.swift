@@ -16,9 +16,11 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let movieResultsVC = MovieResultsViewController()
-        setViewControllers([movieResultsVC], animated: false)
+        let movieResultsVC = ResultsViewController()
         
+        
+        // Set the tabbar items
+        setViewControllers([movieResultsVC], animated: false)
     }
     
     

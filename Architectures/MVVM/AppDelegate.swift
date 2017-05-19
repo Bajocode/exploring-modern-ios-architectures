@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         
         // Allocate navigation controller and tabbar
-        let tabBarC = UITabBarController()
+        let tabBarC = TabBarViewController()
         let navC = UINavigationController(rootViewController: tabBarC)
         
         // Configure style

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="MDN-U4-JHL" customClass="MovieCollectionViewCell" customModule="MVC" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="MDN-U4-JHL" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -65,12 +65,6 @@
                 <constraint firstAttribute="bottom" secondItem="yMz-pQ-pOb" secondAttribute="bottom" id="vgJ-dJ-GbA"/>
                 <constraint firstItem="N7o-ey-v6T" firstAttribute="centerX" secondItem="MDN-U4-JHL" secondAttribute="centerX" id="wNe-s3-h4P"/>
             </constraints>
-            <connections>
-                <outlet property="activityIndicator" destination="N7o-ey-v6T" id="ZIB-j9-8rA"/>
-                <outlet property="ratingLabel" destination="DbA-ze-8bY" id="97N-XL-0VE"/>
-                <outlet property="thumbImageView" destination="yMz-pQ-pOb" id="U7g-KW-K66"/>
-                <outlet property="titleLabel" destination="V9W-44-WMI" id="S8e-9H-NdD"/>
-            </connections>
         </collectionViewCell>
     </objects>
 </document>
