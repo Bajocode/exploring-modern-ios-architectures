@@ -14,7 +14,7 @@ class MovieResultsDataSource: NSObject, UICollectionViewDataSource {
     // MARK: - Properties
     
     var movies = [Movie]()
-    private let cellID = "MovieCell"
+    let cellID = "MovieCell"
     
     
     // MARK: - DataSource

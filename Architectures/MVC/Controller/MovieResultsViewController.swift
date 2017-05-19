@@ -2,15 +2,15 @@
 //  MovieResultsViewController.swift
 //  Architectures
 //
-//  Created by Fabijan Bajo on 17/05/2017.
+//  Created by Fabijan Bajo on 19/05/2017.
 //
 //
 
 import UIKit
 
 class MovieResultsViewController: UIViewController {
-
-
+    
+    
     // MARK: - Properties
     
     var movieManager: MovieManager!
@@ -26,6 +26,8 @@ class MovieResultsViewController: UIViewController {
         // Configure collectionview
         collectionView.dataSource = dataSource
         collectionView.delegate = self
+        let cellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: dataSource.cellID)
         
         // Start the movie fetch asynchronously and update the datasource
         movieManager.fetchNowPlayingMovies { (result) in

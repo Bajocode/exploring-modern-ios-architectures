@@ -16,10 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Use property injection to inject the movieManager into root
-        let navC = window!.rootViewController as! UINavigationController
-        let movieResultsVC = navC.topViewController as! MovieResultsViewController
+        // Initialize the window (not using Storyboards)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        
+        // Allocate navigation controller and root
+        let movieResultsVC = MovieResultsViewController()
         movieResultsVC.movieManager = MovieManager()
+        let navC = UINavigationController(rootViewController: movieResultsVC)
+        
+        // Set window's root and make visible
+        window!.rootViewController = navC
+        window!.makeKeyAndVisible()
         
         return true
     }
