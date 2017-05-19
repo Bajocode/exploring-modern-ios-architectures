@@ -26,9 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCollectionViewCell.xib; path = ../MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsViewController.swift; path = Controller/MovieResultsViewController.swift; sourceTree = "<group>"; };
-		2279AB3D1ECEFCF9001B074B /* MovieResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieResultsViewController.xib; path = Controller/MovieResultsViewController.xib; sourceTree = "<group>"; };
+		2279AB3D1ECEFCF9001B074B /* MovieResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieResultsViewController.xib; path = MVC/Controller/MovieResultsViewController.xib; sourceTree = "<group>"; };
 		2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailViewController.swift; path = Controller/MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2279AB431ECEFF86001B074B /* MovieDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieDetailViewController.xib; path = Controller/MovieDetailViewController.xib; sourceTree = "<group>"; };
 		2292062A1ECC6E210090E78C /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,11 +57,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2292061F1ECC6E040090E78C = {
+		2279AB471ECF07CE001B074B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */,
 				22EE56FF1ECC7E3800790E71 /* moviedata.json */,
+				2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */,
+				2279AB3D1ECEFCF9001B074B /* MovieResultsViewController.xib */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		2292061F1ECC6E040090E78C = {
+			isa = PBXGroup;
+			children = (
+				2279AB471ECF07CE001B074B /* Shared */,
 				2292062C1ECC6E210090E78C /* MVC */,
 				2292062B1ECC6E210090E78C /* Products */,
 			);
@@ -102,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				22EE56F11ECC70CA00790E71 /* MovieCollectionViewCell.swift */,
-				2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -112,7 +121,6 @@
 			children = (
 				22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */,
 				2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */,
-				2279AB3D1ECEFCF9001B074B /* MovieResultsViewController.xib */,
 				2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */,
 				2279AB431ECEFF86001B074B /* MovieDetailViewController.xib */,
 			);
