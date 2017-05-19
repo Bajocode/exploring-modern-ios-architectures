@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageManager {
+final class ImageManager {
     
     
     // MARK: - Properties

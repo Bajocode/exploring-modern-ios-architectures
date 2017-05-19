@@ -31,17 +31,6 @@ class TabBarViewController: UITabBarController {
         // Set the tabbar items
         setViewControllers([movieResultsVC], animated: false)
     }
-    
-    
-    // MARK: - Methods
-    
-    
-    
-    // MARK: - Actions
-    
-    
-    
-    // MARK: - Navigation
 }
 
 

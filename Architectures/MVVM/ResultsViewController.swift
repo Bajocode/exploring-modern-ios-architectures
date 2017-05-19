@@ -59,6 +59,7 @@ extension ResultsViewController: UICollectionViewDataSource {
 
 extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // Download the image data for only the cells that the user is attempting to view.
         data[indexPath.item].updateCellImage(collectionView, cell: cell, indexPath: indexPath)
     }
 }
@@ -67,26 +68,8 @@ extension ResultsViewController: UICollectionViewDelegate {
 // MARK: - CollectionViewDelegateFlowLayout
 
 extension ResultsViewController: UICollectionViewDelegateFlowLayout {
+    // Size is dynamic, spacing is set in Xib
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard !data.isEmpty else {
-            return CGSize.zero
-        }
-        let proportion = data[indexPath.item].cellProportion
-        let width = (view.bounds.width - proportion.spacing) / proportion.widthDivisor
-        let height = (view.bounds.height - proportion.spacing) / proportion.heightDivisor
-        
-        return CGSize(width: width, height: height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        guard !data.isEmpty else {
-            return 0.0
-        }
-        return data[section].cellProportion.spacing
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        guard !data.isEmpty else {
-            return 0.0
-        }
-        return data[section].cellProportion.spacing
+        return data.isEmpty ? CGSize.zero : data[indexPath.item].cellSize(withBounds: view.bounds)
     }
 }
