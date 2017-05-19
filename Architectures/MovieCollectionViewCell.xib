@@ -65,6 +65,12 @@
                 <constraint firstAttribute="bottom" secondItem="yMz-pQ-pOb" secondAttribute="bottom" id="vgJ-dJ-GbA"/>
                 <constraint firstItem="N7o-ey-v6T" firstAttribute="centerX" secondItem="MDN-U4-JHL" secondAttribute="centerX" id="wNe-s3-h4P"/>
             </constraints>
+            <connections>
+                <outlet property="activityIndicator" destination="N7o-ey-v6T" id="yoG-eA-TY4"/>
+                <outlet property="ratingLabel" destination="DbA-ze-8bY" id="Lyv-h6-lu6"/>
+                <outlet property="thumbImageView" destination="yMz-pQ-pOb" id="NbN-ot-7OZ"/>
+                <outlet property="titleLabel" destination="V9W-44-WMI" id="dgc-57-zQK"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

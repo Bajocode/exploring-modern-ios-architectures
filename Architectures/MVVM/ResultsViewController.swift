@@ -14,6 +14,7 @@ class ResultsViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet var collectionView: UICollectionView!
+    var data = [CellRepresentable]()
     let cellID = "MovieCell"
     
     
@@ -47,11 +48,10 @@ class ResultsViewController: UIViewController {
 
 extension ResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        return cell
+        return data[indexPath.row].cellInstance(collectionView, indexPath: indexPath)
     }
 }
 extension ResultsViewController: UICollectionViewDelegate {
