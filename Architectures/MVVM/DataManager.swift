@@ -14,6 +14,7 @@ final class DataManager {
     // MARK: - Properties
     
     static let shared = DataManager()
+    let imageManager = ImageManager()
     
     
     // MARK: - Initializers

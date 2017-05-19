@@ -22,12 +22,11 @@ class TabBarViewController: UITabBarController {
         DataManager.shared.fetchNowPlayingMovies { (result) in
             switch result {
             case let .success(movieViewModels):
-                
+                movieResultsVC.data = movieViewModels
             case let .failure(error):
                 print(error)
             }
         }
-        
         
         // Set the tabbar items
         setViewControllers([movieResultsVC], animated: false)

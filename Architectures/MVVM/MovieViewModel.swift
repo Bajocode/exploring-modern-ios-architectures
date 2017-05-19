@@ -26,12 +26,23 @@ struct MovieViewModel: CellRepresentable {
     var rating: String {
         return String(format: "%.1f", movie.averageRating)
     }
-    private let cellID = "MovieCell"
     var cellProportion: CellProportion {
         return CellProportion( heightDivisor: 2.5,
                                widthDivisor: 2,
                                spacing: 1)
     }
+    
+    // CellRepresentable
+    var objectID: Int {
+        return movie.movieID
+    }
+    var imageURL: URL {
+        return TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
+    }
+
+    
+    // Private
+    private let cellID = "MovieCell"
     private let releaseDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-mm-dd"

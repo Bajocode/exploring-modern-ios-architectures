@@ -14,7 +14,11 @@ class ResultsViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet var collectionView: UICollectionView!
-    var data = [CellRepresentable]()
+    var data = [CellRepresentable]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     let cellID = "MovieCell"
     
     
@@ -52,6 +56,32 @@ extension ResultsViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return data[indexPath.row].cellInstance(collectionView, indexPath: indexPath)
+    }
+}
+
+
+// MARK: - CollectionView Delegate
+
+extension ResultsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let vm = data[indexPath.item]
+        DataManager.shared.imageManager.fetchImage(forVM: vm, size: .thumb) { result in
+   
+            // Make sure that we are dealing with same movie object (fetching takes time)
+            guard
+                let vmIndex = self.data.index(where: { $0.objectID == vm.objectID }),
+                case let.success(image) = result else {
+                    return
+            }
+            let movieIndexPath = IndexPath(row: vmIndex, section: 0)
+            
+            // Update cell when image request finishes, if cell still visible on screen
+            if let cell = self.collectionView.cellForItem(at: movieIndexPath) as? MovieCollectionViewCell {
+                cell.updateImageView(with: image)
+            }
+            
+        }
+        
     }
 }
 
