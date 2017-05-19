@@ -25,6 +25,7 @@
 		223FB50F1ECF24E80073C66E /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FB50E1ECF24E80073C66E /* TmdbAPI.swift */; };
 		223FB5111ECF28450073C66E /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FB5101ECF28450073C66E /* ImageManager.swift */; };
 		223FB5131ECF28B60073C66E /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FB5121ECF28B60073C66E /* ImageStore.swift */; };
+		223FB5181ECF339C0073C66E /* CellProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FB5171ECF339C0073C66E /* CellProportion.swift */; };
 		2279AB3E1ECEFCF9001B074B /* MovieResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */; };
 		2279AB441ECEFF86001B074B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */; };
 		2292062E1ECC6E210090E78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292062D1ECC6E210090E78C /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		223FB50E1ECF24E80073C66E /* TmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbAPI.swift; sourceTree = "<group>"; };
 		223FB5101ECF28450073C66E /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		223FB5121ECF28B60073C66E /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		223FB5171ECF339C0073C66E /* CellProportion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProportion.swift; sourceTree = "<group>"; };
 		2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCollectionViewCell.xib; path = ../MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsViewController.swift; path = Controller/MovieResultsViewController.swift; sourceTree = "<group>"; };
 		2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailViewController.swift; path = Controller/MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				223FB50E1ECF24E80073C66E /* TmdbAPI.swift */,
+				223FB5171ECF339C0073C66E /* CellProportion.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				223FB5011ECF16FE0073C66E /* ResultsViewController.swift in Sources */,
 				223FB5091ECF1BBD0073C66E /* CellRepresentable.swift in Sources */,
 				223FB4FE1ECF16190073C66E /* MovieViewModel.swift in Sources */,
+				223FB5181ECF339C0073C66E /* CellProportion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

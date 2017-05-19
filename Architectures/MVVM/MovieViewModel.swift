@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct CellProportion {
-    let heightDivisor: CGFloat
-    let widthDivisor: CGFloat
-    let spacing: CGFloat
-}
-
 struct MovieViewModel: CellRepresentable {
     
     
@@ -31,23 +25,24 @@ struct MovieViewModel: CellRepresentable {
                                widthDivisor: 2,
                                spacing: 1)
     }
+    private let releaseDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-mm-dd"
+        return formatter
+    }()
     
-    // CellRepresentable
+    
+    // MARK: - CellRepresentable
+    
     var objectID: Int {
         return movie.movieID
     }
     var imageURL: URL {
         return TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
     }
-
-    
-    // Private
-    private let cellID = "MovieCell"
-    private let releaseDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd"
-        return formatter
-    }()
+    var cellID: String {
+        return "MovieCell"
+    }
     
     
     // MARK: - Initializers
@@ -66,5 +61,20 @@ struct MovieViewModel: CellRepresentable {
         // Setup cell with self and return
         cell.configure(with: self)
         return cell
+    }
+    
+    func updateCellImage(_ collectionView: UICollectionView, cell: UICollectionViewCell, indexPath: IndexPath) {
+        DataManager.shared.imageManager.fetchImage(forVM: self, size: .thumb) { (result) in
+            
+            
+            guard
+                case let .success(image) = result,
+                let movieCell = cell as? MovieCollectionViewCell else {
+                return
+            }
+            
+            movieCell.updateImageView(with: image)
+        }
+        
     }
 }
