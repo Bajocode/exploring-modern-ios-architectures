@@ -54,7 +54,6 @@ final class DataManager {
         }
         return TmdbAPI.parsedMovies(forJSONData: jsonData)
     }
-    
 }
 
 

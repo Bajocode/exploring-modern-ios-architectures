@@ -133,7 +133,7 @@
 			children = (
 				223FB4EB1ECF0BD40073C66E /* TabBarViewController.swift */,
 				223FB5031ECF17100073C66E /* ResultsVC */,
-				223FB5041ECF17200073C66E /* MovieCell */,
+				223FB5041ECF17200073C66E /* Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -163,13 +163,13 @@
 			name = ResultsVC;
 			sourceTree = "<group>";
 		};
-		223FB5041ECF17200073C66E /* MovieCell */ = {
+		223FB5041ECF17200073C66E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				223FB5051ECF173D0073C66E /* MovieCollectionViewCell.swift */,
 				2279AB3A1ECEF91B001B074B /* MovieCollectionViewCell.xib */,
 			);
-			name = MovieCell;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		223FB5071ECF1B860073C66E /* Protocols */ = {

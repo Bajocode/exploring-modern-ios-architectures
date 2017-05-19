@@ -26,25 +26,19 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Configure collectionView
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        // Register cell
-        let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
-        collectionView.register(movieCellNib, forCellWithReuseIdentifier: cellID)
     }
     
     
     // MARK: - Methods
     
-    
-    
-    // MARK: - Actions
-    
-    
-    
-    // MARK: - Navigation
+    private func setUp() {
+        // Configure collectionView
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        // Register cell
+        let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
+        collectionView.register(movieCellNib, forCellWithReuseIdentifier: cellID)
+    }
 }
 
 
@@ -66,7 +60,6 @@ extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let vm = data[indexPath.item]
         DataManager.shared.imageManager.fetchImage(forVM: vm, size: .thumb) { result in
-   
             // Make sure that we are dealing with same movie object (fetching takes time)
             guard
                 let vmIndex = self.data.index(where: { $0.objectID == vm.objectID }),
