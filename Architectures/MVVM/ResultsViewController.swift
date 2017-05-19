@@ -62,6 +62,11 @@ extension ResultsViewController: UICollectionViewDelegate {
         // Download the image data for only the cells that the user is attempting to view.
         data[indexPath.item].updateCellImage(collectionView, cell: cell, indexPath: indexPath)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        detailVC.viewModel = data[indexPath.item] as! DetailRepresentable
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 

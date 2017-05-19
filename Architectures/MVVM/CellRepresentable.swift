@@ -14,7 +14,7 @@ protocol CellRepresentable {
     // MARK: - Properties
     
     var objectID: Int { get }
-    var imageURL: URL { get }
+    var thumbImageURL: URL { get }
     var cellID: String { get }
     
     

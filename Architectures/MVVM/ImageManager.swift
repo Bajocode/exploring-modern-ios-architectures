@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ImageManager {
+class ImageManager {
     
     
     // MARK: - Properties
@@ -19,17 +19,16 @@ final class ImageManager {
     // MARK: - Methods
     
     // Fetch image for movie and dispatch on main
-    func fetchImage(forVM vm: CellRepresentable, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
+    func fetchImage(with url: URL, completion: @escaping (ImageResult) -> Void) {
+        // Remove "/" because docs dir sees as folders
+        let cacheKey = url.path.components(separatedBy: "/").dropFirst(3).joined(separator: "")
         // Return early if found in local cache or docs dir
-        let cacheKey = String(vm.objectID) + size.rawValue
         if let image = imageStore.image(forKey: cacheKey) {
-            DispatchQueue.main.async {
-                completion(.success(image))
-            }
+            DispatchQueue.main.async { completion(.success(image)) }
             return
         }
         // Make a new request
-        let request = URLRequest(url: vm.imageURL)
+        let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             print("Called Fetch")
             // Store in cache and dispatch back on main thread
@@ -37,12 +36,11 @@ final class ImageManager {
             if case let .success(image) = result {
                 self.imageStore.setImage(image, forKey: cacheKey)
             }
-            DispatchQueue.main.async {
-                completion(result)
-            }
+            DispatchQueue.main.async { completion(result) }
         }
         task.resume()
     }
+    
     private func processImageRequest(data: Data?, error: Error?) -> ImageResult {
         guard
             let imageData = data,

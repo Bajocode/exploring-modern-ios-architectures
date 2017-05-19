@@ -35,26 +35,45 @@ struct MovieViewModel {
 }
 
 
+// MARK: - DetailRepresentable
+
+extension MovieViewModel: DetailRepresentable {
+    
+    // Properties
+    var fullImageURL: URL {
+        return TmdbAPI.tmdbImageURL(forSize: .full, path: movie.posterPath)
+    }
+    
+    // Methods
+    func updateFullImage(completion: @escaping (_ image: UIImage) -> Void) {
+        DataManager.shared.imageManager.fetchImage(with: fullImageURL) { (result) in
+            switch result {
+            case let .success(image):
+                completion(image)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+}
+
+
 // MARK: - CellRepresentable
 
 extension MovieViewModel: CellRepresentable {
     
-    
     // Properties
-    
     var objectID: Int {
         return movie.movieID
     }
-    var imageURL: URL {
+    var thumbImageURL: URL {
         return TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
     }
     var cellID: String {
         return "MovieCell"
     }
     
-    
     // Methods
-    
     func cellSize(withBounds bounds: CGRect) -> CGSize {
         let width = (bounds.width - 1) / 2
         let height = (bounds.height - 1) / 2.5
@@ -70,7 +89,7 @@ extension MovieViewModel: CellRepresentable {
     }
     
     func updateCellImage(_ collectionView: UICollectionView,  cell: UICollectionViewCell, indexPath: IndexPath) {
-        DataManager.shared.imageManager.fetchImage(forVM: self, size: .thumb) { (result) in
+        DataManager.shared.imageManager.fetchImage(with: thumbImageURL) { (result) in
             
             // Make sure it's the same movie object (fetching async)
             guard
