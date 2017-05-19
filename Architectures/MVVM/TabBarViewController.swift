@@ -17,6 +17,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         let movieResultsVC = ResultsViewController()
+        movieResultsVC.title = "MVVM"
         
         // Fetch movies
         DataManager.shared.fetchNowPlayingMovies { (result) in

@@ -28,7 +28,7 @@ class MovieResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Now Playing Movies"
+        navigationItem.title = "MVC"
         // Configure collectionview
         collectionView.dataSource = dataSource
         collectionView.delegate = self

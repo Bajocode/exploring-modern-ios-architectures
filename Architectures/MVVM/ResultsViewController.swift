@@ -19,7 +19,6 @@ class ResultsViewController: UIViewController {
             collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-    let cellID = "MovieCell"
     
     
     // MARK: - Lifecycle
@@ -38,7 +37,7 @@ class ResultsViewController: UIViewController {
         collectionView.dataSource = self
         // Register cell
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
-        collectionView.register(movieCellNib, forCellWithReuseIdentifier: cellID)
+        collectionView.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
     }
 }
 
