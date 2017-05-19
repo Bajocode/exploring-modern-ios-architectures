@@ -59,8 +59,8 @@ final class MovieManager {
     // Fetch image for movie and dispatch on main
     func fetchImage(forMovie movie: Movie, size: TmdbImageSize, completion: @escaping (ImageResult) -> Void) {
         // Return early if found in local cache or docs dir
-        let movieID = String(movie.movieID)
-        if let image = imageStore.image(forKey: movieID) {
+        let cacheKey = String(movie.movieID) + size.rawValue
+        if let image = imageStore.image(forKey: cacheKey) {
             DispatchQueue.main.async {
                 completion(.success(image))
             }
@@ -73,7 +73,7 @@ final class MovieManager {
             // Store in cache and dispatch back on main thread
             let result = self.processImageRequest(data: data, error: error)
             if case let .success(image) = result {
-                self.imageStore.setImage(image, forKey: movieID)
+                self.imageStore.setImage(image, forKey: cacheKey)
             }
             DispatchQueue.main.async {
                 completion(result)

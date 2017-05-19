@@ -63,6 +63,13 @@ extension MovieResultsViewController: UICollectionViewDelegate {
             }
         }
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = dataSource.movies[indexPath.row]
+        let movieDetailVC = MovieDetailViewController()
+        movieDetailVC.movie = movie
+        movieDetailVC.movieManager = movieManager
+        navigationController?.pushViewController(movieDetailVC, animated: true)
+    }
 }
 
 

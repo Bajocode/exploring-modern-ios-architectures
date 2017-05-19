@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let movieResultsVC = MovieResultsViewController()
         movieResultsVC.movieManager = MovieManager()
         let navC = UINavigationController(rootViewController: movieResultsVC)
+        navC.navigationBar.barStyle = .black
         
         // Set window's root and make visible
         window!.rootViewController = navC
