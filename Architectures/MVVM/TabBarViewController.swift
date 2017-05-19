@@ -18,6 +18,15 @@ class TabBarViewController: UITabBarController {
         
         let movieResultsVC = ResultsViewController()
         
+        // Fetch movies
+        DataManager.shared.fetchNowPlayingMovies { (result) in
+            switch result {
+            case let .success(movieViewModels):
+                
+            case let .failure(error):
+                print(error)
+            }
+        }
         
         
         // Set the tabbar items
