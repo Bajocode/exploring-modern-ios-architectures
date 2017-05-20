@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 19/05/2017.
 //
 //
+/*
+    Utilities for the Tmdb API
+*/
 
 import Foundation
 
@@ -25,12 +28,6 @@ struct TmdbAPI {
         }
         return apiKey
     }
-    private static let tmdbDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd"
-        return formatter
-    }()
-    
     
     
     // MARK: - Methods
@@ -39,16 +36,8 @@ struct TmdbAPI {
     static func tmdbImageURL(forSize size: TmdbImageSize, path: String) -> URL {
         return URL(string: baseImageURLString + "/" + size.rawValue + "/" + path)!
     }
-
-    static func remoteURL(withType type: ObjectType) -> URL {
-        switch type {
-        case .movie:
-            return constructTmdbURL(forMethod: .nowPlayingMovies)
-        case .actor:
-            return constructTmdbURL(forMethod: .popularActors)
-        }
-    }
     
+    // Local static JSON url constructor based on object type
     static func localURL(withType type: ObjectType) -> URL {
         switch type {
         case .movie:
@@ -57,16 +46,25 @@ struct TmdbAPI {
             return localJSONURL(forFileName: "actordata")
         }
     }
+    private static func localJSONURL(forFileName fileName: String) -> URL {
+        return Bundle.main.url(forResource: fileName, withExtension: "json")!
+    }
     
-    // Constructs URL's specific to the Tmdb server API
+    // URL constructor implementation for Tmdb Servers based on object type
+    static func remoteURL(withType type: ObjectType) -> URL {
+        switch type {
+        case .movie:
+            return constructTmdbURL(forMethod: .nowPlayingMovies)
+        case .actor:
+            return constructTmdbURL(forMethod: .popularActors)
+        }
+    }
     private static func constructTmdbURL(forMethod method: TmdbMethod, extraParameters: [String:String]? = nil) -> URL {
         let urlWithMethod = baseURLString + method.rawValue
         var components = URLComponents(string: urlWithMethod)!
         var queryItems = [URLQueryItem]()
-        
         // Base param required for all Tmdb requests
         queryItems.append(URLQueryItem(name: "api_key", value: apiKey))
-        
         // Optional extra params for specific requests
         if let extraParams = extraParameters {
             for (key,value) in extraParams {
@@ -77,14 +75,10 @@ struct TmdbAPI {
         components.queryItems = queryItems
         return components.url!
     }
-    
-    private static func localJSONURL(forFileName fileName: String) -> URL {
-        return Bundle.main.url(forResource: fileName, withExtension: "json")!
-    }
 }
 
 
-// MARK: - Tmdb related help types
+// MARK: - Tmdb related helper types
 
 enum TmdbImageSize: String {
     case full = "original"

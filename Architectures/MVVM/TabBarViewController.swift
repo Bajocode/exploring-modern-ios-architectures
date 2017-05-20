@@ -20,10 +20,10 @@ class TabBarViewController: UITabBarController {
         movieResultsVC.title = "MVVM"
         
         // Fetch movies
-        DataManager.shared.fetchNowPlayingMovies { (result) in
+        DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
-            case let .success(movieViewModels):
-                movieResultsVC.data = movieViewModels
+            case let .success(movies):
+                movieResultsVC.data = movies.map { MovieViewModel(movie: $0 as! Movie) }
             case let .failure(error):
                 print(error)
             }

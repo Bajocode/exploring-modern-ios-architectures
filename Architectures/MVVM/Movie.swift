@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: Parsable {
     
     // MARK: - Properties
     
@@ -20,7 +20,7 @@ struct Movie {
 }
 
 
-// MARK: - Parsable
+// MARK: - Equatable
 
 extension Movie: Equatable {
     static func == (lhs: Movie, rhs: Movie) -> Bool {

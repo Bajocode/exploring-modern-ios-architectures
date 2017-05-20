@@ -5,12 +5,15 @@
 //  Created by Fabijan Bajo on 20/05/2017.
 //
 //
+/*
+    Tmdb object parsing utility methods
+*/
 
 import Foundation
 
 struct TmdbParser {
     
-    // Call inidvidual movie parser and pass MoviesResult to MovieManager
+    // DataManager's access to the parsing utilities
     static func parsedResult(withJSONData data: Data, type: ObjectType) -> DataResult {
         do{
             // Serialize raw json into foundation json and retrieve movie array
@@ -26,6 +29,7 @@ struct TmdbParser {
         }
     }
     
+    // Caller of individual object parsers based on object type
     private static func parsedObjects(withJSONArray array: [[String: Any]], type: ObjectType) -> [Parsable] {
         // Parse individual movies
         var parsedObjects = [Parsable]()
@@ -49,7 +53,7 @@ struct TmdbParser {
     }
     
     // Parse individual movie dictionaries, extracted from json response
-    private static func parsedMovie(forMovieJSON json: [String:Any]) -> Parsable? {
+    private static func parsedMovie(forMovieJSON json: [String:Any]) -> Movie? {
         guard
             let movieID = json["id"] as? Int,
             let title = json["title"] as? String,
@@ -59,11 +63,11 @@ struct TmdbParser {
                 // Do not have enough information to construct the object
                 return nil
         }
-        return Movie(title: title, posterPath: posterPath, movieID: movieID, releaseDate: releaseDate, averageRating: averageRating) as? Parsable
+        return Movie(title: title, posterPath: posterPath, movieID: movieID, releaseDate: releaseDate, averageRating: averageRating)
     }
     
     // Parse individual actor dictionaries, extracted from json response
-    private static func parsedActor(forActorJSON json: [String:Any]) -> Parsable? {
+    private static func parsedActor(forActorJSON json: [String:Any]) -> Actor? {
         guard
             let actorID = json["id"] as? Int,
             let name = json["name"] as? String,
@@ -71,10 +75,13 @@ struct TmdbParser {
                 // Do not have enough information to construct the object
                 return nil
         }
-        return Actor(name: name, profilePath: profilePath, actorID: actorID) as? Parsable
+        return Actor(name: name, profilePath: profilePath, actorID: actorID)
     }
     
 }
+
+
+// MARK: - Tmdb parsing related helper types
 
 fileprivate enum TmdbError: CustomStringConvertible, Error {
     case invalidJSONData(key: String, dictionary: Any)
