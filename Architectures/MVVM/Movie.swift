@@ -15,12 +15,12 @@ struct Movie {
     let title: String
     let posterPath: String
     let movieID: Int
-    let releaseDate: Date
+    let releaseDate: String
     let averageRating: Double
 }
 
 
-// MARK: - Equatable
+// MARK: - Parsable
 
 extension Movie: Equatable {
     static func == (lhs: Movie, rhs: Movie) -> Bool {

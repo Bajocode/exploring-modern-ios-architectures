@@ -15,7 +15,8 @@ struct MovieViewModel {
     
     let movie: Movie
     var releaseDate: String {
-        return releaseDateFormatter.string(from: movie.releaseDate)
+        let dateObject = releaseDateFormatter.date(from: movie.releaseDate)
+        return releaseDateFormatter.string(from: dateObject!)
     }
     var rating: String {
         return String(format: "%.1f", movie.averageRating)
