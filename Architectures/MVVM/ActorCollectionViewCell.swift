@@ -1,20 +1,19 @@
 //
-//  MovieCollectionViewCell.swift
+//  ActorCollectionViewCell.swift
 //  Architectures
 //
-//  Created by Fabijan Bajo on 19/05/2017.
+//  Created by Fabijan Bajo on 20/05/2017.
 //
 //
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
- 
+class ActorCollectionViewCell: UICollectionViewCell {
+
     
     // MARK: - Properties
     
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var thumbImageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -33,9 +32,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Methods
     
-    func configure(with viewModel: MovieViewModel) {
-        titleLabel.text = viewModel.movie.title
-        ratingLabel.text = viewModel.rating
+    func configure(with viewModel: ActorViewModel) {
+        nameLabel.text = viewModel.actor.name
     }
     func updateImageView(with image: UIImage?, cornerRadius: CGFloat? = nil) {
         thumbImageView.layer.cornerRadius = cornerRadius ?? 0.0

@@ -35,9 +35,11 @@ class ResultsViewController: UIViewController {
         // Configure collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
-        // Register cell
+        // Register cells
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         collectionView.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
+        let actorCellNib = UINib(nibName: "ActorCollectionViewCell", bundle: nil)
+        collectionView.register(actorCellNib, forCellWithReuseIdentifier: "ActorCell")
     }
 }
 

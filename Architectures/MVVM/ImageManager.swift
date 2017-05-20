@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 19/05/2017.
 //
 //
+/*
+    Access point for everything related to image data, only accessible through DataManager
+*/
 
 import UIKit
 

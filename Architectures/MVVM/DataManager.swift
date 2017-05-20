@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 19/05/2017.
 //
 //
+/*
+    The only accesspoint to everything data and network related
+*/
 
 import UIKit
 
@@ -55,6 +58,9 @@ final class DataManager {
         return TmdbParser.parsedResult(withJSONData: jsonData, type: type)
     }
 }
+
+
+// MARK: - Data related helper types
 
 enum ObjectType {
     case movie

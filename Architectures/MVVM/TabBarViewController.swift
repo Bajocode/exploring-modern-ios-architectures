@@ -15,11 +15,18 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
         
+        configureViewControllers()
+    }
+    
+    
+    // MARK: - Methods
+    
+    private func configureViewControllers() {
+        // Configure movieResultsVC
         let movieResultsVC = ResultsViewController()
         movieResultsVC.title = "MVVM"
-        
-        // Fetch movies
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
             case let .success(movies):
@@ -29,9 +36,34 @@ class TabBarViewController: UITabBarController {
             }
         }
         
+        // Configure actorResultsVC
+        let actorResultsVC = ResultsViewController()
+        actorResultsVC.title = "Popular Actors"
+        
         // Set the tabbar items
-        setViewControllers([movieResultsVC], animated: false)
+        setViewControllers([movieResultsVC, actorResultsVC], animated: false)
     }
+}
+
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard
+            let actorResultsVC = viewController as? ResultsViewController,
+            actorResultsVC.data.isEmpty else {
+            return
+        }
+        DataManager.shared.fetchNewTmdbObjects(withType: .actor) { (result) in
+            switch result {
+            case let .success(actors):
+                actorResultsVC.data = actors.map { ActorViewModel(actor: $0 as! Actor) }
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
 }
 
 

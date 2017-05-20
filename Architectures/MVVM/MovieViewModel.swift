@@ -73,6 +73,9 @@ extension MovieViewModel: CellRepresentable {
     var cellID: String {
         return "MovieCell"
     }
+    var cornerRadius: CGFloat? {
+        return nil
+    }
     
     // Methods
     func cellSize(withBounds bounds: CGRect) -> CGSize {
@@ -99,7 +102,7 @@ extension MovieViewModel: CellRepresentable {
                     return
             }
             // Update cell when image request finishes, if cell still visible on screen
-            movieCell.updateImageView(with: image)
+            movieCell.updateImageView(with: image, cornerRadius: self.cornerRadius)
         }
     }
 }

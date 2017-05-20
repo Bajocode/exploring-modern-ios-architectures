@@ -5,6 +5,9 @@
 //  Created by Fabijan Bajo on 19/05/2017.
 //
 //
+/*
+    Image store for saving / retrieving images from local cache and docs dir
+*/
 
 import UIKit
 

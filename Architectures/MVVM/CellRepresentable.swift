@@ -16,6 +16,7 @@ protocol CellRepresentable {
     var objectID: Int { get }
     var thumbImageURL: URL { get }
     var cellID: String { get }
+    var cornerRadius: CGFloat? { get }
     
     
     // MARK: - Methods
