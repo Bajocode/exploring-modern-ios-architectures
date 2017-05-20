@@ -49,4 +49,17 @@ class MovieTests: XCTestCase {
         XCTAssertEqual(movie.averageRating, 1.0)
     }
     
+    
+    // MARK: - Equatable
+    
+    func test_EqualMovies_AreEqual_WithSameIDs() {
+        let first = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
+        let second = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
+        XCTAssertEqual(first, second)
+    }
+    func test_EqualMovies_AreUnEqual_WithDIfferentIDs() {
+        let first = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
+        let second = Movie(title: "", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 0.0)
+        XCTAssertNotEqual(first, second)
+    }
 }
