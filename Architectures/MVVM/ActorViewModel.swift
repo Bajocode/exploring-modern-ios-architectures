@@ -24,6 +24,32 @@ struct ActorViewModel {
     
 }
 
+
+// MARK: - DetailRepresentable
+
+extension ActorViewModel: DetailRepresentable {
+    
+    // Properties
+    var fullImageURL: URL {
+        return TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)
+    }
+    
+    // Methods
+    func updateFullImage(completion: @escaping (_ image: UIImage) -> Void) {
+        DataManager.shared.imageManager.fetchImage(with: fullImageURL) { (result) in
+            switch result {
+            case let .success(image):
+                completion(image)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+}
+
+
+// MARK: - CellRepresentable
+
 extension ActorViewModel: CellRepresentable {
     
     // Properties

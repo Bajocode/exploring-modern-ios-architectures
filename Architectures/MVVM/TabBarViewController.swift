@@ -16,7 +16,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        
+        navigationItem.title = "MVVM"
         configureViewControllers()
     }
     

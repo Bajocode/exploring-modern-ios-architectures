@@ -29,7 +29,14 @@ class DetailViewController: UIViewController {
     // MARK: - Methods
     
     private func setUp() {
-        navigationItem.title = (viewModel as! MovieViewModel).movie.title
+        // Set navigation title
+        var title = ""
+        if let movieVM = viewModel as? MovieViewModel {
+            title = movieVM.movie.title
+        } else if let actorVM = viewModel as? ActorViewModel {
+            title = actorVM.actor.name
+        }
+        navigationItem.title = title
         
         // Network calls go through VM
         activityIndicator.startAnimating()

@@ -32,7 +32,6 @@ class ResultsViewController: UIViewController {
     // MARK: - Methods
     
     private func setUp() {
-        navigationItem.title = "MVVM"
         // Configure collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
