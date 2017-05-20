@@ -6,7 +6,7 @@
 //
 //
 /*
-    The only accesspoint to everything data and network related
+    SINGLETON: The only accesspoint to everything data and network related
 */
 
 import UIKit

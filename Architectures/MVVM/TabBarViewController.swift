@@ -47,13 +47,15 @@ class TabBarViewController: UITabBarController {
 
 
 extension TabBarViewController: UITabBarControllerDelegate {
-    
+    // Fetch actor batch only when user shows the tab
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        // For this example project, just fetch once
         guard
             let actorResultsVC = viewController as? ResultsViewController,
             actorResultsVC.data.isEmpty else {
             return
         }
+        // Async actor fetch, dispatching on main while instantiatin ViewModels
         DataManager.shared.fetchNewTmdbObjects(withType: .actor) { (result) in
             switch result {
             case let .success(actors):

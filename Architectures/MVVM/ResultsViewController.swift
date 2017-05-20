@@ -65,6 +65,7 @@ extension ResultsViewController: UICollectionViewDelegate {
         data[indexPath.item].updateCellImage(collectionView, cell: cell, indexPath: indexPath)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Cast ViewModel into DetailRepresentable to continue as detail VC configurer
         let detailVC = DetailViewController()
         detailVC.viewModel = data[indexPath.item] as! DetailRepresentable
         navigationController?.pushViewController(detailVC, animated: true)
@@ -75,7 +76,7 @@ extension ResultsViewController: UICollectionViewDelegate {
 // MARK: - CollectionViewDelegateFlowLayout
 
 extension ResultsViewController: UICollectionViewDelegateFlowLayout {
-    // Size is dynamic, spacing is set in Xib
+    // Implement all UI configurations through ViewModels
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return data.isEmpty ? CGSize.zero : data[indexPath.item].cellSize(withBounds: view.bounds)
     }
