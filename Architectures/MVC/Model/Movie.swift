@@ -11,7 +11,7 @@
 
 import Foundation
 
-final class Movie {
+struct Movie {
     
     
     // MARK: - Properties
@@ -21,17 +21,6 @@ final class Movie {
     let movieID: Int
     let releaseDate: Date
     let averageRating: Double
-    
-    
-    // MARK: - Initializers
-    
-    init(title: String, posterPath: String, movieID: Int, releaseDate: Date, averageRating: Double) {
-        self.title = title
-        self.posterPath = posterPath
-        self.movieID = movieID
-        self.releaseDate = releaseDate
-        self.averageRating = averageRating
-    }
 }
 
 
