@@ -39,6 +39,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
     func updateImageView(with image: UIImage?, cornerRadius: CGFloat? = nil) {
         thumbImageView.layer.cornerRadius = cornerRadius ?? 0.0
+        // Update Image
         if let imageToDisplay = image {
             activityIndicator.stopAnimating()
             thumbImageView.image = imageToDisplay

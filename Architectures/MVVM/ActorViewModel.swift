@@ -36,15 +36,22 @@ extension ActorViewModel: CellRepresentable {
     var cellID: String {
         return "ActorCell"
     }
+    var cellSpacing: CGFloat {
+        return 8
+    }
     var cornerRadius: CGFloat? {
         return 5.0
     }
     
+    
     // Methods
     func cellSize(withBounds bounds: CGRect) -> CGSize {
-        let width = (bounds.width - 1) / 3
-        let height = (bounds.height - 1) / 2
+        let width = (bounds.width - 32) / 3
+        let height = (bounds.height - 16) / 3
         return CGSize(width: width, height: height)
+    }
+    func collecitonViewInsets(with tabBarHeight: CGFloat) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 8, left: 8, bottom: tabBarHeight, right: 8)
     }
     func cellInstance(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         // Instantiate

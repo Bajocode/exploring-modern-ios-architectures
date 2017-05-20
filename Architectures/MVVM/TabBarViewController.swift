@@ -26,7 +26,7 @@ class TabBarViewController: UITabBarController {
     private func configureViewControllers() {
         // Configure movieResultsVC
         let movieResultsVC = ResultsViewController()
-        movieResultsVC.title = "MVVM"
+        movieResultsVC.title = "Recent Movies"
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
             case let .success(movies):

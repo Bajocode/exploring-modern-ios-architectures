@@ -32,9 +32,11 @@ class ResultsViewController: UIViewController {
     // MARK: - Methods
     
     private func setUp() {
+        navigationItem.title = "MVVM"
         // Configure collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
+       
         // Register cells
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         collectionView.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
@@ -77,5 +79,14 @@ extension ResultsViewController: UICollectionViewDelegateFlowLayout {
     // Size is dynamic, spacing is set in Xib
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return data.isEmpty ? CGSize.zero : data[indexPath.item].cellSize(withBounds: view.bounds)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return data.isEmpty ? 0.0 : data[section].cellSpacing
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return data.isEmpty ? 0.0 : data[section].cellSpacing
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return data.isEmpty ? UIEdgeInsets.zero : data[section].collecitonViewInsets(with: tabBarController!.tabBar.bounds.height)
     }
 }

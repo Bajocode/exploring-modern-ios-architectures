@@ -73,9 +73,10 @@ extension MovieViewModel: CellRepresentable {
     var cellID: String {
         return "MovieCell"
     }
-    var cornerRadius: CGFloat? {
-        return nil
+    var cellSpacing: CGFloat {
+        return 1
     }
+    
     
     // Methods
     func cellSize(withBounds bounds: CGRect) -> CGSize {
@@ -83,7 +84,9 @@ extension MovieViewModel: CellRepresentable {
         let height = (bounds.height - 1) / 2.5
         return CGSize(width: width, height: height)
     }
-    
+    func collecitonViewInsets(with tabBarHeight: CGFloat) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight, right: 0)
+    }
     func cellInstance(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         // Instantiate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MovieCollectionViewCell
