@@ -19,7 +19,7 @@ struct Actor: Parsable {
 }
 
 
-// MARK: - Parsable
+// MARK: - Equatable
 
 extension Actor: Equatable {
     static func == (lhs: Actor, rhs: Actor) -> Bool {

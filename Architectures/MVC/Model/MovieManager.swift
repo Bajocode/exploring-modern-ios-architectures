@@ -69,10 +69,11 @@ final class MovieManager {
         // Make a new request
         let request = URLRequest(url: TmdbAPI.tmdbImageURL(forSize: size, path: movie.posterPath))
         let task = session.dataTask(with: request) { (data, response, error) in
-            print("Called Fetch")
+            
             // Store in cache and dispatch back on main thread
             let result = self.processImageRequest(data: data, error: error)
             if case let .success(image) = result {
+                print("Image form network fetch")
                 self.imageStore.setImage(image, forKey: cacheKey)
             }
             DispatchQueue.main.async {

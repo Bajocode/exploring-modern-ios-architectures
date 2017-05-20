@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
     // MARK: - Methods
     
     private func setUp() {
+        edgesForExtendedLayout = []
         // Set navigation title
         var title = ""
         if let movieVM = viewModel as? MovieViewModel {

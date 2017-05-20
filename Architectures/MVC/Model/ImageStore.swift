@@ -34,6 +34,7 @@ final class ImageStore {
     func image(forKey key: String) -> UIImage? {
         // Check if in local cache first
         if let  existingImage = cache.object(forKey: key as NSString) {
+            print("Image from local cache")
             return existingImage
         }
         // Check in docs dir
@@ -43,6 +44,7 @@ final class ImageStore {
         }
         // Set from disk to cache 
         cache.setObject(imageFromDisk, forKey: key as NSString)
+        print("Image from docs dir (drive)")
         return imageFromDisk
     }
     
