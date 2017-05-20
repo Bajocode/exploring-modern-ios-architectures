@@ -3,7 +3,7 @@
 #### Project
 In this project I'm structuring my knowledge about modern architectural patterns,
 showcasing the main features through a simple Movie app. The app makes use of
-the Tmdb API :movie_camera: which requires an API key. However, static
+the [Tmdb API](https://www.themoviedb.org/documentation/api) which requires an API key. However, static
 `JSON` files are also included for quick usage.
 
 #### Setup
@@ -12,8 +12,8 @@ the Tmdb API :movie_camera: which requires an API key. However, static
 2. Build and run!
 
 ###### With real requests
-1. [Request an API key](http://https://www.themoviedb.org/faq/api) :key: at themoviedb.org
-2. Insert your key in `TmdbAPIKey.plist` located at the root of the repo
+1. [Request an API key](http://https://www.themoviedb.org/faq/api) :key:
+2. Insert your key in `TmdbAPIKey.plist` located at the root of `/Architectures`
 3. In Xcode, choose a target / architecture
 4. Build and run!
 
