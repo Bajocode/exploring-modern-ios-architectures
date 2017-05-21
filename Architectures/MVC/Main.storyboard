@@ -13,7 +13,7 @@
         <!--Movie Results View Controller-->
         <scene sceneID="G1r-dA-XUA">
             <objects>
-                <viewController id="rJ2-JV-m5f" customClass="MovieResultsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieResultsVC" id="rJ2-JV-m5f" customClass="MovieResultsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HcB-TK-exV"/>
                         <viewControllerLayoutGuide type="bottom" id="flF-1L-ujx"/>

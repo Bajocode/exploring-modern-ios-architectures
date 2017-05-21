@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222E2CD11ED1E0450075C04E /* MovieResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */; };
 		223B7BAB1ECF7D4500C7CF65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B7BA91ECF7D4500C7CF65 /* DetailViewController.swift */; };
 		223B7BAC1ECF7D4500C7CF65 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223B7BAA1ECF7D4500C7CF65 /* DetailViewController.xib */; };
 		223B7BAE1ECF7DB900C7CF65 /* DetailRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B7BAD1ECF7DB900C7CF65 /* DetailRepresentable.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsDataSourceTests.swift; path = Model/MovieResultsDataSourceTests.swift; sourceTree = "<group>"; };
 		223B7BA91ECF7D4500C7CF65 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		223B7BAA1ECF7D4500C7CF65 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		223B7BAD1ECF7DB900C7CF65 /* DetailRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRepresentable.swift; sourceTree = "<group>"; };
@@ -136,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222E2CCF1ED1DFBF0075C04E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22B910511ED09A2E00760927 /* MovieTests.swift */,
+				222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		223B7BA81ECF7CF900C7CF65 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,23 +171,6 @@
 				223FB4E71ECF0A380073C66E /* Info.plist */,
 			);
 			path = MVVM;
-			sourceTree = "<group>";
-		};
-		223FB4EF1ECF0C110073C66E /* MovieResultsVC */ = {
-			isa = PBXGroup;
-			children = (
-				2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */,
-				22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */,
-			);
-			name = MovieResultsVC;
-			sourceTree = "<group>";
-		};
-		223FB4F01ECF0C390073C66E /* MovieDetailVC */ = {
-			isa = PBXGroup;
-			children = (
-				2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */,
-			);
-			name = MovieDetailVC;
 			sourceTree = "<group>";
 		};
 		223FB4F81ECF15780073C66E /* View */ = {
@@ -312,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				22B9104B1ED099D800760927 /* Info.plist */,
-				22B910511ED09A2E00760927 /* MovieTests.swift */,
+				222E2CCF1ED1DFBF0075C04E /* Model */,
 			);
 			path = MVCTests;
 			sourceTree = "<group>";
@@ -324,6 +318,7 @@
 				22EE56F51ECC753E00790E71 /* MovieManager.swift */,
 				22EE57011ECC7F8500790E71 /* ImageStore.swift */,
 				22EE56F71ECC755E00790E71 /* TmdbAPI.swift */,
+				22EE56FB1ECC795200790E71 /* MovieResultsDataSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,8 +334,8 @@
 		22EE56ED1ECC6F0D00790E71 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				223FB4EF1ECF0C110073C66E /* MovieResultsVC */,
-				223FB4F01ECF0C390073C66E /* MovieDetailVC */,
+				2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */,
+				2279AB421ECEFF86001B074B /* MovieDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -544,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E2CD11ED1E0450075C04E /* MovieResultsDataSourceTests.swift in Sources */,
 				22B910521ED09A2E00760927 /* MovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -950,6 +946,7 @@
 				22B9104F1ED099D800760927 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
