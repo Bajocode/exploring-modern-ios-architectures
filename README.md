@@ -39,8 +39,8 @@ As I work through the architectures I will experiment with different setups whil
 ###### Project setup
 * UI: 1 Storyboard with segues
 * Model / flow: a `movieManager` dependency is
- - injected through property injection starting at app launch
- - makes all requests including images and storage
+  * injected through property injection starting at app launch
+  * makes all requests including images and storage
 
 ###### Experiences
 <table style="width:100%">
