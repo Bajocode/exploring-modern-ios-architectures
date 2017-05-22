@@ -8,11 +8,11 @@ the [Tmdb API](https://www.themoviedb.org/documentation/api) which requires an A
 
 #### Setup
 
-###### With static JSON
+###### Static JSON
 1. In Xcode, choose a target / architecture
 2. Build and run!
 
-###### With real requests
+###### Tmdb requests
 1. [Request an API key](http://https://www.themoviedb.org/faq/api) :key:
 2. Insert your key in `TmdbAPIKey.plist` located at the root of `/Architectures`
 3. In Xcode, choose a target / architecture
@@ -31,7 +31,7 @@ As I work through the architectures I will experiment with different setups whil
 
 <!-- MVC BEGIN -->
 
-## MVC
+## MVC-S
 <p align = "middle">
     <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
@@ -48,7 +48,7 @@ As I work through the architectures I will experiment with different setups whil
 
 <!-- MVVM BEGIN -->
 
-## MVVM
+## MVVM + POP
 <p align="middle">
     <img src="RepoMedia/MVVM.png" alt="MVC" width="550"/>
 </p>
