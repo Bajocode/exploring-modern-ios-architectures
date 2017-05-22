@@ -33,6 +33,7 @@ As I work through the architectures I will experiment with different setups whil
 <p align = "middle">
     <img src="RepoMedia/MVC.png" alt="MVC" style="width: 350px;"/>
 </p>
+
 ###### Project setup
 * UI: 1 Storyboard with segues
  * `->UINavigationController` - `MovieResultsScene` - `MovieDetailScene`
