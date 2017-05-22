@@ -33,7 +33,7 @@ As I work through the architectures I will experiment with different setups whil
 
 ## MVC
 <p align = "middle">
-    <img src="RepoMedia/MVC.png" alt="MVC" style="width: 200px;"/>
+    <img src="RepoMedia/MVC.png" alt="MVC"  width="250"/>
 </p>
 
 ###### Project setup
@@ -64,8 +64,8 @@ As I work through the architectures I will experiment with different setups whil
 <!-- MVVM BEGIN -->
 
 ## MVVM
-<p align = "middle">
-    <img src="RepoMedia/MVVM.png" alt="MVC" style="width: 400px;"/>
+<p align="middle">
+    <img src="RepoMedia/MVVM.png" alt="MVC" width="400"/>
 </p>
 
 ###### Project setup
