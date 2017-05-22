@@ -29,9 +29,11 @@ As I work through the architectures I will experiment with different setups whil
 
 ---
 
+<!-- MVC BEGIN -->
+
 ## MVC
 <p align = "middle">
-    <img src="RepoMedia/MVC.png" alt="MVC" style="width: 350px;"/>
+    <img src="RepoMedia/MVC.png" alt="MVC" style="width: 200px;"/>
 </p>
 
 ###### Project setup
@@ -58,10 +60,14 @@ As I work through the architectures I will experiment with different setups whil
 ###### ToDo
 * Add extra tests
 
+
+<!-- MVVM BEGIN -->
+
 ## MVVM
 <p align = "middle">
-    <img src="RepoMedia/MVVM.png" alt="MVC" style="width: 600px;"/>
+    <img src="RepoMedia/MVVM.png" alt="MVC" style="width: 400px;"/>
 </p>
+
 ###### Project setup
 * UI: Xibs
 * Model / flow: a `DataManager Singleton` ...
