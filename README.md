@@ -70,9 +70,9 @@ As I work through the architectures I will experiment with different setups whil
 ###### Project setup
 * UI: Xibs
 * Model / flow: a `DataManager Singleton` ...
- * makes all network requests  
- * is the only entry-point for anything related to data
- * has a reference to ImageManager and ImageStore
+  * makes all network requests  
+  * is the only entry-point for anything related to data
+  * has a reference to ImageManager and ImageStore
 
 ###### Experiences
 <table style="width:100%">
