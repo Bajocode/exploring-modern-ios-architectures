@@ -29,8 +29,60 @@ As I work through the architectures I will experiment with different setups whil
 ---
 
 ## MVC
+<p align = "middle">
+    <img src="RepoMedia/MVC.png" alt="MVC" style="width: 350px;"/>
+</p>
+###### Project setup
+* UI: 1 Storyboard with segues
+ * `->UINavigationController` - `MovieResultsScene` - `MovieDetailScene`
+* Model / flow: a `movieManager` dependency is
+ * injected through property injection starting at app launch
+ * makes all requests including images and storage
+
+###### Experiences
+<table style="width:100%">
+  <tr>
+    <th>Orthogonality</th>
+    <th>Ease of use</th>
+    <th>Testability</th>
+  </tr>
+  <tr>
+    <td>The View and the Model are separated, but the View and the Controller are tightly coupled.</td>
+    <td>Very quick easy to set up, probably the least amount of code among other patterns.</td>
+    <td>The bad distribution and quickly growing View Controllers make it difficult to test.</td>
+  </tr>
+</table>
+
+###### ToDo
+* Add extra tests
 
 ## MVVM
+<p align = "middle">
+    <img src="RepoMedia/MVVM.png" alt="MVC" style="width: 600px;"/>
+</p>
+###### Project setup
+* UI: Xibs
+* Model / flow: a `DataManager Singleton` ...
+ * makes all network requests  
+ * is the only entry-point for anything related to data
+ * has a reference to ImageManager and ImageStore
+
+###### Experiences
+<table style="width:100%">
+  <tr>
+    <th>Orthogonality</th>
+    <th>Ease of use</th>
+    <th>Testability</th>
+  </tr>
+  <tr>
+    <td>The View and the Model are separated, but the View and the Controller are tightly coupled.</td>
+    <td>Needs more code than MVC, but would probably be lighter when combined with a reactive framework.</td>
+    <td>Not yet added</td>
+  </tr>
+</table>
+
+###### ToDo
+* Add tests
 
 ## MVP
 
