@@ -82,7 +82,7 @@ As I work through the architectures I will experiment with different setups whil
     <th>Testability</th>
   </tr>
   <tr>
-    <td>The View and the Model are separated, but the View and the Controller are tightly coupled.</td>
+    <td>Offloading UI related code from the VC to VM makes the VC less coupled with the View.</td>
     <td>Needs more code than MVC, but would probably be lighter when combined with a reactive framework.</td>
     <td>Not yet added</td>
   </tr>
