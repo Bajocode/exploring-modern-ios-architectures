@@ -33,7 +33,7 @@ class MovieResultsDataSourceTests: XCTestCase {
         // Configure collectionView
         collectionView = movieResultsVC.collectionView
         collectionView.dataSource = sut
-        collectionView.delegate = movieResultsVC
+        
     }
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -49,10 +49,11 @@ class MovieResultsDataSourceTests: XCTestCase {
     }
     
     func test_CellforRow_ReturnsMovieCell() {
-//        sut.movies.append(Movie(title: "", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 0.0))
-//        collectionView.reloadData()
-//        let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0))
-//        XCTAssertTrue(cell is MovieCollectionViewCell)
+        sut.movies.append(Movie(title: "", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 0.0))
+        collectionView.reloadData()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: IndexPath(item: 0, section: 0))
+        
+        XCTAssertTrue(cell is MovieCollectionViewCell)
     }
-    
 }
+
