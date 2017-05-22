@@ -33,15 +33,14 @@ As I work through the architectures I will experiment with different setups whil
 
 ## MVC
 <p align = "middle">
-    <img src="RepoMedia/MVC.png" alt="MVC"  width="250"/>
+    <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
 
 ###### Project setup
 * UI: 1 Storyboard with segues
- * `->UINavigationController` - `MovieResultsScene` - `MovieDetailScene`
 * Model / flow: a `movieManager` dependency is
- * injected through property injection starting at app launch
- * makes all requests including images and storage
+ - injected through property injection starting at app launch
+ - makes all requests including images and storage
 
 ###### Experiences
 <table style="width:100%">
@@ -65,7 +64,7 @@ As I work through the architectures I will experiment with different setups whil
 
 ## MVVM
 <p align="middle">
-    <img src="RepoMedia/MVVM.png" alt="MVC" width="400"/>
+    <img src="RepoMedia/MVVM.png" alt="MVC" width="550"/>
 </p>
 
 ###### Project setup
