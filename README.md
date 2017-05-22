@@ -19,13 +19,13 @@ the [Tmdb API](https://www.themoviedb.org/documentation/api) which requires an A
 4. Build and run!
 
 #### Architectural Questions
-As I work through the architectures I will experiment with different setups while keeping the core principles of the architectures in mind. Here are some important questions to consider:
+As I work through the architectures I will experiment with different setups while keeping the core principles of the architectures in mind. Some important aspects to consider:
 
-:small_blue_diamond: Are responsibilities well defined?
+:small_blue_diamond: **Orthogonality:** responsibilities, distribution, coupling etc.
 
-:small_blue_diamond: How easy is it to set up and implement? (ease of use)
+:small_blue_diamond: **Ease of use:** how easy is it to set up and implement?
 
-:small_blue_diamond: Is it easy to test?
+:small_blue_diamond: **Testability:** is it easy and convenient to test?
 
 ---
 
