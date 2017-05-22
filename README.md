@@ -7,6 +7,7 @@ the [Tmdb API](https://www.themoviedb.org/documentation/api) which requires an A
 `JSON` files are also included for quick usage.
 
 #### Setup
+
 ###### With static JSON
 1. In Xcode, choose a target / architecture
 2. Build and run!
