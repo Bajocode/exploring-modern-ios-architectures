@@ -23,9 +23,9 @@ As I work through the architectures I will experiment with different setups whil
 
 :small_blue_diamond: Are responsibilities well defined?
 
-:small_blue_diamond: Can you identify potential duplication?
-
 :small_blue_diamond: How easy is it to set up and implement? (ease of use)
+
+:small_blue_diamond: Is it easy to test?
 
 ---
 
