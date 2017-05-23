@@ -36,14 +36,22 @@ As I work through the architectures I will experiment with different setups whil
     <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
 
-###### Approach
-* UI: 1 Storyboard with segues
-* Model / flow: a `movieManager` dependency is
-  * injected through property injection starting at app launch
-  * makes all requests including images and storage
+###### Approach for this project
+* **Model**
+  * Business logic, data transformation and store
+  * `movieManager` dependency is injected through property injection starting at app launch
+  * It makes all requests including images and has a reference to the `imageStore`
+* **View**
+  * The cell configured directly with the Model
+  * UI presentation flow: UIStoryboard with segues
+* **Controller**
+  * Mediator between view and Model
+  * Delegate and datasource
+  * Dispatching and canceling network requests
+
 
 ###### ToDo
-* Add extra tests
+* Add networking tests
 
 
 <!-- MVVM BEGIN -->
@@ -54,11 +62,19 @@ As I work through the architectures I will experiment with different setups whil
 </p>
 
 ###### Approach
-* UI: Xibs
-* Model / flow: a `DataManager Singleton` ...
-  * makes all network requests  
-  * is the only entry-point for anything related to data
-  * has a reference to ImageManager and ImageStore
+* **Model**
+  * A raw representation of the data
+* **View**
+  * (MVC) ViewControllers are the views
+  * Updates it’s state from the View Model by setting up bindings
+  * UI presentation flow: individual Xibs
+* **ViewModel**
+  * Invokes changes in Model and updates itself + binding View
+  * This project implements bindings through callbacks instead of reactive binds (RXSwift etc.)
+  * Triggers all network call through a `DataManager singleton`
+
+*A tabBarController is added as a presenter of generic viewControllers*
+
 
 ###### ToDo
 * Add tests
