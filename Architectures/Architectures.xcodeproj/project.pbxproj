@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220C11211ED55F9E00C43BA2 /* MovieCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C11201ED55F9E00C43BA2 /* MovieCellTests.swift */; };
 		222E2CD11ED1E0450075C04E /* MovieResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */; };
 		223B7BAB1ECF7D4500C7CF65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223B7BA91ECF7D4500C7CF65 /* DetailViewController.swift */; };
 		223B7BAC1ECF7D4500C7CF65 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223B7BAA1ECF7D4500C7CF65 /* DetailViewController.xib */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220C11201ED55F9E00C43BA2 /* MovieCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCellTests.swift; path = Controller/MovieCellTests.swift; sourceTree = "<group>"; };
 		222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsDataSourceTests.swift; path = Model/MovieResultsDataSourceTests.swift; sourceTree = "<group>"; };
 		223B7BA91ECF7D4500C7CF65 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = View/DetailViewController.swift; sourceTree = "<group>"; };
 		223B7BAA1ECF7D4500C7CF65 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = View/DetailViewController.xib; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220C11221ED55FA100C43BA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				220C11201ED55F9E00C43BA2 /* MovieCellTests.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		222E2CCF1ED1DFBF0075C04E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +317,7 @@
 			children = (
 				22B9104B1ED099D800760927 /* Info.plist */,
 				222E2CCF1ED1DFBF0075C04E /* Model */,
+				220C11221ED55FA100C43BA2 /* Controller */,
 			);
 			path = MVCTests;
 			sourceTree = "<group>";
@@ -540,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				222E2CD11ED1E0450075C04E /* MovieResultsDataSourceTests.swift in Sources */,
+				220C11211ED55F9E00C43BA2 /* MovieCellTests.swift in Sources */,
 				22B910521ED09A2E00760927 /* MovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
