@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MVVM
 //
-//  Created by Fabijan Bajo on 19/05/2017.
+//  Created by Fabijan Bajo on 25/05/2017.
 //
 //
 
@@ -15,13 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Initialize the window (not using Storyboards)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+        window?.backgroundColor = .black
         
         // Allocate navigation controller and tabbar
-        let tabBarC = TabBarViewController()
+        let tabBarC = UITabBarController()
         let navC = UINavigationController(rootViewController: tabBarC)
+        let movieResultsVC = ResultsViewController()
+        movieResultsVC.viewModel = MovieViewModel()
+        tabBarC.setViewControllers([movieResultsVC], animated: false)
         
         // Configure style
         navC.navigationBar.barStyle = .black
@@ -30,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set window's root and make visible
         window!.rootViewController = navC
         window!.makeKeyAndVisible()
+        
         
         return true
     }

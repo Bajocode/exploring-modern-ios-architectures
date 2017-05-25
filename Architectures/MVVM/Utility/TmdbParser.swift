@@ -39,10 +39,10 @@ struct TmdbParser {
                 if let movie = parsedMovie(forMovieJSON: jsonObject) {
                     parsedObjects.append(movie)
                 }
-            case .actor:
-                if let actor = parsedActor(forActorJSON: jsonObject) {
-                    parsedObjects.append(actor)
-                }
+            case .actor: break
+//                if let actor = parsedActor(forActorJSON: jsonObject) {
+//                    parsedObjects.append(actor)
+//                }
             }
         }
         // If not able to parse movies, perhaps because JSON format changed
@@ -67,16 +67,16 @@ struct TmdbParser {
     }
     
     // Parse individual actor dictionaries, extracted from json response
-    private static func parsedActor(forActorJSON json: [String:Any]) -> Actor? {
-        guard
-            let actorID = json["id"] as? Int,
-            let name = json["name"] as? String,
-            let profilePath = json["profile_path"] as? String else {
-                // Do not have enough information to construct the object
-                return nil
-        }
-        return Actor(name: name, profilePath: profilePath, actorID: actorID)
-    }
+//    private static func parsedActor(forActorJSON json: [String:Any]) -> Actor? {
+//        guard
+//            let actorID = json["id"] as? Int,
+//            let name = json["name"] as? String,
+//            let profilePath = json["profile_path"] as? String else {
+//                // Do not have enough information to construct the object
+//                return nil
+//        }
+//        return Actor(name: name, profilePath: profilePath, actorID: actorID)
+//    }
     
 }
 

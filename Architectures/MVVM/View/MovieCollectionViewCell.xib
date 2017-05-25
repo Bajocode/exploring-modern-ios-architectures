@@ -1,76 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="MDN-U4-JHL" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yMz-pQ-pOb">
-                        <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
-                    </imageView>
-                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-ey-v6T">
-                        <rect key="frame" x="77.5" y="128.5" width="20" height="20"/>
-                    </activityIndicatorView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-Y6-FHD">
-                        <rect key="frame" x="0.0" y="226.5" width="175" height="50"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9W-44-WMI">
-                                <rect key="frame" x="16" y="16" width="107.5" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-ze-8bY">
-                                <rect key="frame" x="139.5" y="15.5" width="19.5" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.701171875" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DbA-ze-8bY" firstAttribute="leading" secondItem="V9W-44-WMI" secondAttribute="trailing" constant="16" id="4vn-iZ-jiA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DbA-ze-8bY" secondAttribute="trailing" constant="8" id="P3x-Xp-p1X"/>
-                            <constraint firstItem="V9W-44-WMI" firstAttribute="leading" secondItem="MBw-Y6-FHD" secondAttribute="leadingMargin" constant="8" id="fPm-nc-b9e"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="V9W-44-WMI" secondAttribute="bottom" constant="8" id="fVt-jD-Pbw"/>
-                            <constraint firstItem="DbA-ze-8bY" firstAttribute="centerY" secondItem="V9W-44-WMI" secondAttribute="centerY" id="gtp-9Z-79y"/>
-                            <constraint firstItem="V9W-44-WMI" firstAttribute="top" secondItem="MBw-Y6-FHD" secondAttribute="topMargin" constant="8" id="yaW-XV-0to"/>
-                        </constraints>
-                    </view>
-                </subviews>
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             </view>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="N7o-ey-v6T" firstAttribute="centerY" secondItem="MDN-U4-JHL" secondAttribute="centerY" id="2u5-kW-t26"/>
-                <constraint firstItem="MBw-Y6-FHD" firstAttribute="leading" secondItem="MDN-U4-JHL" secondAttribute="leading" id="A9Q-LR-193"/>
-                <constraint firstItem="yMz-pQ-pOb" firstAttribute="leading" secondItem="MDN-U4-JHL" secondAttribute="leading" id="EHj-iD-fKt"/>
-                <constraint firstAttribute="trailing" secondItem="MBw-Y6-FHD" secondAttribute="trailing" id="EnW-zC-GTg"/>
-                <constraint firstAttribute="trailing" secondItem="yMz-pQ-pOb" secondAttribute="trailing" id="KCh-dV-e3B"/>
-                <constraint firstItem="yMz-pQ-pOb" firstAttribute="top" secondItem="MDN-U4-JHL" secondAttribute="top" id="Pjr-4U-veI"/>
-                <constraint firstAttribute="bottom" secondItem="MBw-Y6-FHD" secondAttribute="bottom" id="fz6-4e-SON"/>
-                <constraint firstAttribute="bottom" secondItem="yMz-pQ-pOb" secondAttribute="bottom" id="vgJ-dJ-GbA"/>
-                <constraint firstItem="N7o-ey-v6T" firstAttribute="centerX" secondItem="MDN-U4-JHL" secondAttribute="centerX" id="wNe-s3-h4P"/>
-            </constraints>
-            <connections>
-                <outlet property="activityIndicator" destination="N7o-ey-v6T" id="yoG-eA-TY4"/>
-                <outlet property="ratingLabel" destination="DbA-ze-8bY" id="Lyv-h6-lu6"/>
-                <outlet property="thumbImageView" destination="yMz-pQ-pOb" id="NbN-ot-7OZ"/>
-                <outlet property="titleLabel" destination="V9W-44-WMI" id="dgc-57-zQK"/>
-            </connections>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
         </collectionViewCell>
     </objects>
 </document>
