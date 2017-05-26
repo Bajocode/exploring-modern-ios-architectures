@@ -18,10 +18,11 @@ class ResultsViewController: UIViewController {
     
     var viewModel: ViewModel!
     private lazy var collectionView: UICollectionView = {
-        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(viewModel: self.viewModel))
+        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(viewModel: self.viewModel, bounds: self.view.bounds))
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
         cv.dataSource = self
+        //cv.delegate = self
         return cv
     }()
     
@@ -36,7 +37,7 @@ class ResultsViewController: UIViewController {
     
     // MARK: - Methods
     
-    func configure() {
+    private func configure() {
         view.addSubview(collectionView)
         
         // Bind ViewModel data updates to collectionView refresh
@@ -57,7 +58,10 @@ extension ResultsViewController: UICollectionViewDataSource {
         return viewModel.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellID, for: indexPath) as! MovieCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellID, for: indexPath)
+        if let imagePresentable = cell as? CellConfigurable {
+            imagePresentable.configure(with: viewModel[indexPath.row])
+        }
         return cell
     }
 }

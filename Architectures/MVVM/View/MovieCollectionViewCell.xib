@@ -6,19 +6,71 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="8aa-hi-liu" customClass="MovieCollectionViewCell" customModule="MVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3yC-WO-vsA">
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="277"/>
+                    </imageView>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-Pi-C1o">
+                        <rect key="frame" x="77.5" y="128.5" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQM-o6-XYS">
+                        <rect key="frame" x="0.0" y="226.5" width="175" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1q-4U-INq">
+                                <rect key="frame" x="16" y="16" width="107.5" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CX3-Wt-7HQ">
+                                <rect key="frame" x="139.5" y="15.5" width="19.5" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.701171875" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CX3-Wt-7HQ" firstAttribute="centerY" secondItem="r1q-4U-INq" secondAttribute="centerY" id="8Xj-Gq-RIx"/>
+                            <constraint firstItem="r1q-4U-INq" firstAttribute="top" secondItem="pQM-o6-XYS" secondAttribute="topMargin" constant="8" id="9t7-r7-aJf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="r1q-4U-INq" secondAttribute="bottom" constant="8" id="K8f-3B-8Bd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CX3-Wt-7HQ" secondAttribute="trailing" constant="8" id="NGg-5e-a0P"/>
+                            <constraint firstItem="r1q-4U-INq" firstAttribute="leading" secondItem="pQM-o6-XYS" secondAttribute="leadingMargin" constant="8" id="nJY-fa-AkL"/>
+                            <constraint firstItem="CX3-Wt-7HQ" firstAttribute="leading" secondItem="r1q-4U-INq" secondAttribute="trailing" constant="16" id="nzh-5C-qMA"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pQM-o6-XYS" secondAttribute="bottom" id="0yW-LD-LyJ"/>
+                <constraint firstItem="3yC-WO-vsA" firstAttribute="leading" secondItem="8aa-hi-liu" secondAttribute="leading" id="4uL-cZ-ldF"/>
+                <constraint firstItem="3yC-WO-vsA" firstAttribute="top" secondItem="8aa-hi-liu" secondAttribute="top" id="Ble-T7-6dt"/>
+                <constraint firstAttribute="trailing" secondItem="pQM-o6-XYS" secondAttribute="trailing" id="Ml4-hy-J1n"/>
+                <constraint firstItem="2HP-Pi-C1o" firstAttribute="centerY" secondItem="8aa-hi-liu" secondAttribute="centerY" id="S1T-D9-Ei8"/>
+                <constraint firstAttribute="bottom" secondItem="3yC-WO-vsA" secondAttribute="bottom" id="VoS-Yp-U4B"/>
+                <constraint firstItem="pQM-o6-XYS" firstAttribute="leading" secondItem="8aa-hi-liu" secondAttribute="leading" id="fMf-ub-MAm"/>
+                <constraint firstAttribute="trailing" secondItem="3yC-WO-vsA" secondAttribute="trailing" id="ieu-ds-yDw"/>
+                <constraint firstItem="2HP-Pi-C1o" firstAttribute="centerX" secondItem="8aa-hi-liu" secondAttribute="centerX" id="wc4-u0-IVg"/>
+            </constraints>
+            <connections>
+                <outlet property="activityIndicator" destination="2HP-Pi-C1o" id="fEj-ca-9O6"/>
+                <outlet property="ratingLabel" destination="CX3-Wt-7HQ" id="5wu-Ne-YFM"/>
+                <outlet property="thumbImageView" destination="3yC-WO-vsA" id="s0M-8V-Gx7"/>
+                <outlet property="titleLabel" destination="r1q-4U-INq" id="PdW-tO-dkC"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

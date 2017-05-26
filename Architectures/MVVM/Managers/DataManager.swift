@@ -17,8 +17,7 @@ final class DataManager {
     // MARK: - Properties
     
     static let shared = DataManager()
-    let imageManager = ImageManager()
-    
+    let imageStore = ImageStore()
     
     // MARK: - Initializers
     
@@ -67,6 +66,6 @@ enum ObjectType {
     case actor
 }
 enum DataResult {
-    case success([Parsable])
+    case success([Convertable])
     case failure(Error)
 }

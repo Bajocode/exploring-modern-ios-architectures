@@ -24,15 +24,15 @@
 		22811E681ED7409B0005E60A /* actordata.json in Resources */ = {isa = PBXBuildFile; fileRef = 2240415B1ED03A6700A1AF63 /* actordata.json */; };
 		22811E691ED7409D0005E60A /* tmdbAPIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */; };
 		22811E6E1ED741FE0005E60A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E6B1ED741FE0005E60A /* DataManager.swift */; };
-		22811E6F1ED741FE0005E60A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E6C1ED741FE0005E60A /* ImageManager.swift */; };
 		22811E701ED741FE0005E60A /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E6D1ED741FE0005E60A /* ImageStore.swift */; };
 		22811E741ED742530005E60A /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E721ED742530005E60A /* TmdbAPI.swift */; };
 		22811E751ED742530005E60A /* TmdbParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E731ED742530005E60A /* TmdbParser.swift */; };
-		22811E771ED742930005E60A /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E761ED742930005E60A /* Parsable.swift */; };
-		22811E791ED74A070005E60A /* CellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E781ED74A070005E60A /* CellRepresentable.swift */; };
 		22811E7D1ED75A680005E60A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E7C1ED75A680005E60A /* Extensions.swift */; };
 		22811E801ED75B730005E60A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E7E1ED75B730005E60A /* MovieCollectionViewCell.swift */; };
 		22811E811ED75B730005E60A /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22811E7F1ED75B730005E60A /* MovieCollectionViewCell.xib */; };
+		22824BD11ED85396005C759E /* Convertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22824BD01ED85396005C759E /* Convertable.swift */; };
+		22824BD51ED8A364005C759E /* CollectionViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22824BD41ED8A363005C759E /* CollectionViewConfigurable.swift */; };
+		22824BD71ED8A3C2005C759E /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22824BD61ED8A3C2005C759E /* CellConfigurable.swift */; };
 		2292062E1ECC6E210090E78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292062D1ECC6E210090E78C /* AppDelegate.swift */; };
 		229206351ECC6E210090E78C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229206341ECC6E210090E78C /* Assets.xcassets */; };
 		229206381ECC6E210090E78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229206361ECC6E210090E78C /* LaunchScreen.storyboard */; };
@@ -74,15 +74,15 @@
 		22811E621ED73D580005E60A /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieViewModel.swift; path = ViewModel/MovieViewModel.swift; sourceTree = "<group>"; };
 		22811E651ED73D8A0005E60A /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = Protocol/ViewModel.swift; sourceTree = "<group>"; };
 		22811E6B1ED741FE0005E60A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		22811E6C1ED741FE0005E60A /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		22811E6D1ED741FE0005E60A /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		22811E721ED742530005E60A /* TmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbAPI.swift; sourceTree = "<group>"; };
 		22811E731ED742530005E60A /* TmdbParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbParser.swift; sourceTree = "<group>"; };
-		22811E761ED742930005E60A /* Parsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsable.swift; sourceTree = "<group>"; };
-		22811E781ED74A070005E60A /* CellRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellRepresentable.swift; path = Protocol/CellRepresentable.swift; sourceTree = "<group>"; };
 		22811E7C1ED75A680005E60A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		22811E7E1ED75B730005E60A /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCollectionViewCell.swift; path = View/MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		22811E7F1ED75B730005E60A /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCollectionViewCell.xib; path = View/MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		22824BD01ED85396005C759E /* Convertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertable.swift; sourceTree = "<group>"; };
+		22824BD41ED8A363005C759E /* CollectionViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewConfigurable.swift; path = Protocol/CollectionViewConfigurable.swift; sourceTree = "<group>"; };
+		22824BD61ED8A3C2005C759E /* CellConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		2292062A1ECC6E210090E78C /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2292062D1ECC6E210090E78C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229206341ECC6E210090E78C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,8 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				22811E651ED73D8A0005E60A /* ViewModel.swift */,
-				22811E761ED742930005E60A /* Parsable.swift */,
-				22811E781ED74A070005E60A /* CellRepresentable.swift */,
+				22824BD01ED85396005C759E /* Convertable.swift */,
+				22824BD41ED8A363005C759E /* CollectionViewConfigurable.swift */,
+				22824BD61ED8A3C2005C759E /* CellConfigurable.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				22811E6B1ED741FE0005E60A /* DataManager.swift */,
-				22811E6C1ED741FE0005E60A /* ImageManager.swift */,
 				22811E6D1ED741FE0005E60A /* ImageStore.swift */,
 			);
 			path = Managers;
@@ -453,17 +453,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22824BD51ED8A364005C759E /* CollectionViewConfigurable.swift in Sources */,
 				22811E661ED73D8A0005E60A /* ViewModel.swift in Sources */,
+				22824BD11ED85396005C759E /* Convertable.swift in Sources */,
 				22811E741ED742530005E60A /* TmdbAPI.swift in Sources */,
 				22811E6E1ED741FE0005E60A /* DataManager.swift in Sources */,
-				22811E6F1ED741FE0005E60A /* ImageManager.swift in Sources */,
 				22811E701ED741FE0005E60A /* ImageStore.swift in Sources */,
 				22811E5D1ED73CDD0005E60A /* Movie.swift in Sources */,
-				22811E771ED742930005E60A /* Parsable.swift in Sources */,
 				227C56E41ED73B48007E98A5 /* AppDelegate.swift in Sources */,
 				22811E751ED742530005E60A /* TmdbParser.swift in Sources */,
 				22811E601ED73D360005E60A /* ResultsViewController.swift in Sources */,
-				22811E791ED74A070005E60A /* CellRepresentable.swift in Sources */,
+				22824BD71ED8A3C2005C759E /* CellConfigurable.swift in Sources */,
 				22811E801ED75B730005E60A /* MovieCollectionViewCell.swift in Sources */,
 				22811E631ED73D580005E60A /* MovieViewModel.swift in Sources */,
 				22811E7D1ED75A680005E60A /* Extensions.swift in Sources */,
