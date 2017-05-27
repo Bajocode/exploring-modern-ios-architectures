@@ -19,12 +19,30 @@ class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
     
+    // MARK: - Lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        activityIndicator.startAnimating()
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        activityIndicator.startAnimating()
+    }
+    
+    
     // MARK: - Methods
     
     func configure(with converted: Parsable) {
         let instance = converted as! MovieViewModel.PresentableInstance
         titleLabel.text = instance.title
         ratingLabel.text = instance.ratingText
-        thumbImageView.downloadImage(from: instance.thumbnailURL)
+        thumbImageView.downloadImage(from: instance.thumbnailURL) { 
+            if self.thumbImageView.image == nil {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
 }

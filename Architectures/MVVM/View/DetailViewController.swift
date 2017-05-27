@@ -41,9 +41,12 @@ class DetailViewController: UIViewController {
     // MARK: - Methods
 
     private func configure() {
+        // View setup
+        edgesForExtendedLayout = []
         view.backgroundColor = .black
         view.addSubview(imageView)
         view.addSubview(activityIndicator)
+        // Image fetching
         activityIndicator.startAnimating()
         imageView.downloadImage(from: imageURL) { 
             self.activityIndicator.stopAnimating()

@@ -10,6 +10,8 @@
 		220C11211ED55F9E00C43BA2 /* MovieCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220C11201ED55F9E00C43BA2 /* MovieCellTests.swift */; };
 		222E2CD11ED1E0450075C04E /* MovieResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */; };
 		22339EE11ED964E1001C4D40 /* Parsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22339EE01ED964E1001C4D40 /* Parsable.swift */; };
+		22339EE51ED988F8001C4D40 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22339EE41ED988F8001C4D40 /* Actor.swift */; };
+		22339EE71ED9892E001C4D40 /* ActorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22339EE61ED9892E001C4D40 /* ActorViewModel.swift */; };
 		223FB4F41ECF106E0073C66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223FB4F31ECF106E0073C66E /* Main.storyboard */; };
 		2240415C1ED03A6700A1AF63 /* actordata.json in Resources */ = {isa = PBXBuildFile; fileRef = 2240415B1ED03A6700A1AF63 /* actordata.json */; };
 		2279AB3E1ECEFCF9001B074B /* MovieResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */; };
@@ -62,6 +64,8 @@
 		220C11201ED55F9E00C43BA2 /* MovieCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCellTests.swift; path = Controller/MovieCellTests.swift; sourceTree = "<group>"; };
 		222E2CD01ED1E0450075C04E /* MovieResultsDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsDataSourceTests.swift; path = Model/MovieResultsDataSourceTests.swift; sourceTree = "<group>"; };
 		22339EE01ED964E1001C4D40 /* Parsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parsable.swift; path = Protocol/Parsable.swift; sourceTree = "<group>"; };
+		22339EE41ED988F8001C4D40 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Actor.swift; path = Model/Actor.swift; sourceTree = "<group>"; };
+		22339EE61ED9892E001C4D40 /* ActorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActorViewModel.swift; path = ViewModel/ActorViewModel.swift; sourceTree = "<group>"; };
 		223FB4F31ECF106E0073C66E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2240415B1ED03A6700A1AF63 /* actordata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = actordata.json; path = Shared/actordata.json; sourceTree = "<group>"; };
 		2279AB3C1ECEFCF9001B074B /* MovieResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsViewController.swift; path = Controller/MovieResultsViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				22811E621ED73D580005E60A /* MovieViewModel.swift */,
+				22339EE61ED9892E001C4D40 /* ActorViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				22811E5C1ED73CDD0005E60A /* Movie.swift */,
+				22339EE41ED988F8001C4D40 /* Actor.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -467,10 +473,12 @@
 				22811E751ED742530005E60A /* TmdbParser.swift in Sources */,
 				22811E601ED73D360005E60A /* ResultsViewController.swift in Sources */,
 				22824BD71ED8A3C2005C759E /* CellConfigurable.swift in Sources */,
+				22339EE71ED9892E001C4D40 /* ActorViewModel.swift in Sources */,
 				22811E801ED75B730005E60A /* MovieCollectionViewCell.swift in Sources */,
 				22824BD91ED8AA63005C759E /* DetailViewController.swift in Sources */,
 				22811E631ED73D580005E60A /* MovieViewModel.swift in Sources */,
 				22811E7D1ED75A680005E60A /* Extensions.swift in Sources */,
+				22339EE51ED988F8001C4D40 /* Actor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

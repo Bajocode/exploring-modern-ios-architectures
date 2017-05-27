@@ -60,6 +60,11 @@ class ResultsViewController: UIViewController {
 
 // MARK: - CollectionView Delegate
 
+/*
+    - user selects cell
+    - call showDetail on view model with index path
+    - view model decides which model to use, and calls the bound closure
+*/
 extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Bind
