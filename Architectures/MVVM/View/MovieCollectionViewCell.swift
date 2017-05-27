@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
+class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
 
     
     // MARK: - Properties
@@ -18,30 +18,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet fileprivate var thumbImageView: UIImageView!
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        activityIndicator.startAnimating()
-    }
-    override func prepareForReuse() {
-        activityIndicator.startAnimating()
-    }
-}
-
-
-// MARK: - ImageCellConfigurable
-
-extension MovieCollectionViewCell: CellConfigurable {
     
     // MARK: - Methods
     
-    func configure(with converted: Convertable) {
-        activityIndicator.startAnimating()
-        let uiReadyMovie = converted as! MovieViewModel.UIReadyInstance
-        titleLabel.text = uiReadyMovie.title
-        ratingLabel.text = uiReadyMovie.ratingText
-        activityIndicator.startAnimating()
-        thumbImageView.downloadImage(with: uiReadyMovie.thumbnailURL) { 
-            self.activityIndicator.stopAnimating()
-        }
+    func configure(with converted: Parsable) {
+        let instance = converted as! MovieViewModel.PresentableInstance
+        titleLabel.text = instance.title
+        ratingLabel.text = instance.ratingText
+        thumbImageView.downloadImage(from: instance.thumbnailURL)
     }
 }

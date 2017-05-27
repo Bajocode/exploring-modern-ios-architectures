@@ -12,5 +12,5 @@ protocol CellConfigurable {
     
     // MARK: - Methods
     
-    func configure(with converted: Convertable)
+    func configure(with converted: Parsable)
 }

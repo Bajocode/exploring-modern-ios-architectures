@@ -22,7 +22,7 @@ class ResultsViewController: UIViewController {
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
         cv.dataSource = self
-        //cv.delegate = self
+        cv.delegate = self
         return cv
     }()
     
@@ -40,16 +40,34 @@ class ResultsViewController: UIViewController {
     private func configure() {
         view.addSubview(collectionView)
         
-        // Bind ViewModel data updates to collectionView refresh
-        viewModel.bind { [weak self] in
+        // Bind
+        viewModel.bindModelUpdate(with: { [weak self] in
             self?.collectionView.reloadSections(IndexSet(integer: 0))
-        }
-        
-        // Offload data reloading to viewModel
+        })
+        // Invoke
         viewModel.fetchNewModelObjects()
+    }
+
+    func showDetail(with url: URL) {
+        let vc = DetailViewController()
+        vc.imageURL = url
+        show(vc, sender: self)
     }
 }
 
+
+// MARK: - CollectionView Delegate
+
+extension ResultsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Bind
+        viewModel.bindPresentation { [weak self] (url) in
+            self?.showDetail(with: url)
+        }
+        // Invoke
+        viewModel.showDetail(at: indexPath)
+    }
+}
 
 // MARK: - CollectionView DataSource
 
@@ -60,6 +78,7 @@ extension ResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellID, for: indexPath)
         if let imagePresentable = cell as? CellConfigurable {
+            // Subscript: viewModel[i] -> PresentableInstance<Parsable>
             imagePresentable.configure(with: viewModel[indexPath.row])
         }
         return cell

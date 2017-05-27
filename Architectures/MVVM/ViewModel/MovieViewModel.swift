@@ -17,10 +17,10 @@ class MovieViewModel: ViewModel {
     
     // MARK: - Properties
     
-    fileprivate var movies = [Movie]() { didSet { didChange?() } }
+    // Properties
+    fileprivate var movies = [Movie]() { didSet { viewReload?() } }
     var count: Int { return movies.count }
-    private var didChange: (() -> Void)?
-    struct UIReadyInstance: Convertable {
+    struct PresentableInstance: Parsable {
         let title: String
         let thumbnailURL: URL
         let fullSizeURL: URL
@@ -32,32 +32,52 @@ class MovieViewModel: ViewModel {
         formatter.dateFormat = "yyyy-mm-dd"
         return formatter
     }()
+    // Binds
+    private var viewReload: (() -> Void)?
+    private var showDetail: ((URL) -> Void)?
     
-        
     // MARK: - Methods
     
-    subscript (index: Int) -> Convertable { return uiReadyInstance(from: movies[index]) }
-    func bind(didChange: @escaping () -> Void) {
-        self.didChange = didChange
+    // Subscript: viewModel[i] -> PresentableInstance
+    subscript (index: Int) -> Parsable { return presentableInstance(from: movies[index]) }
+    
+    // Initialize binds
+    func bindModelUpdate(with viewReload: @escaping () -> Void) {
+        self.viewReload = viewReload
     }
+    func bindPresentation(with showDetail: @escaping (URL) -> Void) {
+        self.showDetail = showDetail
+    }
+    
+    func showDetail(at indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        let presentable = presentableInstance(from: movie) as! PresentableInstance
+        showDetail?(presentable.fullSizeURL)
+    }
+
+
+
+    // Fetch and parse model objects, bound to collectionview reload 
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
-            case let .success(convertables):
-                self.movies = convertables as! [Movie]
+            case let .success(parasables):
+                self.movies = parasables as! [Movie]
             case let .failure(error):
                 print(error)
             }
         }
     }
+    
     // Exposing data model objects for easy presenting and UI management
-    private func uiReadyInstance(from movie: Movie) -> UIReadyInstance {
+    func presentableInstance(from model: Parsable) -> Parsable {
+        let movie = model as! Movie
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: movie.posterPath)
         let ratingText = String(format: "%.1f", movie.averageRating)
         let dateObject = releaseDateFormatter.date(from: movie.releaseDate)
         let releaseDateText = releaseDateFormatter.string(from: dateObject!)
-        return UIReadyInstance(title: movie.title, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, ratingText: ratingText, releaseDateText: releaseDateText)
+        return PresentableInstance(title: movie.title, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, ratingText: ratingText, releaseDateText: releaseDateText)
     }
 }
 

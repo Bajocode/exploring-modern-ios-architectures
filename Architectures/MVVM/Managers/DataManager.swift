@@ -19,6 +19,7 @@ final class DataManager {
     static let shared = DataManager()
     let imageStore = ImageStore()
     
+    
     // MARK: - Initializers
     
     private init() {}
@@ -27,7 +28,7 @@ final class DataManager {
     // MARK: - Methods
     
     // Fetch now playing movies and dispatch on main
-    func fetchNewTmdbObjects(withType type: ObjectType, completion: @escaping (DataResult) -> Void) {
+    func fetchNewTmdbObjects(withType type: ModelType, completion: @escaping (DataResult) -> Void) {
         if TmdbAPI.apiKey == nil {
             // No key provided, use local JSON
             var localData: Data?, localError: Error?
@@ -50,7 +51,7 @@ final class DataManager {
             task.resume()
         }
     }
-    private func processRequest(data: Data?, error: Error?, type: ObjectType) -> DataResult {
+    private func processRequest(data: Data?, error: Error?, type: ModelType) -> DataResult {
         guard let jsonData = data else {
             return .failure(error!)
         }
@@ -61,11 +62,11 @@ final class DataManager {
 
 // MARK: - Data related helper types
 
-enum ObjectType {
+enum ModelType {
     case movie
     case actor
 }
 enum DataResult {
-    case success([Convertable])
+    case success([Parsable])
     case failure(Error)
 }

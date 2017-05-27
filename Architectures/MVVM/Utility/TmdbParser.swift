@@ -14,7 +14,7 @@ import Foundation
 struct TmdbParser {
     
     // DataManager's access to the parsing utilities
-    static func parsedResult(withJSONData data: Data, type: ObjectType) -> DataResult {
+    static func parsedResult(withJSONData data: Data, type: ModelType) -> DataResult {
         do{
             // Serialize raw json into foundation json and retrieve movie array
             let jsonFoundationObject = try JSONSerialization.jsonObject(with: data, options: [])
@@ -30,9 +30,9 @@ struct TmdbParser {
     }
     
     // Caller of individual object parsers based on object type
-    private static func parsedObjects(withJSONArray array: [[String: Any]], type: ObjectType) -> [Convertable] {
+    private static func parsedObjects(withJSONArray array: [[String: Any]], type: ModelType) -> [Parsable] {
         // Parse individual movies
-        var parsedObjects = [Convertable]()
+        var parsedObjects = [Parsable]()
         for jsonObject in array {
             switch type {
             case .movie:

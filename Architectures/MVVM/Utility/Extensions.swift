@@ -8,7 +8,9 @@
 
 import UIKit
 
-// Offload layout implementation from View to layout itself
+
+// MARK: - UICollectionViewFlowLayout
+
 extension UICollectionViewFlowLayout {
     convenience init(viewModel: CollectionViewConfigurable, bounds: CGRect) {
         self.init()
@@ -31,10 +33,11 @@ extension UICollectionViewFlowLayout {
     }
 }
 
-// Enable easy image downloads 
+
+// MARK: - UIImageView
+
 extension UIImageView {
-    // Testing this solution
-    func downloadImage(with url: URL) {
+    func downloadImage(from url: URL) {
         // Remove "/" because docs dir sees as folders
         let cacheKey = url.path.components(separatedBy: "/").dropFirst(3).joined(separator: "")
         // Return early if found in local cache or docs dir
@@ -42,22 +45,15 @@ extension UIImageView {
             DispatchQueue.main.async { self.image = image }
             return
         }
-        // Not in cache or docs? Make a new request
-        URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse,
-                httpURLResponse.statusCode == 200,
-                let imageData = data,
-                error == nil,
-                let newImage = UIImage(data: imageData) else {
-                    print("Fetching image failed for path: \(url.path)")
-                    return
+        // Nothing in cache / docs? Fetch new
+        URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
+            guard let httpURLResponse = response as? HTTPURLResponse,  httpURLResponse.statusCode == 200,
+                let data = data, error == nil,
+                let image = UIImage(data: data) else { return }
+            DataManager.shared.imageStore.setImage(image, forKey: cacheKey)
+            DispatchQueue.main.async {
+                self?.image = image
             }
-            // Put the image in cache and dispatch on main
-            DataManager.shared.imageStore.setImage(newImage, forKey: cacheKey)
-            DispatchQueue.main.async { self?.image = newImage }
-        }.resume()
+        }).resume()
     }
 }
-
-

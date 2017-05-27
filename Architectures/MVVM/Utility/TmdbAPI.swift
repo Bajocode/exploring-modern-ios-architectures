@@ -38,7 +38,7 @@ struct TmdbAPI {
     }
     
     // Local static JSON url constructor based on object type
-    static func localURL(withType type: ObjectType) -> URL {
+    static func localURL(withType type: ModelType) -> URL {
         switch type {
         case .movie:
             return localJSONURL(forFileName: "moviedata")
@@ -51,7 +51,7 @@ struct TmdbAPI {
     }
     
     // URL constructor implementation for Tmdb Servers based on object type
-    static func remoteURL(withType type: ObjectType) -> URL {
+    static func remoteURL(withType type: ModelType) -> URL {
         switch type {
         case .movie:
             return constructTmdbURL(forMethod: .nowPlayingMovies)

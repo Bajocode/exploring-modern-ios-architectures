@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie: Convertable {
+struct Movie: Parsable {
     
     // MARK: - Properties
     
