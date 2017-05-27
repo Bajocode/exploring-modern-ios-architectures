@@ -22,34 +22,16 @@ class ActorViewModel: ViewModel {
         let fullSizeURL: URL
     }
 
-    // Binds
+    
+    // MARK: - Binds
+    
+    // Bind model updates and collectionview reload
     private var viewReload: (() -> Void)?
-    private var showDetail: ((URL) -> Void)?
-    
-    // MARK: - Methods
-    
-    // Subscript: viewModel[i] -> PresentableInstance
-    subscript (index: Int) -> Parsable { return presentableInstance(from: actors[index]) }
-    
-    // Initialize binds
     func bindModelUpdate(with viewReload: @escaping () -> Void) {
         self.viewReload = viewReload
     }
-    func bindPresentation(with showDetail: @escaping (URL) -> Void) {
-        self.showDetail = showDetail
-    }
-    
-    func showDetail(at indexPath: IndexPath) {
-        let movie = actors[indexPath.row]
-        let presentable = presentableInstance(from: movie) as! PresentableInstance
-        showDetail?(presentable.fullSizeURL)
-    }
-    
-    
-    
-    // Fetch and parse model objects, bound to collectionview reload
     func fetchNewModelObjects() {
-        DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
+        DataManager.shared.fetchNewTmdbObjects(withType: .actor) { (result) in
             switch result {
             case let .success(parasables):
                 self.actors = parasables as! [Actor]
@@ -59,7 +41,22 @@ class ActorViewModel: ViewModel {
         }
     }
     
-    // Exposing data model objects for easy presenting and UI management
+    // Bind collectionviewDidTap and detailVC presentation
+    private var showDetail: ((URL, String) -> Void)?
+    func bindPresentation(with showDetail: @escaping (URL, String) -> Void) {
+        self.showDetail = showDetail
+    }
+    func showDetail(at indexPath: IndexPath) {
+        let actor = actors[indexPath.row]
+        let presentable = presentableInstance(from: actor) as! PresentableInstance
+        showDetail?(presentable.fullSizeURL, presentable.name)
+    }
+
+    
+    // MARK: - Helpers
+    
+    // Subscript: viewModel[i] -> PresentableInstance
+    subscript (index: Int) -> Parsable { return presentableInstance(from: actors[index]) }
     func presentableInstance(from model: Parsable) -> Parsable {
         let actor = model as! Actor
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
@@ -84,4 +81,5 @@ extension ActorViewModel: CollectionViewConfigurable {
     var interItemSpacing: Int? { return 8 }
     var lineSpacing: Int? { return 8 }
     var bottomInset: Int? { return 49 }
+    var cornerRadius: Double? { return 20.0 }
 }

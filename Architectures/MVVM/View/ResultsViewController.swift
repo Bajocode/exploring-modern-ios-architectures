@@ -22,6 +22,8 @@ class ResultsViewController: UIViewController {
         cv.clipsToBounds = true
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
+        let actorCellNib = UINib(nibName: "ActorCollectionViewCell", bundle: nil)
+        cv.register(actorCellNib, forCellWithReuseIdentifier: "ActorCell")
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -39,6 +41,7 @@ class ResultsViewController: UIViewController {
     // MARK: - Methods
     
     private func configure() {
+        tabBarController?.navigationItem.title = "MVVM"
         view.backgroundColor = .black
         view.addSubview(collectionView)
         
@@ -50,8 +53,9 @@ class ResultsViewController: UIViewController {
         viewModel.fetchNewModelObjects()
     }
 
-    func showDetail(with url: URL) {
+    func showDetail(with url: URL, title: String) {
         let vc = DetailViewController()
+        vc.navigationItem.title = title
         vc.imageURL = url
         show(vc, sender: viewModel)
     }
@@ -68,8 +72,8 @@ class ResultsViewController: UIViewController {
 extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Bind
-        viewModel.bindPresentation { [weak self] (url) in
-            self?.showDetail(with: url)
+        viewModel.bindPresentation { [weak self] (url, title) in
+            self?.showDetail(with: url, title: title)
         }
         // Invoke
         viewModel.showDetail(at: indexPath)

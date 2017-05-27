@@ -22,9 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Allocate navigation controller and tabbar
         let tabBarC = UITabBarController()
         let navC = UINavigationController(rootViewController: tabBarC)
+        
+        // Allocate resultVC's
         let movieResultsVC = ResultsViewController()
         movieResultsVC.viewModel = MovieViewModel()
-        tabBarC.setViewControllers([movieResultsVC], animated: false)
+        movieResultsVC.title = "Movies"
+        let actorResultsVC = ResultsViewController()
+        actorResultsVC.title = "Actors"
+        actorResultsVC.viewModel = ActorViewModel()
+        
+        tabBarC.setViewControllers([movieResultsVC, actorResultsVC], animated: false)
         
         // Configure style
         navC.navigationBar.barStyle = .black

@@ -18,18 +18,17 @@ protocol ViewModel: class, CollectionViewConfigurable {
     
     // MARK: - Methods
     
-    // Second conversion: Model -> UIReadyInstance
     subscript (index: Int) -> Parsable { get }
     
     // Binds
     func bindModelUpdate(with viewReload: @escaping () -> Void)
-    func bindPresentation(with showDetail: @escaping (URL) -> Void)
+    func bindPresentation(with showDetail: @escaping (URL, String) -> Void)
     
     // Invoked by View
     func fetchNewModelObjects()
     func showDetail(at indexPath: IndexPath)
     
-    // Generate single presentable instance from raw model
+    // Single presentable instance from raw model
     func presentableInstance(from model: Parsable) -> Parsable
 }
 
