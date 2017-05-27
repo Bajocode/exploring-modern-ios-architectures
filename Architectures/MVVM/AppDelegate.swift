@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize the window (not using Storyboards)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .black
         
         // Allocate navigation controller and tabbar
         let tabBarC = UITabBarController()

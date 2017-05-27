@@ -19,6 +19,7 @@ class ResultsViewController: UIViewController {
     var viewModel: ViewModel!
     private lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(viewModel: self.viewModel, bounds: self.view.bounds))
+        cv.clipsToBounds = true
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
         cv.dataSource = self
@@ -38,6 +39,7 @@ class ResultsViewController: UIViewController {
     // MARK: - Methods
     
     private func configure() {
+        view.backgroundColor = .black
         view.addSubview(collectionView)
         
         // Bind
@@ -51,7 +53,7 @@ class ResultsViewController: UIViewController {
     func showDetail(with url: URL) {
         let vc = DetailViewController()
         vc.imageURL = url
-        show(vc, sender: self)
+        show(vc, sender: viewModel)
     }
 }
 

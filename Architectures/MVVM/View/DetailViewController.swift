@@ -14,6 +14,14 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     
     var imageURL: URL!
+    
+    // Use lazy to access self.view when instantiated
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        indicator.center = self.view.center
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView(frame: self.view.bounds)
         imageView.contentMode = .scaleAspectFill
@@ -33,7 +41,12 @@ class DetailViewController: UIViewController {
     // MARK: - Methods
 
     private func configure() {
+        view.backgroundColor = .black
         view.addSubview(imageView)
-        imageView.downloadImage(from: imageURL)
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        imageView.downloadImage(from: imageURL) { 
+            self.activityIndicator.stopAnimating()
+        }
     }
 }
