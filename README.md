@@ -1,5 +1,7 @@
 # Exploring Modern iOS Architectures
 
+![Alamofire: Elegant Networking in Swift](RepoMedia/Header.png)
+
 #### Project
 In this project I'm structuring my knowledge about modern architectural patterns,
 showcasing the main features through a simple Movie app. The app makes use of
