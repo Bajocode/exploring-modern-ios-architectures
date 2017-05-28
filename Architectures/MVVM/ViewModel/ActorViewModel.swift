@@ -14,7 +14,7 @@ class ActorViewModel: ViewModel {
     // MARK: - Properties
     
     // Properties
-    fileprivate var actors = [Actor]() { didSet { viewReload?() } }
+    fileprivate var actors = [Actor]() { didSet { modelUpdate?() } }
     var count: Int { return actors.count }
     struct PresentableInstance: Parsable {
         let name: String
@@ -25,16 +25,19 @@ class ActorViewModel: ViewModel {
     
     // MARK: - Binds
     
+    typealias modelUpdateClosure = () -> Void
+    typealias showDetailClosure = (URL, String) -> Void
+    
     // Bind model updates and collectionview reload
-    private var viewReload: (() -> Void)?
-    func bindModelUpdate(with viewReload: @escaping () -> Void) {
-        self.viewReload = viewReload
+    private var modelUpdate: modelUpdateClosure?
+    func bindViewReload(with modelUpdate: @escaping modelUpdateClosure) {
+        self.modelUpdate = modelUpdate
     }
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .actor) { (result) in
             switch result {
-            case let .success(parasables):
-                self.actors = parasables as! [Actor]
+            case let .success(parsables):
+                self.actors = parsables as! [Actor]
             case let .failure(error):
                 print(error)
             }
@@ -42,8 +45,8 @@ class ActorViewModel: ViewModel {
     }
     
     // Bind collectionviewDidTap and detailVC presentation
-    private var showDetail: ((URL, String) -> Void)?
-    func bindPresentation(with showDetail: @escaping (URL, String) -> Void) {
+    private var showDetail: showDetailClosure?
+    func bindPresentation(with showDetail: @escaping showDetailClosure) {
         self.showDetail = showDetail
     }
     func showDetail(at indexPath: IndexPath) {

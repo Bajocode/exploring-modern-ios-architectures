@@ -21,7 +21,7 @@ protocol ViewModel: class, CollectionViewConfigurable {
     subscript (index: Int) -> Parsable { get }
     
     // Binds
-    func bindModelUpdate(with viewReload: @escaping () -> Void)
+    func bindViewReload(with modelUpdate: @escaping () -> Void)
     func bindPresentation(with showDetail: @escaping (URL, String) -> Void)
     
     // Invoked by View

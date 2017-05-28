@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PWn-63-Fuj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PWn-63-Fuj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -126,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-lx-Rtc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-wY-K7v">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
@@ -136,7 +136,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cZy-lx-Rtc" secondAttribute="trailing" id="1Q7-hS-dSJ"/>
                             <constraint firstItem="cZf-wY-K7v" firstAttribute="centerY" secondItem="i1P-Ns-mjg" secondAttribute="centerY" id="8kt-kE-cYq"/>
-                            <constraint firstItem="cZy-lx-Rtc" firstAttribute="top" secondItem="hhx-2c-VSn" secondAttribute="bottom" id="WG3-ne-UkT"/>
+                            <constraint firstItem="cZy-lx-Rtc" firstAttribute="top" secondItem="i1P-Ns-mjg" secondAttribute="top" id="SBX-Jv-Inh"/>
                             <constraint firstItem="VFv-NE-kGJ" firstAttribute="top" secondItem="cZy-lx-Rtc" secondAttribute="bottom" id="r95-r8-dSg"/>
                             <constraint firstItem="cZy-lx-Rtc" firstAttribute="leading" secondItem="i1P-Ns-mjg" secondAttribute="leading" id="rco-t9-v2c"/>
                             <constraint firstItem="cZf-wY-K7v" firstAttribute="centerX" secondItem="i1P-Ns-mjg" secondAttribute="centerX" id="ufb-cm-RRE"/>

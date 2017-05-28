@@ -42,7 +42,6 @@ class DetailViewController: UIViewController {
 
     private func configure() {
         // View setup
-        edgesForExtendedLayout = []
         view.backgroundColor = .black
         view.addSubview(imageView)
         view.addSubview(activityIndicator)

@@ -46,17 +46,17 @@ class ResultsViewController: UIViewController {
         view.addSubview(collectionView)
         
         // Bind
-        viewModel.bindModelUpdate(with: { [weak self] in
+        viewModel.bindViewReload { [weak self] in
             self?.collectionView.reloadSections(IndexSet(integer: 0))
-        })
+        }
         // Invoke
         viewModel.fetchNewModelObjects()
     }
 
-    func showDetail(with url: URL, title: String) {
+    func showDetail(with imageUrl: URL, navigationTitle: String) {
         let vc = DetailViewController()
-        vc.navigationItem.title = title
-        vc.imageURL = url
+        vc.navigationItem.title = navigationTitle
+        vc.imageURL = imageUrl
         show(vc, sender: viewModel)
     }
 }
@@ -73,7 +73,7 @@ extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Bind
         viewModel.bindPresentation { [weak self] (url, title) in
-            self?.showDetail(with: url, title: title)
+            self?.showDetail(with: url, navigationTitle: title)
         }
         // Invoke
         viewModel.showDetail(at: indexPath)

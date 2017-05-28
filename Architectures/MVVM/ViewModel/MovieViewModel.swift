@@ -17,7 +17,7 @@ class MovieViewModel: ViewModel {
     
     // MARK: - Properties
     
-    fileprivate var movies = [Movie]() { didSet { viewReload?() } }
+    fileprivate var movies = [Movie]() { didSet { modelUpdate?() } }
     var count: Int { return movies.count }
     struct PresentableInstance: Parsable {
         let title: String
@@ -35,10 +35,13 @@ class MovieViewModel: ViewModel {
     
     // MARK: - Binds
     
+    typealias modelUpdateClosure = () -> Void
+    typealias showDetailClosure = (URL, String) -> Void
+    
     // Bind model updates and collectionview reload
-    private var viewReload: (() -> Void)?
-    func bindModelUpdate(with viewReload: @escaping () -> Void) {
-        self.viewReload = viewReload
+    private var modelUpdate: modelUpdateClosure?
+    func bindViewReload(with modelUpdate: @escaping modelUpdateClosure) {
+        self.modelUpdate = modelUpdate
     }
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
@@ -52,8 +55,8 @@ class MovieViewModel: ViewModel {
     }
     
     // Bind collectionviewDidTap and detailVC presentation
-    private var showDetail: ((URL, String) -> Void)?
-    func bindPresentation(with showDetail: @escaping (URL, String) -> Void) {
+    private var showDetail: showDetailClosure?
+    func bindPresentation(with showDetail: @escaping showDetailClosure) {
         self.showDetail = showDetail
     }
     func showDetail(at indexPath: IndexPath) {

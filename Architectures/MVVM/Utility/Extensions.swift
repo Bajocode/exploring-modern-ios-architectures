@@ -49,6 +49,7 @@ extension UIImageView {
             return
         }
         // Nothing in cache / docs? Fetch new
+        // ImageView could be nil, use [weak self] capture list
         URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
             guard let httpURLResponse = response as? HTTPURLResponse,  httpURLResponse.statusCode == 200,
                 let data = data, error == nil,
