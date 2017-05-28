@@ -153,6 +153,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		2273CC5D1EDB036C0020B638 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				227C56EA1ED73B48007E98A5 /* Assets.xcassets */,
+				227C56EC1ED73B48007E98A5 /* LaunchScreen.storyboard */,
+				227C56EF1ED73B48007E98A5 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		2279AB471ECF07CE001B074B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,9 +183,7 @@
 				22811E5A1ED73C730005E60A /* View */,
 				22811E641ED73D6E0005E60A /* Protocol */,
 				22811E591ED73C660005E60A /* ViewModel */,
-				227C56EA1ED73B48007E98A5 /* Assets.xcassets */,
-				227C56EC1ED73B48007E98A5 /* LaunchScreen.storyboard */,
-				227C56EF1ED73B48007E98A5 /* Info.plist */,
+				2273CC5D1EDB036C0020B638 /* Assets */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
