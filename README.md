@@ -21,7 +21,7 @@ the [Tmdb API](https://www.themoviedb.org/documentation/api) which requires an A
 4. Build and run!
 
 #### Architectural Questions
-As I work through the architectures I will experiment with different setups while keeping the core principles of the architectures in mind. Some important aspects to consider:
+As I work through the architectures I will experiment with different setups while keeping the core principles of the architectures in mind. The project is designed with code readability and learning in mind, to use them in production may require performance optimisations or other changes. Some architectural aspects to consider:
 
 :small_blue_diamond: **Orthogonality:** responsibilities, distribution, coupling etc.
 
@@ -38,18 +38,17 @@ As I work through the architectures I will experiment with different setups whil
     <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
 
-###### Approach for this project
 * **Model**
-  * Business logic, data transformation and store
-  * `movieManager` dependency is injected through property injection starting at app launch
-  * It makes all requests including images and has a reference to the `imageStore`
+  * Data layer objects, business logic (stores, managers)
+  * Notifies Controller when changes occur
 * **View**
-  * The cell configured directly with the Model
-  * UI presentation flow: UIStoryboard with segues
+  * Cells, `UIView` objects and subclasses
+  * Send actions to Controller
 * **Controller**
-  * Mediator between view and Model
-  * Delegate and datasource
+  * Mediator between View and Model
+  * Delegate and datasource of almost everything
   * Dispatching and canceling network requests
+  * Manages View lifecycle (tightly coupled)
 
 
 ###### ToDo
@@ -67,15 +66,12 @@ As I work through the architectures I will experiment with different setups whil
 * **Model**
   * A raw representation of the data
 * **View**
-  * (MVC) ViewControllers are the views
-  * Updates it’s state from the View Model by setting up bindings
-  * UI presentation flow: individual Xibs
+  * ViewControllers, cells, `UIViews`
+  * Updates it’s state from the ViewModel by setting up bindings
+  * Forwards events to ViewModel
 * **ViewModel**
-  * Invokes changes in Model and updates itself + binding View
-  * This project implements bindings through callbacks instead of reactive binds (RXSwift etc.)
-  * Triggers all network call through a `DataManager singleton`
-
-*A tabBarController is added as a presenter of generic viewControllers*
+  * Mediator between View and Model
+  * `UIKit` independent representation of the View
 
 
 ###### ToDo
