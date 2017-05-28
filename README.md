@@ -66,8 +66,9 @@ As I work through the architectures I will experiment with different setups whil
 ###### Structure
 * **Model**
   * A raw representation of the data
+  * Business logic
 * **View**
-  * ViewControllers, cells, `UIViews`
+  * `UIViewControllers`, cells, `UIViews`
   * Updates it’s state from the ViewModel by setting up bindings
   * Forwards events to ViewModel
 * **ViewModel**
@@ -79,6 +80,22 @@ As I work through the architectures I will experiment with different setups whil
 * Add tests
 
 ## MVP
+<p align="middle">
+    <img src="RepoMedia/MVP.png" alt="MVC" width="550"/>
+</p>
+* **Model**
+  * A raw representation of the data
+  * Business logic
+* **View**
+  * Passive `UIViewControllers`, cells, `UIViews`
+  * May not know about Model or execute presentations
+  * Delegates user interactions to the presenter
+* **Presenter**
+  * Mediator between Model and View
+  * Contains the logic to handle user interactions
+  * Updates View's data and state
+  * Converts Model to UI presentable format
+
 
 ## VIPER
 
