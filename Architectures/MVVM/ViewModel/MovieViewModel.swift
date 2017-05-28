@@ -94,8 +94,8 @@ extension MovieViewModel: CollectionViewConfigurable {
     var heightDivisor: Double { return 2.5 }
     
     // Optional
-    var interItemSpacing: Int? { return 1 }
-    var lineSpacing: Int? { return 1 }
-    var bottomInset: Int? { return 49 }
+    var interItemSpacing: Double? { return 1 }
+    var lineSpacing: Double? { return 1 }
+    var bottomInset: Double? { return 49 }
 }
 

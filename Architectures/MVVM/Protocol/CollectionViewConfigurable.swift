@@ -13,12 +13,11 @@ protocol CollectionViewConfigurable: class {
     // MARK: - Properties
     
     // Optional
-    var topInset: Int? { get }
-    var bottomInset: Int? { get }
-    var horizontalInsets: Int? { get }
-    var interItemSpacing: Int? { get }
-    var lineSpacing: Int? { get }
-    var cornerRadius: Double? { get }
+    var topInset: Double? { get }
+    var bottomInset: Double? { get }
+    var horizontalInsets: Double? { get }
+    var interItemSpacing: Double? { get }
+    var lineSpacing: Double? { get }
     
     // Required
     var widthDivisor: Double { get }
@@ -32,10 +31,9 @@ protocol CollectionViewConfigurable: class {
 extension CollectionViewConfigurable {
     
     // Provide default values: optional protocol workaround for non @objc structures
-    var topInset: Int? { return nil }
-    var bottomInset: Int? { return nil }
-    var horizontalInsets: Int? { return nil }
-    var interItemSpacing: Int? { return nil }
-    var lineSpacing: Int? { return nil }
-    var cornerRadius: Double? { return nil }
+    var topInset: Double? { return nil }
+    var bottomInset: Double? { return nil }
+    var horizontalInsets: Double? { return nil }
+    var interItemSpacing: Double? { return nil }
+    var lineSpacing: Double? { return nil }
 }

@@ -20,6 +20,7 @@ class ActorViewModel: ViewModel {
         let name: String
         let thumbnailURL: URL
         let fullSizeURL: URL
+        let cornerRadius: Double
     }
 
     
@@ -64,7 +65,7 @@ class ActorViewModel: ViewModel {
         let actor = model as! Actor
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)
-        return PresentableInstance(name: actor.name, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL)
+        return PresentableInstance(name: actor.name, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, cornerRadius: 10.0)
     }
 }
 
@@ -81,8 +82,9 @@ extension ActorViewModel: CollectionViewConfigurable {
     var heightDivisor: Double { return 3.0 }
     
     // Optional
-    var interItemSpacing: Int? { return 8 }
-    var lineSpacing: Int? { return 8 }
-    var bottomInset: Int? { return 49 }
-    var cornerRadius: Double? { return 20.0 }
+    var interItemSpacing: Double? { return 8 }
+    var lineSpacing: Double? { return 8 }
+    var topInset: Double? { return 8 }
+    var horizontalInsets: Double? { return 8 }
+    var bottomInset: Double? { return 49 }
 }
