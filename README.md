@@ -38,6 +38,7 @@ As I work through the architectures I will experiment with different setups whil
     <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
 
+###### Structure
 * **Model**
   * Data layer objects, business logic (stores, managers)
   * Notifies Controller when changes occur
@@ -62,7 +63,7 @@ As I work through the architectures I will experiment with different setups whil
     <img src="RepoMedia/MVVM.png" alt="MVC" width="550"/>
 </p>
 
-###### Approach
+###### Structure
 * **Model**
   * A raw representation of the data
 * **View**
