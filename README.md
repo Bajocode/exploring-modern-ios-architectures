@@ -40,8 +40,8 @@ As I work through the architectures I will experiment with different setups whil
 
 ###### Structure
 * **Model**
+  * Conceptual domain model, representing real state content
   * Data layer objects, business logic (stores, managers)
-  * Notifies Controller when changes occur
 * **View**
   * Cells, `UIView` objects and subclasses
   * Send actions to Controller
@@ -58,22 +58,24 @@ As I work through the architectures I will experiment with different setups whil
 
 <!-- MVVM BEGIN -->
 
-## MVVM + POP
+## MVVM
 <p align="middle">
     <img src="RepoMedia/MVVM.png" alt="MVC" width="550"/>
 </p>
 
 ###### Structure
 * **Model**
-  * A raw representation of the data
-  * Business logic
+  * Conceptual domain model, representing real state content
 * **View**
-  * `UIViewControllers`, cells, `UIViews`
+  * Structure, layout, and appearance of what a user sees on the screen (`UIViewControllers`, cells, `UIViews`)
   * Updates it’s state from the ViewModel by setting up bindings
   * Forwards events to ViewModel
 * **ViewModel**
-  * Mediator between View and Model
+  * An abstraction of the view exposing public properties and commands
   * `UIKit` independent representation of the View
+* **Binder**
+  * A (reactive) databinding technology is key to the pattern. However, this simplistic app example achieves binding through callbacks.
+
 
 
 ###### ToDo
@@ -86,17 +88,15 @@ As I work through the architectures I will experiment with different setups whil
 
 ###### Structure
 * **Model**
-  * A raw representation of the data
-  * Business logic
+  * Conceptual domain model, representing real state content
 * **View**
   * Passive `UIViewControllers`, cells, `UIViews`
   * May not know about Model or execute presentations
   * Delegates user interactions to the presenter
 * **Presenter**
-  * Mediator between Model and View
+  * Acts upon the model and the view
   * Contains the logic to handle user interactions
-  * Updates View's data and state
-  * Converts Model to UI presentable format
+  * Retrieves data from the Model and formats it for display in the View
 
 
 ## VIPER

@@ -9,5 +9,20 @@
 import Foundation
 
 protocol ResultsViewPresenter {
-    <#requirements#>
+    
+    
+    // MARK: - Properties
+    
+    var objectsCount: Int { get }
+    
+    
+    // MARK: - Initializers
+    
+    init(view: ResultsView)
+    
+    
+    // MARK: - Methods
+    
+    func presentableInstance(index: Int) -> Parsable
+    func presentNewObjects()
 }

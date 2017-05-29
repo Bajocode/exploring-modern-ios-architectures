@@ -10,4 +10,6 @@ import Foundation
 
 protocol ResultsView: class {
     
+    // MARK: - Methods
+    func reloadCollectionData()
 }
