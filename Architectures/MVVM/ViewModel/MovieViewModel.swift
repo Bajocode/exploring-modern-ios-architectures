@@ -46,8 +46,8 @@ class MovieViewModel: ViewModel {
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
-            case let .success(parasables):
-                self.movies = parasables as! [Movie]
+            case let .success(parsables):
+                self.movies = parsables as! [Movie]
             case let .failure(error):
                 print(error)
             }
