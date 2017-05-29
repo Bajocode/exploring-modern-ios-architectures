@@ -41,3 +41,15 @@ extension UIImageView {
         }).resume()
     }
 }
+
+extension UICollectionViewFlowLayout {
+    
+    class func itemSizeWithSingleSpacing(with spacing: CGFloat, bottomInset: CGFloat, widthDivisor: CGFloat, heightDivisor: CGFloat, bounds: CGRect) -> CGSize {
+        // Itemsize (if all spacing / insets are equal)
+        let fullWspace = (widthDivisor + 1) * spacing
+        let fullHspace = (heightDivisor + 1) + spacing
+        let width = (bounds.width - fullWspace) / widthDivisor
+        let height = (bounds.height - fullHspace) / heightDivisor
+        return CGSize(width: width, height: height)
+    }
+}
