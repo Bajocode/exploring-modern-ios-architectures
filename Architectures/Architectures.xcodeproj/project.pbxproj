@@ -49,6 +49,7 @@
 		22BA1E981EDB580B000E93CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA1E971EDB580B000E93CF /* AppDelegate.swift */; };
 		22BA1E9F1EDB580B000E93CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BA1E9E1EDB580B000E93CF /* Assets.xcassets */; };
 		22BA1EA21EDB580B000E93CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BA1EA01EDB580B000E93CF /* LaunchScreen.storyboard */; };
+		22BA4B951EDC4AA900D4F007 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA4B941EDC4AA900D4F007 /* DetailViewController.swift */; };
 		22C059661EDC1628001286CB /* moviedata.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FF1ECC7E3800790E71 /* moviedata.json */; };
 		22C059671EDC1628001286CB /* actordata.json in Resources */ = {isa = PBXBuildFile; fileRef = 2240415B1ED03A6700A1AF63 /* actordata.json */; };
 		22C059681EDC162C001286CB /* tmdbAPIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */; };
@@ -128,6 +129,7 @@
 		22BA1E9E1EDB580B000E93CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22BA1EA11EDB580B000E93CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22BA1EA31EDB580B000E93CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BA4B941EDC4AA900D4F007 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = View/DetailViewController.swift; sourceTree = "<group>"; };
 		22C0596B1EDC16EC001286CB /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		22C0596F1EDC176B001286CB /* ResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsView.swift; path = Protocol/ResultsView.swift; sourceTree = "<group>"; };
 		22C059711EDC1793001286CB /* ResultsViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsViewPresenter.swift; path = Protocol/ResultsViewPresenter.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				2209738F1EDC38F600F3CB20 /* ResultsViewController.swift */,
+				22BA4B941EDC4AA900D4F007 /* DetailViewController.swift */,
 				22C059751EDC187B001286CB /* MovieCollectionViewCell.swift */,
 				22C059761EDC187B001286CB /* MovieCollectionViewCell.xib */,
 			);
@@ -687,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C059721EDC1793001286CB /* ResultsViewPresenter.swift in Sources */,
+				22BA4B951EDC4AA900D4F007 /* DetailViewController.swift in Sources */,
 				22C0597C1EDC204C001286CB /* DataManager.swift in Sources */,
 				22C059791EDC204C001286CB /* TmdbAPI.swift in Sources */,
 				2209738C1EDC33D700F3CB20 /* Parsable.swift in Sources */,

@@ -24,4 +24,5 @@ protocol ResultsViewPresenter: CollectionViewConfigurable {
     
     func presentableInstance(index: Int) -> Parsable
     func presentNewObjects()
+    func presentDetail(for indexPath: IndexPath)
 }

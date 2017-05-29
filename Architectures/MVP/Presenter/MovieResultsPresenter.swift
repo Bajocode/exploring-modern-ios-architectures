@@ -60,6 +60,14 @@ class MovieResultsPresenter: ResultsViewPresenter {
             self.view.reloadCollectionData()
         }
     }
+    
+    func presentDetail(for indexPath: IndexPath) {
+        let presentable = presentableInstance(index: indexPath.row) as! PresentableInstance
+        let vc = DetailViewController()
+        vc.imageURL = presentable.fullSizeURL
+        vc.navigationItem.title = presentable.title
+        view.show(vc)
+    }
 }
 
 

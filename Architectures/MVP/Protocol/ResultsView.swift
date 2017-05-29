@@ -12,4 +12,5 @@ protocol ResultsView: class {
     
     // MARK: - Methods
     func reloadCollectionData()
+    func show(_ detailVC: DetailViewController)
 }
