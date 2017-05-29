@@ -14,11 +14,8 @@ class MovieResultsPresenter: ResultsViewPresenter {
     // MARK: - Properties
     
     unowned private let view: ResultsView
-    private var objects = [Movie]()
-    var objectsCount: Int { return objects.count }
-    struct PresentableInstance: Parsable {
-        
-    }
+    private var movies = [Movie]()
+    var objectsCount: Int { return movies.count }
     struct PresentableInstance: Parsable {
         let title: String
         let thumbnailURL: URL
@@ -33,10 +30,17 @@ class MovieResultsPresenter: ResultsViewPresenter {
     }()
     
     
+    // MARK: - Initializers
+    
+    required init(view: ResultsView) {
+        self.view = view
+    }
+    
+    
     // MARK: - Methods
     
     func presentableInstance(index: Int) -> Parsable {
-        let movie = objects[index] as! Movie
+        let movie = movies[index]
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: movie.posterPath)
         let ratingText = String(format: "%.1f", movie.averageRating)
@@ -45,7 +49,7 @@ class MovieResultsPresenter: ResultsViewPresenter {
         return PresentableInstance(title: movie.title, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, ratingText: ratingText, releaseDateText: releaseDateText)
     }
     
-    func fetchNewModelObjects() {
+    func presentNewObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
             case let .success(parsables):
@@ -53,6 +57,7 @@ class MovieResultsPresenter: ResultsViewPresenter {
             case let .failure(error):
                 print(error)
             }
+            self.view.reloadCollectionData()
         }
     }
     
