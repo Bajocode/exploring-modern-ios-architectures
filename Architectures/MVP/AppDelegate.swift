@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Allocate resultVC's
         let movieResultsVC = ResultsViewController()
-        movieResultsVC.presenter = MovieViewModel()
+        movieResultsVC.presenter = MovieResultsPresenter(view: movieResultsVC)
         movieResultsVC.title = "Movies"
         
         tabBarC.setViewControllers([movieResultsVC], animated: false)

@@ -70,7 +70,7 @@ class ActorViewModel: ViewModel {
 }
 
 
-// MARK: - CellRepresentable
+// MARK: - CollectionViewConfigurable
 
 extension ActorViewModel: CollectionViewConfigurable {
     

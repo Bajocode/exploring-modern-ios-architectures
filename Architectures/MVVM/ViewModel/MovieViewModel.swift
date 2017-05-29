@@ -82,7 +82,7 @@ class MovieViewModel: ViewModel {
 }
 
 
-// MARK: - CellRepresentable
+// MARK: - CollectionViewConfigurable
 
 extension MovieViewModel: CollectionViewConfigurable {
     

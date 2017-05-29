@@ -8,13 +8,12 @@
 
 import Foundation
 
-protocol ResultsViewPresenter {
+protocol ResultsViewPresenter: CollectionViewConfigurable {
     
     
     // MARK: - Properties
     
     var objectsCount: Int { get }
-    
     
     // MARK: - Initializers
     

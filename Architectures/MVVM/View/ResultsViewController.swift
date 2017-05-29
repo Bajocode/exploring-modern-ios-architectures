@@ -18,7 +18,7 @@ class ResultsViewController: UIViewController {
     
     var viewModel: ViewModel!
     private lazy var collectionView: UICollectionView = {
-        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(viewModel: self.viewModel, bounds: self.view.bounds))
+        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(abstraction: self.viewModel, bounds: self.view.bounds))
         cv.clipsToBounds = true
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")

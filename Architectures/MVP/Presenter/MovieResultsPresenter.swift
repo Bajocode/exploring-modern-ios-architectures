@@ -60,5 +60,21 @@ class MovieResultsPresenter: ResultsViewPresenter {
             self.view.reloadCollectionData()
         }
     }
+}
+
+
+// MARK: - CollectionViewConfigurable
+extension MovieResultsPresenter: CollectionViewConfigurable {
     
+    // MARK: - Properties
+    
+    // Required
+    var cellID: String { return "MovieCell" }
+    var widthDivisor: Double { return 2.0 }
+    var heightDivisor: Double { return 2.5 }
+    
+    // Optional
+    var interItemSpacing: Double? { return 1 }
+    var lineSpacing: Double? { return 1 }
+    var bottomInset: Double? { return 49 }
 }

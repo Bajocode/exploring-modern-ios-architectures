@@ -42,14 +42,34 @@ extension UIImageView {
     }
 }
 
+
+// MARK: - UICollectionViewFlowLayout
+
 extension UICollectionViewFlowLayout {
-    
-    class func itemSizeWithSingleSpacing(with spacing: CGFloat, bottomInset: CGFloat, widthDivisor: CGFloat, heightDivisor: CGFloat, bounds: CGRect) -> CGSize {
-        // Itemsize (if all spacing / insets are equal)
+    // Inits layout with equal spacing for all insets and itemspacings
+    convenience init(abstraction: CollectionViewConfigurable, bounds: CGRect) {
+        self.init()
+        // Define values
+        let spacing = CGFloat(abstraction.interItemSpacing ?? 0)
+        let bottomInset = CGFloat(abstraction.bottomInset ?? 0)
+        let widthDivisor = CGFloat(abstraction.widthDivisor)
+        let heightDivisor = CGFloat(abstraction.heightDivisor)
+        
+        // Calculate itemSize
         let fullWspace = (widthDivisor + 1) * spacing
         let fullHspace = (heightDivisor + 1) + spacing
         let width = (bounds.width - fullWspace) / widthDivisor
         let height = (bounds.height - fullHspace) / heightDivisor
-        return CGSize(width: width, height: height)
+        self.itemSize = CGSize(width: width, height: height)
+        
+        // Configure insets
+        sectionInset = UIEdgeInsets(
+            top: spacing,
+            left: spacing,
+            bottom: bottomInset,
+            right: spacing
+        )
+        minimumInteritemSpacing = spacing
+        minimumLineSpacing = spacing
     }
 }
