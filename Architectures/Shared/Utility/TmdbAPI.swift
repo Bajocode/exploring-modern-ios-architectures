@@ -18,7 +18,7 @@ struct TmdbAPI {
     
     private static let baseURLString = "https://api.themoviedb.org/3"
     private static let baseImageURLString = "https://image.tmdb.org/t/p"
-    static var apiKey: String? { // Return key if provided in plist
+    public static var apiKey: String? { // Return key if provided in plist
         guard
             let path = Bundle.main.path(forResource: "tmdbAPIKey", ofType: "plist"),
             let plistDict = NSDictionary(contentsOfFile: path),
@@ -33,12 +33,12 @@ struct TmdbAPI {
     // MARK: - Methods
     
     // Generate Tmdb specific image URLs
-    static func tmdbImageURL(forSize size: TmdbImageSize, path: String) -> URL {
+    public static func tmdbImageURL(forSize size: TmdbImageSize, path: String) -> URL {
         return URL(string: baseImageURLString + "/" + size.rawValue + "/" + path)!
     }
     
     // Local static JSON url constructor based on object type
-    static func localURL(withType type: ModelType) -> URL {
+    public static func localURL(withType type: ModelType) -> URL {
         switch type {
         case .movie:
             return localJSONURL(forFileName: "moviedata")
@@ -51,7 +51,7 @@ struct TmdbAPI {
     }
     
     // URL constructor implementation for Tmdb Servers based on object type
-    static func remoteURL(withType type: ModelType) -> URL {
+    public static func remoteURL(withType type: ModelType) -> URL {
         switch type {
         case .movie:
             return constructTmdbURL(forMethod: .nowPlayingMovies)
@@ -80,7 +80,7 @@ struct TmdbAPI {
 
 // MARK: - Tmdb related helper types
 
-enum TmdbImageSize: String {
+public enum TmdbImageSize: String {
     case full = "original"
     case thumb = "w300"
 }

@@ -28,7 +28,7 @@ final class DataManager {
     // MARK: - Methods
     
     // Fetch now playing movies and dispatch on main
-    func fetchNewTmdbObjects(withType type: ModelType, completion: @escaping (DataResult) -> Void) {
+    public func fetchNewTmdbObjects(withType type: ModelType, completion: @escaping (DataResult) -> Void) {
         if TmdbAPI.apiKey == nil {
             // No key provided, use local JSON
             var localData: Data?, localError: Error?

@@ -21,7 +21,7 @@ final class ImageStore {
     
     // MARK: - Methods
     
-    func setImage(_ image: UIImage, forKey key: String) {
+    public func setImage(_ image: UIImage, forKey key: String) {
         cache.setObject(image, forKey: key as NSString)
         // Store image to disk
         // Writing atomically prevents data corruption should your application crash during the write procedure. (stored in temp first)
@@ -31,7 +31,7 @@ final class ImageStore {
         }
     }
     
-    func image(forKey key: String) -> UIImage? {
+    public func image(forKey key: String) -> UIImage? {
         // Check if in local cache first
         if let  existingImage = cache.object(forKey: key as NSString) {
             print("Image from local cache")
@@ -48,7 +48,7 @@ final class ImageStore {
         return imageFromDisk
     }
     
-    func deleteImage(forKey key: String) {
+    public func deleteImage(forKey key: String) {
         // Remove from both cache and file system
         cache.removeObject(forKey: key as NSString)
         let url = imageURL(forKey: key)

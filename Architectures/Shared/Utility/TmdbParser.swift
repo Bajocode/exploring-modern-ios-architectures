@@ -14,7 +14,7 @@ import Foundation
 struct TmdbParser {
     
     // DataManager's access to the parsing utilities
-    static func parsedResult(withJSONData data: Data, type: ModelType) -> DataResult {
+    public static func parsedResult(withJSONData data: Data, type: ModelType) -> DataResult {
         do{
             // Serialize raw json into foundation json and retrieve movie array
             let jsonFoundationObject = try JSONSerialization.jsonObject(with: data, options: [])
