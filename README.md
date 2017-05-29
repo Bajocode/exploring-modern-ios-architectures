@@ -83,6 +83,8 @@ As I work through the architectures I will experiment with different setups whil
 <p align="middle">
     <img src="RepoMedia/MVP.png" alt="MVC" width="550"/>
 </p>
+
+###### Structure
 * **Model**
   * A raw representation of the data
   * Business logic
