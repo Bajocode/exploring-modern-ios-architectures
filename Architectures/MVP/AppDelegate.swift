@@ -26,8 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let movieResultsVC = ResultsViewController()
         movieResultsVC.presenter = MovieResultsPresenter(view: movieResultsVC)
         movieResultsVC.title = "Movies"
+        let actorResultsVC = ResultsViewController()
+        actorResultsVC.presenter = ActorResultsPresenter(view: actorResultsVC)
+        actorResultsVC.title = "Actors"
         
-        tabBarC.setViewControllers([movieResultsVC], animated: false)
+        tabBarC.setViewControllers([movieResultsVC, actorResultsVC], animated: false)
         
         // Configure style
         navC.navigationBar.barStyle = .black

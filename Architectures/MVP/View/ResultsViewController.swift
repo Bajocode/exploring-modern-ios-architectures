@@ -19,6 +19,8 @@ class ResultsViewController: UIViewController {
         cv.clipsToBounds = true
         let movieCellNib = UINib(nibName: "MovieCollectionViewCell", bundle: nil)
         cv.register(movieCellNib, forCellWithReuseIdentifier: "MovieCell")
+        let actorCellNib = UINib(nibName: "ActorCollectionViewCell", bundle: nil)
+        cv.register(actorCellNib, forCellWithReuseIdentifier: "ActorCell")
         cv.dataSource = self
         cv.delegate = self
         return cv
