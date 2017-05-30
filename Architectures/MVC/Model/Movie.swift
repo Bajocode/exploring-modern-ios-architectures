@@ -11,16 +11,17 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: Parsable {
     
     
     // MARK: - Properties
     
     let title: String
-    let posterPath: String
+    let thumbnailURL: URL
+    let fullURL: URL
     let movieID: Int
-    let releaseDate: Date
-    let averageRating: Double
+    let releaseDate: String
+    let averageRating: String
 }
 
 

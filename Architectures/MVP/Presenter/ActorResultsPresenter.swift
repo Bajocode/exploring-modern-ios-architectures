@@ -37,7 +37,7 @@ class ActorResultsPresenter: ResultsViewPresenter {
         let actor = actors[index]
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)
-        return PresentableInstance(name: actor.name, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, cornerRadius: 15.0)
+        return PresentableInstance(name: actor.name, thumbnailURL: thumbnailURL, fullSizeURL: fullSizeURL, cornerRadius: 10.0)
     }
     
     func presentNewObjects() {

@@ -57,7 +57,7 @@ extension UICollectionViewFlowLayout {
         
         // Calculate itemSize
         let fullWspace = (widthDivisor + 1) * spacing
-        let fullHspace = (heightDivisor + 1) + spacing
+        let fullHspace = (heightDivisor + 1) * spacing
         let width = (bounds.width - fullWspace) / widthDivisor
         let height = (bounds.height - fullHspace) / heightDivisor
         self.itemSize = CGSize(width: width, height: height)

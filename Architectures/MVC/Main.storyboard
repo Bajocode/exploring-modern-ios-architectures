@@ -7,13 +7,29 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movie Results View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="mMY-WV-PsW">
+            <objects>
+                <tabBarController id="mBV-Qq-2sI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Dyt-Os-tlV"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="tuH-BE-sO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKe-pw-gfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="105"/>
+        </scene>
+        <!--Results View Controller-->
         <scene sceneID="G1r-dA-XUA">
             <objects>
-                <viewController storyboardIdentifier="MovieResultsVC" id="rJ2-JV-m5f" customClass="MovieResultsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsVC" id="rJ2-JV-m5f" customClass="ResultsViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HcB-TK-exV"/>
                         <viewControllerLayoutGuide type="bottom" id="flF-1L-ujx"/>
@@ -86,11 +102,51 @@
                                             <constraint firstAttribute="trailing" secondItem="jlf-Wt-0GL" secondAttribute="trailing" id="oa6-1t-tFq"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="activityIndicator" destination="EsU-zg-OHi" id="C1k-WV-wuB"/>
-                                            <outlet property="ratingLabel" destination="6Ap-x2-riS" id="TZE-cV-Ldq"/>
-                                            <outlet property="thumbImageView" destination="jlf-Wt-0GL" id="cfk-lq-jNR"/>
-                                            <outlet property="titleLabel" destination="cY8-wR-xFw" id="ZCr-ee-FWx"/>
-                                            <segue destination="M2Q-PA-KO2" kind="show" identifier="ShowDetailVC" id="jcg-fy-aMU"/>
+                                            <outlet property="activityIndicator" destination="EsU-zg-OHi" id="G7s-bm-UPG"/>
+                                            <outlet property="ratingLabel" destination="6Ap-x2-riS" id="z1j-84-X6s"/>
+                                            <outlet property="thumbImageView" destination="jlf-Wt-0GL" id="4VP-uJ-ci0"/>
+                                            <outlet property="titleLabel" destination="cY8-wR-xFw" id="ohr-7m-ls0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActorCell" id="SyN-wM-zvs" customClass="ActorCollectionViewCell" customModule="MVC" customModuleProvider="target">
+                                        <rect key="frame" x="200" y="0.0" width="122" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="122" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-K7-EcL">
+                                                    <rect key="frame" x="51" y="92.5" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="5ia-RT-LpR">
+                                                    <rect key="frame" x="8" y="162" width="106" height="35"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FzT-ZK-ee5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="154"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="FzT-ZK-ee5" firstAttribute="height" secondItem="SyN-wM-zvs" secondAttribute="height" multiplier="0.75" id="CXe-c6-cLy"/>
+                                            <constraint firstItem="FzT-ZK-ee5" firstAttribute="top" secondItem="SyN-wM-zvs" secondAttribute="top" id="IDp-TV-g8U"/>
+                                            <constraint firstAttribute="trailing" secondItem="FzT-ZK-ee5" secondAttribute="trailing" id="NIq-aX-cS5"/>
+                                            <constraint firstItem="5ia-RT-LpR" firstAttribute="leading" secondItem="SyN-wM-zvs" secondAttribute="leading" constant="8" id="UnQ-bA-HAN"/>
+                                            <constraint firstAttribute="trailing" secondItem="5ia-RT-LpR" secondAttribute="trailing" constant="8" id="YIQ-pY-HRV"/>
+                                            <constraint firstItem="5ia-RT-LpR" firstAttribute="top" secondItem="FzT-ZK-ee5" secondAttribute="bottom" constant="8" id="auw-Q2-ToB"/>
+                                            <constraint firstAttribute="bottom" secondItem="5ia-RT-LpR" secondAttribute="bottom" constant="8" id="cTj-PU-RRs"/>
+                                            <constraint firstItem="NZY-K7-EcL" firstAttribute="centerY" secondItem="SyN-wM-zvs" secondAttribute="centerY" id="e2L-1S-1WJ"/>
+                                            <constraint firstItem="NZY-K7-EcL" firstAttribute="centerX" secondItem="SyN-wM-zvs" secondAttribute="centerX" id="zD3-wr-puH"/>
+                                            <constraint firstItem="FzT-ZK-ee5" firstAttribute="leading" secondItem="SyN-wM-zvs" secondAttribute="leading" id="zgS-Qp-lNr"/>
+                                        </constraints>
+                                        <size key="customSize" width="122" height="205"/>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="NZY-K7-EcL" id="lrp-aw-sdq"/>
+                                            <outlet property="nameLabel" destination="5ia-RT-LpR" id="uk9-AE-yB2"/>
+                                            <outlet property="thumbImageView" destination="FzT-ZK-ee5" id="S9t-Hu-egd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -106,17 +162,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="xA1-vl-0Of"/>
                     <connections>
-                        <outlet property="collectionView" destination="FUa-wQ-gZa" id="gW9-w9-7jm"/>
+                        <outlet property="collectionView" destination="FUa-wQ-gZa" id="VQ7-6L-eVm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJA-Tu-C7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.2" y="104.7976011994003"/>
+            <point key="canvasLocation" x="-543.20000000000005" y="784.85757121439292"/>
         </scene>
-        <!--Movie Detail View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tqf-RI-nst">
             <objects>
-                <viewController id="M2Q-PA-KO2" customClass="MovieDetailViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="M2Q-PA-KO2" customClass="DetailViewController" customModule="MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hhx-2c-VSn"/>
                         <viewControllerLayoutGuide type="bottom" id="VFv-NE-kGJ"/>
@@ -150,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsV-Rh-sLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839.2" y="104.7976011994003"/>
+            <point key="canvasLocation" x="241" y="785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fZf-za-aIz">
@@ -163,12 +219,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="rJ2-JV-m5f" kind="relationship" relationship="rootViewController" id="Tum-fb-FmF"/>
+                        <segue destination="mBV-Qq-2sI" kind="relationship" relationship="rootViewController" id="sVI-4k-nYD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wY-2Q-Hki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="105"/>
+            <point key="canvasLocation" x="-542" y="105"/>
         </scene>
     </scenes>
 </document>

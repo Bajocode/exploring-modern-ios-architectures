@@ -1,5 +1,5 @@
 //
-//  MovieCollectionViewCell.swift
+//  ActorCollectionViewCell.swift
 //  Architectures
 //
 //  Created by Fabijan Bajo on 30/05/2017.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
+class ActorCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     
     // MARK: - Properties
     
-    @IBOutlet fileprivate var titleLabel: UILabel!
-    @IBOutlet fileprivate var ratingLabel: UILabel!
+    @IBOutlet fileprivate var nameLabel: UILabel!
     @IBOutlet fileprivate var thumbImageView: UIImageView!
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
@@ -34,15 +33,16 @@ class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
     // MARK: - Methods
     
     func configure(with converted: Parsable) {
-        let movie = converted as! Movie
-        titleLabel.text = movie.title
-        ratingLabel.text = movie.averageRating
-        thumbImageView.downloadImage(from: movie.thumbnailURL) {
+        // COnfigure properties
+        let actor = converted as! Actor
+        nameLabel.text = actor.name
+        thumbImageView.downloadImage(from: actor.thumbURL) {
             if self.thumbImageView.image == nil {
                 self.activityIndicator.startAnimating()
             } else {
                 self.activityIndicator.stopAnimating()
             }
         }
+        thumbImageView.layer.cornerRadius = 10
     }
 }
