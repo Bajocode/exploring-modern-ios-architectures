@@ -76,10 +76,9 @@ As I work through the architectures I will experiment with different setups whil
 * **Binder**
   * A (reactive) databinding technology is key to the pattern. However, this simplistic app example achieves binding through callbacks.
 
-
-
 ###### ToDo
 * Add tests
+
 
 ## MVP
 <p align="middle">
@@ -98,8 +97,30 @@ As I work through the architectures I will experiment with different setups whil
   * Contains the logic to handle user interactions
   * Retrieves data from the Model and formats it for display in the View
 
+###### ToDo
+* Add tests
 
 ## VIPER
+<p align="middle">
+    <img src="RepoMedia/VIPER.png" alt="MVC" width="550"/>
+</p>
+
+##### Structure
+* **View**
+  * Displays what it is told to by the Presenter and relays user input back to the Presenter
+* **Interactor**
+  * Contains business logic as specified by a use case
+  * The work done in an Interactor should be independent of any UI
+* **Presenter**
+  * Contains View logic for preparing content for display (received from Interactor)
+  * Reacts to user inputs with data from Interactor
+* **Entity**
+  * Conceptual domain model, representing real state content
+  * Only manipulated by the Interactor
+* **Routing**
+  * Contains navigation logic for describing which screens are shown in which order
+  * Routing is shared between the Presenter and Wireframe
+  * Wireframe handles navigation transition animations
 
 ---
 #### References
@@ -107,3 +128,4 @@ As I work through the architectures I will experiment with different setups whil
 * [iOS Architecture Patterns (Medium)](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
 * [Protocols and MVVM in Swift to avoid repetition](https://sudo.isl.co/swift-mvvm-protocols/)
 * [Introduction to Protocol-Oriented MVVM](https://news.realm.io/news/doios-natasha-murashev-protocol-oriented-mvvm/)
+* [VIPER objc](https://www.objc.io/issues/13-architecture/viper/)
