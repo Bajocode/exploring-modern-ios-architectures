@@ -1,6 +1,6 @@
 # Exploring Modern iOS Architectures
 
-![Alamofire: Elegant Networking in Swift](RepoMedia/Header.png)
+![Screenshots of the app](RepoMedia/Header.png)
 
 #### Project
 In this project I'm structuring my knowledge about modern architectural patterns,
