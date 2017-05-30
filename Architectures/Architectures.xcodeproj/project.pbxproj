@@ -155,6 +155,7 @@
 		229692151EDDE1E700460CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229692181EDDE1E700460CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2296921A1EDDE1E700460CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229692291EDDE26700460CAD /* VIPER.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VIPER.playground; sourceTree = "<group>"; };
 		22B910471ED099D800760927 /* MVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B9104B1ED099D800760927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B910511ED09A2E00760927 /* MovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieTests.swift; path = Model/MovieTests.swift; sourceTree = "<group>"; };
@@ -381,6 +382,7 @@
 		2296920D1EDDE1E700460CAD /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				229692291EDDE26700460CAD /* VIPER.playground */,
 				2296920E1EDDE1E700460CAD /* AppDelegate.swift */,
 				229692151EDDE1E700460CAD /* Assets.xcassets */,
 				229692171EDDE1E700460CAD /* LaunchScreen.storyboard */,
