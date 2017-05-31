@@ -17,11 +17,15 @@ class ResultsPresenter: ResultsPresenterInterface, ResultsInteractorOutput {
     var interactor: ResultsInteractorInterface!
     
     
+    
     // MARK: - Methods
     
     // ResultsPresenterInterface
     func updateView() {
         interactor.fetchNewObjects()
+    }
+    func collectionConfiguration() -> CollectionViewConfigurable {
+        return interactor.createCollectionConfiguration()
     }
     
     // ResultsInteractorOutput

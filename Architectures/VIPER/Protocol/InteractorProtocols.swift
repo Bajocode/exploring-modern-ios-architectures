@@ -16,6 +16,7 @@ import Foundation
 // An interface for the Presenter to fetch & receive new model objects
 protocol ResultsInteractorInterface {
     func fetchNewObjects()
+    func createCollectionConfiguration() -> CollectionViewConfigurable
 }
 protocol ResultsInteractorOutput: class {
     func receive(presentableObjects: [Transportable])

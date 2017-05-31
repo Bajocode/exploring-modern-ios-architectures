@@ -10,4 +10,5 @@ import Foundation
 
 protocol ResultsPresenterInterface: class {
     func updateView()
+    func collectionConfiguration() -> CollectionViewConfigurable
 }
