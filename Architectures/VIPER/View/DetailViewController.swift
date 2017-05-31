@@ -45,13 +45,17 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .black
         view.addSubview(imageView)
         view.addSubview(activityIndicator)
-        // Image fetching
         activityIndicator.startAnimating()
+        
+        // Image fetching
         var imageURL: URL!
         switch presentableObject {
         case let moviePresentable as MovieResultsInteractor.PresentableInstance:
-            navigationItem.title = moviePresentable.title
+            tabBarController?.navigationItem.title = moviePresentable.title
             imageURL = moviePresentable.fullSizeURL
+        case let actorPresentable as ActorResultsInteractor.PresentableInstance:
+            tabBarController?.navigationItem.title = actorPresentable.name
+            imageURL = actorPresentable.fullSizeURL
         default: break
         }
         imageView.downloadImage(from: imageURL) {

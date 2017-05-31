@@ -34,5 +34,5 @@ class ResultsPresenter: ResultsPresenterInterface, ResultsInteractorOutput {
     // ResultsInteractorOutput
     func receive(presentableObjects: [Transportable]) {
         view.update(presentableObjects: presentableObjects)
-    }    
+    }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActorCell" id="Vn6-nu-jyt" customClass="ActorCollectionViewCell" customModule="VIPER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="241"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="241"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-St-hOY">
+                        <rect key="frame" x="52.5" y="110.5" width="20" height="20"/>
+                    </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="jgK-tN-yh7">
+                        <rect key="frame" x="8" y="189" width="109" height="44"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqF-TM-cCs">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="181"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="j0r-St-hOY" firstAttribute="centerY" secondItem="Vn6-nu-jyt" secondAttribute="centerY" id="CBp-69-200"/>
+                <constraint firstAttribute="trailing" secondItem="jgK-tN-yh7" secondAttribute="trailing" constant="8" id="TCL-NV-9Xa"/>
+                <constraint firstItem="vqF-TM-cCs" firstAttribute="top" secondItem="Vn6-nu-jyt" secondAttribute="top" id="XdX-f5-HKn"/>
+                <constraint firstItem="j0r-St-hOY" firstAttribute="centerX" secondItem="Vn6-nu-jyt" secondAttribute="centerX" id="Zpz-OP-WSq"/>
+                <constraint firstAttribute="bottom" secondItem="jgK-tN-yh7" secondAttribute="bottom" constant="8" id="aaC-Ru-qYf"/>
+                <constraint firstItem="vqF-TM-cCs" firstAttribute="leading" secondItem="Vn6-nu-jyt" secondAttribute="leading" id="hiK-xS-2ZI"/>
+                <constraint firstItem="jgK-tN-yh7" firstAttribute="leading" secondItem="Vn6-nu-jyt" secondAttribute="leading" constant="8" id="j1U-d7-n8m"/>
+                <constraint firstAttribute="trailing" secondItem="vqF-TM-cCs" secondAttribute="trailing" id="kBM-Ov-YmX"/>
+                <constraint firstItem="jgK-tN-yh7" firstAttribute="top" secondItem="vqF-TM-cCs" secondAttribute="bottom" constant="8" id="mfb-bL-0DP"/>
+                <constraint firstItem="vqF-TM-cCs" firstAttribute="height" secondItem="Vn6-nu-jyt" secondAttribute="height" multiplier="0.75" id="uSC-ze-blE"/>
+            </constraints>
+            <connections>
+                <outlet property="activityIndicator" destination="j0r-St-hOY" id="hGO-g8-EiU"/>
+                <outlet property="nameLabel" destination="jgK-tN-yh7" id="iN8-tQ-yVQ"/>
+                <outlet property="thumbImageView" destination="vqF-TM-cCs" id="8sk-nt-Tip"/>
+            </connections>
+            <point key="canvasLocation" x="72.5" y="54.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

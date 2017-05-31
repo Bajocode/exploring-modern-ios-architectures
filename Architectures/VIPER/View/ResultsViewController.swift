@@ -68,7 +68,7 @@ extension ResultsViewController: UICollectionViewDataSource {
         return presentableObjects.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: presenter.collectionConfiguration().cellID, for: indexPath)
         if let cellConfigurable = cell as? CellConfigurable {
             cellConfigurable.configure(with: presentableObjects[indexPath.row])
         }
