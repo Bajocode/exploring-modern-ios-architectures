@@ -89,7 +89,7 @@ extension ResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellID, for: indexPath)
         if let cellConfigurable = cell as? CellConfigurable {
-            // Subscript: viewModel[i] -> PresentableInstance<Parsable>
+            // Subscript: viewModel[i] -> PresentableInstance<Transportable>
             cellConfigurable.configure(with: viewModel[indexPath.row])
         }
         return cell

@@ -7,23 +7,23 @@ import UIKit
 
 // MARK: - Entity
 
-protocol Parsable {}
-struct Movie: Parsable {
+protocol Transportable {}
+struct Movie: Transportable {
     let title: String = ""
     let path: String = ""
 }
 
 
 // MARK: - Interactor
-protocol ResultsInteractorInput {
+protocol ResultsInteractorInterface {
     func fetchNewObjects()
 }
 protocol ResultsInteractorOutput: class {
-    func receive(presentableObjects: [Parsable])
+    func receive(presentableObjects: [Transportable])
 }
-class MovieResultsInteractor: ResultsInteractorInput {
+class MovieResultsInteractor: ResultsInteractorInterface {
     weak var output: ResultsInteractorOutput!
-    struct PresentableInstance: Parsable {
+    struct PresentableInstance: Transportable {
         let url: URL = URL(string: "")!
     }
     func fetchNewObjects() {
@@ -34,13 +34,13 @@ class MovieResultsInteractor: ResultsInteractorInput {
 
 
 // MARK: - Presenter
-protocol ResultsPresenterProtocol: class {
+protocol ResultsPresenterInterface: class {
     func updateView()
 }
-class ResultsPresenter: ResultsPresenterProtocol, ResultsInteractorOutput {
+class ResultsPresenter: ResultsPresenterInterface, ResultsInteractorOutput {
     // properties
     weak var view: ResultsViewProtocol!
-    var interactor: ResultsInteractorInput!
+    var interactor: ResultsInteractorInterface!
     
     
     // Presenter interface
@@ -49,7 +49,7 @@ class ResultsPresenter: ResultsPresenterProtocol, ResultsInteractorOutput {
     }
 
     // InteractorOutput
-    func receive(presentableObjects: [Parsable]) {
+    func receive(presentableObjects: [Transportable]) {
         view.update(presentableObjects: presentableObjects)
     }
 }
@@ -57,13 +57,13 @@ class ResultsPresenter: ResultsPresenterProtocol, ResultsInteractorOutput {
 
 // MARK: - View
 protocol ResultsViewProtocol: class {
-    func update(presentableObjects: [Parsable])
+    func update(presentableObjects: [Transportable])
 }
 class ResultsViewController: UIViewController, ResultsViewProtocol {
     // Properties
-    var presenter: ResultsPresenterProtocol!
+    var presenter: ResultsPresenterInterface!
     var collectionView: UICollectionView!
-    fileprivate var presentableObjects = [Parsable]()
+    fileprivate var presentableObjects = [Transportable]()
     
     // Lifecycle
     override func viewDidLoad() {
@@ -73,7 +73,7 @@ class ResultsViewController: UIViewController, ResultsViewProtocol {
     }
     
     // Methods
-    func update(presentableObjects: [Parsable]) {
+    func update(presentableObjects: [Transportable]) {
         self.presentableObjects = presentableObjects
     }
 }

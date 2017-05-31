@@ -63,7 +63,7 @@ extension ResultsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Instantiate and push detailVC
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
-        detailVC.parsable = resultsDataSource.modelObjects[indexPath.row]
+        detailVC.modelObject = resultsDataSource.modelObjects[indexPath.row]
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

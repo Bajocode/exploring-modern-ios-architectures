@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var parsable: Parsable!
+    var modelObject: Transportable!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
         // Determine url
         activityIndicator.startAnimating()
         var url: URL!
-        switch parsable {
+        switch modelObject {
         case let movie as Movie:
             navigationItem.title = movie.title
             url = movie.fullURL

@@ -19,7 +19,7 @@ class MovieViewModel: ViewModel {
     
     fileprivate var movies = [Movie]() { didSet { modelUpdate?() } }
     var count: Int { return movies.count }
-    struct PresentableInstance: Parsable {
+    struct PresentableInstance: Transportable {
         let title: String
         let thumbnailURL: URL
         let fullSizeURL: URL
@@ -69,8 +69,8 @@ class MovieViewModel: ViewModel {
     // MARK: - Helpers
     
     // Subscript: viewModel[i] -> PresentableInstance
-    subscript (index: Int) -> Parsable { return presentableInstance(from: movies[index]) }
-    func presentableInstance(from model: Parsable) -> Parsable {
+    subscript (index: Int) -> Transportable { return presentableInstance(from: movies[index]) }
+    func presentableInstance(from model: Transportable) -> Transportable {
         let movie = model as! Movie
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: movie.posterPath)

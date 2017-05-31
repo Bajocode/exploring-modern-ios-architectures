@@ -16,7 +16,7 @@ class ActorResultsPresenter: ResultsViewPresenter {
     unowned private let view: ResultsView
     private var actors = [Actor]()
     var objectsCount: Int { return actors.count }
-    struct PresentableInstance: Parsable {
+    struct PresentableInstance: Transportable {
         let name: String
         let thumbnailURL: URL
         let fullSizeURL: URL
@@ -33,7 +33,7 @@ class ActorResultsPresenter: ResultsViewPresenter {
     
     // MARK: - Methods
     
-    func presentableInstance(index: Int) -> Parsable {
+    func presentableInstance(index: Int) -> Transportable {
         let actor = actors[index]
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)

@@ -18,7 +18,7 @@ protocol ViewModel: class, CollectionViewConfigurable {
     
     // MARK: - Methods
     
-    subscript (index: Int) -> Parsable { get }
+    subscript (index: Int) -> Transportable { get }
     
     // Binds
     func bindViewReload(with modelUpdate: @escaping () -> Void)
@@ -29,6 +29,6 @@ protocol ViewModel: class, CollectionViewConfigurable {
     func showDetail(at indexPath: IndexPath)
     
     // Single presentable instance from raw model
-    func presentableInstance(from model: Parsable) -> Parsable
+    func presentableInstance(from model: Transportable) -> Transportable
 }
 

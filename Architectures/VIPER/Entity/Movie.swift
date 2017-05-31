@@ -2,26 +2,21 @@
 //  Movie.swift
 //  Architectures
 //
-//  Created by Fabijan Bajo on 17/05/2017.
+//  Created by Fabijan Bajo on 31/05/2017.
 //
 //
-/*
-    Task: represent a single Movie
-*/
 
 import Foundation
 
 struct Movie: Transportable {
     
-    
     // MARK: - Properties
     
     let title: String
-    let thumbnailURL: URL
-    let fullURL: URL
+    let posterPath: String
     let movieID: Int
     let releaseDate: String
-    let averageRating: String
+    let averageRating: Double
 }
 
 

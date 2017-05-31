@@ -16,7 +16,7 @@ class ActorViewModel: ViewModel {
     // Properties
     fileprivate var actors = [Actor]() { didSet { modelUpdate?() } }
     var count: Int { return actors.count }
-    struct PresentableInstance: Parsable {
+    struct PresentableInstance: Transportable {
         let name: String
         let thumbnailURL: URL
         let fullSizeURL: URL
@@ -60,8 +60,8 @@ class ActorViewModel: ViewModel {
     // MARK: - Helpers
     
     // Subscript: viewModel[i] -> PresentableInstance
-    subscript (index: Int) -> Parsable { return presentableInstance(from: actors[index]) }
-    func presentableInstance(from model: Parsable) -> Parsable {
+    subscript (index: Int) -> Transportable { return presentableInstance(from: actors[index]) }
+    func presentableInstance(from model: Transportable) -> Transportable {
         let actor = model as! Actor
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)

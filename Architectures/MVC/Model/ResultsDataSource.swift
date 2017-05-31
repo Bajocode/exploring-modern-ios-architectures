@@ -21,7 +21,7 @@ class ResultsDataSource: NSObject, UICollectionViewDataSource {
     
     // MARK: - Properties
     
-    var modelObjects = [Parsable]()
+    var modelObjects = [Transportable]()
     private var cellID: String!
     
     

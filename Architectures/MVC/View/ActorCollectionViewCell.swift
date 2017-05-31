@@ -32,9 +32,9 @@ class ActorCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     // MARK: - Methods
     
-    func configure(with converted: Parsable) {
+    func configure(with object: Transportable) {
         // COnfigure properties
-        let actor = converted as! Actor
+        let actor = object as! Actor
         nameLabel.text = actor.name
         thumbImageView.downloadImage(from: actor.thumbURL) {
             if self.thumbImageView.image == nil {

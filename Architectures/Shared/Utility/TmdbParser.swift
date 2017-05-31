@@ -30,9 +30,9 @@ struct TmdbParser {
     }
     
     // Caller of individual object parsers based on object type
-    private static func parsedObjects(withJSONArray array: [[String: Any]], type: ModelType) -> [Parsable] {
+    private static func parsedObjects(withJSONArray array: [[String: Any]], type: ModelType) -> [Transportable] {
         // Parse individual movies
-        var parsedObjects = [Parsable]()
+        var parsedObjects = [Transportable]()
         for jsonObject in array {
             switch type {
             case .movie:

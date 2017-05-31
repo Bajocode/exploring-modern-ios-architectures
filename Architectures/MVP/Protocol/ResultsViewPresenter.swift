@@ -22,7 +22,7 @@ protocol ResultsViewPresenter: CollectionViewConfigurable {
     
     // MARK: - Methods
     
-    func presentableInstance(index: Int) -> Parsable
+    func presentableInstance(index: Int) -> Transportable
     func presentNewObjects()
     func presentDetail(for indexPath: IndexPath)
 }

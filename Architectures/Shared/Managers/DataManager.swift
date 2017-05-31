@@ -67,6 +67,6 @@ enum ModelType {
     case actor
 }
 enum DataResult {
-    case success([Parsable])
+    case success([Transportable])
     case failure(Error)
 }

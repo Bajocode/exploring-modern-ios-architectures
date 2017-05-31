@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Actor: Parsable {
+struct Actor: Transportable {
     
     // MARK: - Properties
     

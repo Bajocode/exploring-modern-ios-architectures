@@ -32,8 +32,8 @@ class ActorCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     // MARK: - Methods
     
-    func configure(with converted: Parsable) {
-        let instance = converted as! ActorViewModel.PresentableInstance
+    func configure(with object: Transportable) {
+        let instance = object as! ActorViewModel.PresentableInstance
         thumbImageView.layer.cornerRadius = CGFloat(instance.cornerRadius)
         nameLabel.text = instance.name
         thumbImageView.downloadImage(from: instance.thumbnailURL) {

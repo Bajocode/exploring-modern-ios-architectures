@@ -33,8 +33,8 @@ class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     // MARK: - Methods
     
-    func configure(with converted: Parsable) {
-        let movie = converted as! Movie
+    func configure(with object: Transportable) {
+        let movie = object as! Movie
         titleLabel.text = movie.title
         ratingLabel.text = movie.averageRating
         thumbImageView.downloadImage(from: movie.thumbnailURL) {
