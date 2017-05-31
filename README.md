@@ -105,7 +105,7 @@ As I work through the architectures I will experiment with different setups whil
     <img src="RepoMedia/VIPER.png" alt="MVC" width="550"/>
 </p>
 
-##### Structure
+###### Structure
 * **View**
   * Displays what it is told to by the Presenter and relays user input back to the Presenter
 * **Interactor**
@@ -121,6 +121,9 @@ As I work through the architectures I will experiment with different setups whil
   * Contains navigation logic for describing which screens are shown in which order
   * Routing is shared between the Presenter and Wireframe
   * Wireframe handles navigation transition animations
+
+###### ToDo
+* Refactor initial implementation
 
 ---
 #### References
