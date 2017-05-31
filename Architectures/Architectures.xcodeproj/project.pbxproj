@@ -46,6 +46,8 @@
 		227757EC1EDECE9000DA08DE /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227757EA1EDECE9000DA08DE /* MovieCollectionViewCell.xib */; };
 		227757EE1EDED5D200DA08DE /* ResultsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757ED1EDED5D200DA08DE /* ResultsWireFrame.swift */; };
 		227757F01EDED98A00DA08DE /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757EF1EDED98A00DA08DE /* Actor.swift */; };
+		227757F21EDEE30E00DA08DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757F11EDEE30E00DA08DE /* DetailViewController.swift */; };
+		227757F41EDEEC0200DA08DE /* RouterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757F31EDEEC0200DA08DE /* RouterProtocols.swift */; };
 		227C56E41ED73B48007E98A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C56E31ED73B48007E98A5 /* AppDelegate.swift */; };
 		227C56EB1ED73B48007E98A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C56EA1ED73B48007E98A5 /* Assets.xcassets */; };
 		227C56EE1ED73B48007E98A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C56EC1ED73B48007E98A5 /* LaunchScreen.storyboard */; };
@@ -149,6 +151,8 @@
 		227757EA1EDECE9000DA08DE /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MovieCollectionViewCell.xib; path = View/MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		227757ED1EDED5D200DA08DE /* ResultsWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsWireFrame.swift; path = Router/ResultsWireFrame.swift; sourceTree = "<group>"; };
 		227757EF1EDED98A00DA08DE /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		227757F11EDEE30E00DA08DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = View/DetailViewController.swift; sourceTree = "<group>"; };
+		227757F31EDEEC0200DA08DE /* RouterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocols.swift; path = Router/RouterProtocols.swift; sourceTree = "<group>"; };
 		227C56E11ED73B48007E98A5 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227C56E31ED73B48007E98A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227C56EA1ED73B48007E98A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		227757CD1EDEBE1C00DA08DE /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				227757F31EDEEC0200DA08DE /* RouterProtocols.swift */,
 				227757ED1EDED5D200DA08DE /* ResultsWireFrame.swift */,
 			);
 			name = Router;
@@ -319,6 +324,7 @@
 				227757E71EDECC0000DA08DE /* ResultsViewController.swift */,
 				227757E91EDECE9000DA08DE /* MovieCollectionViewCell.swift */,
 				227757EA1EDECE9000DA08DE /* MovieCollectionViewCell.xib */,
+				227757F11EDEE30E00DA08DE /* DetailViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -877,6 +883,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227757F41EDEEC0200DA08DE /* RouterProtocols.swift in Sources */,
 				227757EB1EDECE9000DA08DE /* MovieCollectionViewCell.swift in Sources */,
 				2296921E1EDDE22500460CAD /* CollectionViewConfigurable.swift in Sources */,
 				229692241EDDE22500460CAD /* DataManager.swift in Sources */,
@@ -884,6 +891,7 @@
 				227757DB1EDEC0C900DA08DE /* MovieResultsInteractor.swift in Sources */,
 				227757DD1EDEC2A000DA08DE /* InteractorProtocols.swift in Sources */,
 				227757F01EDED98A00DA08DE /* Actor.swift in Sources */,
+				227757F21EDEE30E00DA08DE /* DetailViewController.swift in Sources */,
 				2296921F1EDDE22500460CAD /* CellConfigurable.swift in Sources */,
 				227757D41EDEBEE100DA08DE /* Movie.swift in Sources */,
 				227757E81EDECC0000DA08DE /* ResultsViewController.swift in Sources */,

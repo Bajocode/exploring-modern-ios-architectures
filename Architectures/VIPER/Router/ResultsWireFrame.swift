@@ -8,16 +8,17 @@
 
 import UIKit
 
-class ResultsWireFrame {
+class ResultsWireFrame: ResultsWireFrameInterface {
     
-    class func constructStartingPoint() -> UIViewController {
-
+    // Wire up and construct project's root view (UITabbarController)
+    class func constructResultsModule() -> UIViewController {
         // Allocate resultVC's
         let movieResultsVC = ResultsViewController()
         let moviePresenter = ResultsPresenter()
         let movieInteractor = MovieResultsInteractor()
         moviePresenter.interactor = movieInteractor
         moviePresenter.view = movieResultsVC
+        moviePresenter.wireFrame = ResultsWireFrame()
         movieInteractor.output = moviePresenter
         movieResultsVC.presenter = moviePresenter
         movieResultsVC.title = "Movies"
@@ -30,5 +31,11 @@ class ResultsWireFrame {
         tabBarC.tabBar.barStyle = .black
         
         return tabBarC
+    }
+    
+    // Show detailview from presenter
+    func showDetail(from view: ResultsViewInterface, forPresentable object: Transportable) {
+        let detailVC = DetailViewController()
+        detailVC.presentableObject = object
     }
 }

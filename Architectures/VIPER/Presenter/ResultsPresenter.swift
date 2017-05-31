@@ -15,7 +15,7 @@ class ResultsPresenter: ResultsPresenterInterface, ResultsInteractorOutput {
     
     weak var view: ResultsViewInterface!
     var interactor: ResultsInteractorInterface!
-    
+    var wireFrame: ResultsWireFrameInterface!
     
     
     // MARK: - Methods
@@ -27,9 +27,12 @@ class ResultsPresenter: ResultsPresenterInterface, ResultsInteractorOutput {
     func collectionConfiguration() -> CollectionViewConfigurable {
         return interactor.createCollectionConfiguration()
     }
+    func showDetail(forPresentable object: Transportable) {
+        wireFrame.showDetail(from: view, forPresentable: object)
+    }
     
     // ResultsInteractorOutput
     func receive(presentableObjects: [Transportable]) {
         view.update(presentableObjects: presentableObjects)
-    }
+    }    
 }

@@ -23,6 +23,7 @@ class ResultsViewController: UIViewController, ResultsViewInterface {
         let actorCellNib = UINib(nibName: "ActorCollectionViewCell", bundle: nil)
         cv.register(actorCellNib, forCellWithReuseIdentifier: "ActorCell")
         cv.dataSource = self
+        cv.delegate = self
         return cv
     }()
     
@@ -47,6 +48,15 @@ class ResultsViewController: UIViewController, ResultsViewInterface {
     
     private func configure() {
         self.view.addSubview(collectionView)
+    }
+}
+
+
+// MARK: - CollectionView Delegate
+
+extension ResultsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.showDetail(forPresentable: presentableObjects[indexPath.row])
     }
 }
 

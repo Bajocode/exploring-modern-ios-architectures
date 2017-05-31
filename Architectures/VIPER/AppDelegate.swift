@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Set window's root and make visible
-        window!.rootViewController = ResultsWireFrame.constructStartingPoint()
+        window!.rootViewController = ResultsWireFrame.constructResultsModule()
         window!.makeKeyAndVisible()
         
         return true

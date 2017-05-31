@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  Architectures
 //
-//  Created by Fabijan Bajo on 29/05/2017.
+//  Created by Fabijan Bajo on 31/05/2017.
 //
 //
 
@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var imageURL: URL!
+    var presentableObject: Transportable!
     
     // Use lazy to access self.view when instantiated
     private lazy var activityIndicator: UIActivityIndicatorView = {
@@ -47,10 +47,15 @@ class DetailViewController: UIViewController {
         view.addSubview(activityIndicator)
         // Image fetching
         activityIndicator.startAnimating()
+        var imageURL: URL!
+        switch presentableObject {
+        case let moviePresentable as MovieResultsInteractor.PresentableInstance:
+            navigationItem.title = moviePresentable.title
+            imageURL = moviePresentable.fullSizeURL
+        default: break
+        }
         imageView.downloadImage(from: imageURL) {
             self.activityIndicator.stopAnimating()
         }
     }
 }
-
-

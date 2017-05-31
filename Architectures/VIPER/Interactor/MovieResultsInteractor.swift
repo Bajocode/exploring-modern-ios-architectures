@@ -59,6 +59,9 @@ class MovieResultsInteractor: ResultsInteractorInterface {
     }
 }
 
+
+// MARK: - CollectionViewConfigurable
+
 extension MovieResultsInteractor: CollectionViewConfigurable {
     // Required
     var cellID: String { return "MovieCell" }
