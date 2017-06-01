@@ -13,10 +13,10 @@ class MovieCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     // MARK: - Properties
     
-    @IBOutlet fileprivate var titleLabel: UILabel!
-    @IBOutlet fileprivate var ratingLabel: UILabel!
-    @IBOutlet fileprivate var thumbImageView: UIImageView!
-    @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var thumbImageView: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     
     // MARK: - Lifecycle

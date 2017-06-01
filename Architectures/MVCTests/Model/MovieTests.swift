@@ -27,39 +27,28 @@ class MovieTests: XCTestCase {
     
     // MARK: - Initialization
     
-    func test_Init_WhenGivenTitle_SetsTitle() {
-        let movie = Movie(title: "Foo", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 0.0)
+    func test_Init_WhenGivenValues_SetsValues() {
+        let movie = Movie(title: "Foo", thumbnailURL: URL(string: "Bar")!, fullURL: URL(string: "Baz")!, movieID: 1, releaseDate: "Qux", averageRating: "Quux")
+        
         XCTAssertEqual(movie.title, "Foo")
+        XCTAssertEqual(movie.thumbnailURL, URL(string: "Bar")!)
+        XCTAssertEqual(movie.fullURL, URL(string: "Baz")!)
+        XCTAssertEqual(movie.releaseDate, "Qux")
+        XCTAssertEqual(movie.averageRating, "Quux")
     }
-    func test_Init_WhenGivenPosterPath_SetsPosterPath() {
-        let movie = Movie(title: "", posterPath: "Foo", movieID: 0, releaseDate: Date(), averageRating: 0.0)
-        XCTAssertEqual(movie.posterPath, "Foo")
-    }
-    func test_Init_WhenGivenID_SetsID() {
-        let movie = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
-        XCTAssertEqual(movie.movieID, 1)
-    }
-    func test_Init_WhenGivenReleaseDate_SetsReleaseDate() {
-        let dateNow = Date()
-        let movie = Movie(title: "", posterPath: "", movieID: 0, releaseDate: dateNow, averageRating: 0.0)
-        XCTAssertEqual(movie.releaseDate, dateNow)
-    }
-    func test_Init_WhenGivenRating_SetsRating() {
-        let movie = Movie(title: "", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 1.0)
-        XCTAssertEqual(movie.averageRating, 1.0)
-    }
+    
     
     
     // MARK: - Equatable
     
     func test_EqualMovies_AreEqual_WithSameIDs() {
-        let first = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
-        let second = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
+        let first = Movie(title: "", thumbnailURL: URL(string: "Foo")!, fullURL: URL(string: "Foo")!, movieID: 1, releaseDate: "", averageRating: "")
+        let second = Movie(title: "", thumbnailURL: URL(string: "Foo")!, fullURL: URL(string: "Foo")!, movieID: 1, releaseDate: "", averageRating: "")
         XCTAssertEqual(first, second)
     }
     func test_EqualMovies_AreUnEqual_WithDIfferentIDs() {
-        let first = Movie(title: "", posterPath: "", movieID: 1, releaseDate: Date(), averageRating: 0.0)
-        let second = Movie(title: "", posterPath: "", movieID: 0, releaseDate: Date(), averageRating: 0.0)
+        let first = Movie(title: "", thumbnailURL: URL(string: "Foo")!, fullURL: URL(string: "Foo")!, movieID: 1, releaseDate: "", averageRating: "")
+        let second = Movie(title: "", thumbnailURL: URL(string: "Foo")!, fullURL: URL(string: "Foo")!, movieID: 0, releaseDate: "", averageRating: "")
         XCTAssertNotEqual(first, second)
     }
 }
