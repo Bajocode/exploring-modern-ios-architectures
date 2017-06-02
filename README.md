@@ -33,7 +33,7 @@ As I work through the architectures I will experiment with different setups whil
 
 <!-- MVC BEGIN -->
 
-## MVC-S
+## MVC
 <p align = "middle">
     <img src="RepoMedia/MVC.png" alt="MVC"  width="350"/>
 </p>
@@ -50,10 +50,6 @@ As I work through the architectures I will experiment with different setups whil
   * Delegate and datasource of almost everything
   * Dispatching and canceling network requests
   * Manages View lifecycle (tightly coupled)
-
-
-###### ToDo
-* Add networking tests
 
 
 <!-- MVVM BEGIN -->
@@ -76,9 +72,6 @@ As I work through the architectures I will experiment with different setups whil
 * **Binder**
   * A (reactive) databinding technology is key to the pattern. However, this simplistic app example achieves binding through callbacks.
 
-###### ToDo
-* Add tests
-
 
 ## MVP
 <p align="middle">
@@ -97,8 +90,7 @@ As I work through the architectures I will experiment with different setups whil
   * Contains the logic to handle user interactions
   * Retrieves data from the Model and formats it for display in the View
 
-###### ToDo
-* Add tests
+
 
 ## VIPER
 <p align="middle">
@@ -122,8 +114,7 @@ As I work through the architectures I will experiment with different setups whil
   * Routing is shared between the Presenter and Wireframe
   * Wireframe handles navigation transition animations
 
-###### ToDo
-* Refactor initial implementation
+
 
 ---
 #### References
