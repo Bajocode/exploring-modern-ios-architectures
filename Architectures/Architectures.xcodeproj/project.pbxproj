@@ -110,6 +110,7 @@
 		22CC754B1EDA1BA60058E844 /* ActorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC75491EDA1BA60058E844 /* ActorCollectionViewCell.xib */; };
 		22E457A01EE19E95007C6610 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4579F1EE19E95007C6610 /* MovieTests.swift */; };
 		22E457B01EE1A065007C6610 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E457AF1EE1A065007C6610 /* MovieTests.swift */; };
+		22E457C11EE1A113007C6610 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E457C01EE1A113007C6610 /* ModelTests.swift */; };
 		22EE56F41ECC74BA00790E71 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE56F31ECC74BA00790E71 /* Movie.swift */; };
 		22EE56FE1ECC7D5C00790E71 /* tmdbAPIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */; };
 		22EE57001ECC7E3800790E71 /* moviedata.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EE56FF1ECC7E3800790E71 /* moviedata.json */; };
@@ -136,6 +137,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 22BA1E941EDB580B000E93CF;
 			remoteInfo = MVP;
+		};
+		22E457BB1EE1A0FB007C6610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229206201ECC6E040090E78C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2296920B1EDDE1E700460CAD;
+			remoteInfo = VIPER;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -226,6 +234,9 @@
 		22E457A51EE1A03A007C6610 /* MVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E457A91EE1A03A007C6610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E457AF1EE1A065007C6610 /* MovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieTests.swift; path = Model/MovieTests.swift; sourceTree = "<group>"; };
+		22E457B61EE1A0FB007C6610 /* VIPERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIPERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E457BA1EE1A0FB007C6610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E457C01EE1A113007C6610 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelTests.swift; path = Model/ModelTests.swift; sourceTree = "<group>"; };
 		22EE56F31ECC74BA00790E71 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Model/Movie.swift; sourceTree = "<group>"; };
 		22EE56FD1ECC7D5C00790E71 /* tmdbAPIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = tmdbAPIKey.plist; path = Shared/tmdbAPIKey.plist; sourceTree = "<group>"; };
 		22EE56FF1ECC7E3800790E71 /* moviedata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = moviedata.json; path = Shared/moviedata.json; sourceTree = "<group>"; };
@@ -275,6 +286,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		22E457A21EE1A03A007C6610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E457B31EE1A0FB007C6610 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,6 +500,7 @@
 				22B910481ED099D800760927 /* MVCTests */,
 				22E457941EE19CE3007C6610 /* MVVMTests */,
 				22E457A61EE1A03A007C6610 /* MVPTests */,
+				22E457B71EE1A0FB007C6610 /* VIPERTests */,
 				2292062B1ECC6E210090E78C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -496,6 +515,7 @@
 				2296920C1EDDE1E700460CAD /* VIPER.app */,
 				22E457931EE19CE3007C6610 /* MVVMTests.xctest */,
 				22E457A51EE1A03A007C6610 /* MVPTests.xctest */,
+				22E457B61EE1A0FB007C6610 /* VIPERTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -670,6 +690,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		22E457B71EE1A0FB007C6610 /* VIPERTests */ = {
+			isa = PBXGroup;
+			children = (
+				22E457BA1EE1A0FB007C6610 /* Info.plist */,
+				22E457C21EE1A11C007C6610 /* Model */,
+			);
+			path = VIPERTests;
+			sourceTree = "<group>";
+		};
+		22E457C21EE1A11C007C6610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22E457C01EE1A113007C6610 /* ModelTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		22EE56EB1ECC6F0000790E71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -835,6 +872,24 @@
 			productReference = 22E457A51EE1A03A007C6610 /* MVPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		22E457B51EE1A0FB007C6610 /* VIPERTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E457BD1EE1A0FB007C6610 /* Build configuration list for PBXNativeTarget "VIPERTests" */;
+			buildPhases = (
+				22E457B21EE1A0FB007C6610 /* Sources */,
+				22E457B31EE1A0FB007C6610 /* Frameworks */,
+				22E457B41EE1A0FB007C6610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22E457BC1EE1A0FB007C6610 /* PBXTargetDependency */,
+			);
+			name = VIPERTests;
+			productName = VIPERTests;
+			productReference = 22E457B61EE1A0FB007C6610 /* VIPERTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -885,6 +940,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 22BA1E941EDB580B000E93CF;
 					};
+					22E457B51EE1A0FB007C6610 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = UZAEKA4CYL;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2296920B1EDDE1E700460CAD;
+					};
 				};
 			};
 			buildConfigurationList = 229206231ECC6E040090E78C /* Build configuration list for PBXProject "Architectures" */;
@@ -907,6 +968,7 @@
 				2296920B1EDDE1E700460CAD /* VIPER */,
 				22E457921EE19CE3007C6610 /* MVVMTests */,
 				22E457A41EE1A03A007C6610 /* MVPTests */,
+				22E457B51EE1A0FB007C6610 /* VIPERTests */,
 			);
 		};
 /* End PBXProject section */
@@ -982,6 +1044,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		22E457A31EE1A03A007C6610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E457B41EE1A0FB007C6610 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1119,6 +1188,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22E457B21EE1A0FB007C6610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E457C11EE1A113007C6610 /* ModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1136,6 +1213,11 @@
 			isa = PBXTargetDependency;
 			target = 22BA1E941EDB580B000E93CF /* MVP */;
 			targetProxy = 22E457AA1EE1A03A007C6610 /* PBXContainerItemProxy */;
+		};
+		22E457BC1EE1A0FB007C6610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2296920B1EDDE1E700460CAD /* VIPER */;
+			targetProxy = 22E457BB1EE1A0FB007C6610 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1941,6 +2023,114 @@
 			};
 			name = Release;
 		};
+		22E457BE1EE1A0FB007C6610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UZAEKA4CYL;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = VIPERTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = FabijanBajo.VIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPER.app/VIPER";
+			};
+			name = Debug;
+		};
+		22E457BF1EE1A0FB007C6610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UZAEKA4CYL;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = VIPERTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = FabijanBajo.VIPERTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIPER.app/VIPER";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2011,6 +2201,14 @@
 			buildConfigurations = (
 				22E457AD1EE1A03A007C6610 /* Debug */,
 				22E457AE1EE1A03A007C6610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22E457BD1EE1A0FB007C6610 /* Build configuration list for PBXNativeTarget "VIPERTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E457BE1EE1A0FB007C6610 /* Debug */,
+				22E457BF1EE1A0FB007C6610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
