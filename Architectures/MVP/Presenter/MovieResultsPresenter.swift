@@ -35,6 +35,11 @@ class MovieResultsPresenter: ResultsViewPresenter {
     required init(view: ResultsView) {
         self.view = view
     }
+    // Testing purposes
+    convenience init(view: ResultsView, testableMovies: [Movie]) {
+        self.init(view: view)
+        movies = testableMovies
+    }
     
     
     // MARK: - Methods

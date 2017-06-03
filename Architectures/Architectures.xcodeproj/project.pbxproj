@@ -34,6 +34,7 @@
 		224A4C531EDD795300845116 /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22811E721ED742530005E60A /* TmdbAPI.swift */; };
 		224A4C551EDD7B1A00845116 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A4C541EDD7B1A00845116 /* Actor.swift */; };
 		224A4C571EDD7F7700845116 /* ActorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A4C561EDD7F7700845116 /* ActorCollectionViewCell.swift */; };
+		226E6FA01EE322C800251BF7 /* MoviePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E6F9F1EE322C800251BF7 /* MoviePresenterTests.swift */; };
 		227757D41EDEBEE100DA08DE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757D31EDEBEE100DA08DE /* Movie.swift */; };
 		227757DB1EDEC0C900DA08DE /* MovieResultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757DA1EDEC0C900DA08DE /* MovieResultsInteractor.swift */; };
 		227757DD1EDEC2A000DA08DE /* InteractorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227757DC1EDEC2A000DA08DE /* InteractorProtocols.swift */; };
@@ -165,6 +166,7 @@
 		224A4C511EDD793900845116 /* TmdbParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TmdbParser.swift; path = Model/TmdbParser.swift; sourceTree = "<group>"; };
 		224A4C541EDD7B1A00845116 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Actor.swift; path = Model/Actor.swift; sourceTree = "<group>"; };
 		224A4C561EDD7F7700845116 /* ActorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActorCollectionViewCell.swift; path = View/ActorCollectionViewCell.swift; sourceTree = "<group>"; };
+		226E6F9F1EE322C800251BF7 /* MoviePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePresenterTests.swift; path = Presenter/MoviePresenterTests.swift; sourceTree = "<group>"; };
 		227757D31EDEBEE100DA08DE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Entity/Movie.swift; sourceTree = "<group>"; };
 		227757DA1EDEC0C900DA08DE /* MovieResultsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieResultsInteractor.swift; path = Interactor/MovieResultsInteractor.swift; sourceTree = "<group>"; };
 		227757DC1EDEC2A000DA08DE /* InteractorProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InteractorProtocols.swift; path = Protocol/InteractorProtocols.swift; sourceTree = "<group>"; };
@@ -321,6 +323,14 @@
 				22B910511ED09A2E00760927 /* MovieTests.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		226E6FA11EE322CC00251BF7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				226E6F9F1EE322C800251BF7 /* MoviePresenterTests.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 		2273CC5D1EDB036C0020B638 /* Assets */ = {
@@ -681,6 +691,7 @@
 			children = (
 				22E457A91EE1A03A007C6610 /* Info.plist */,
 				22E457B11EE1A08B007C6610 /* Model */,
+				226E6FA11EE322CC00251BF7 /* Presenter */,
 			);
 			path = MVPTests;
 			sourceTree = "<group>";
@@ -1189,6 +1200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E457B01EE1A065007C6610 /* MovieTests.swift in Sources */,
+				226E6FA01EE322C800251BF7 /* MoviePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
