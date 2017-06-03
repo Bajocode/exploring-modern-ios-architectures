@@ -42,7 +42,7 @@ class ActorResultsInteractor: ResultsInteractorInterface {
     }
     
     // Convert plain model object to presentable abstractions
-    private func presentableInstance(object: Transportable) -> Transportable {
+    func presentableInstance(object: Transportable) -> Transportable {
         let actor = object as! Actor
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: actor.profilePath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: actor.profilePath)

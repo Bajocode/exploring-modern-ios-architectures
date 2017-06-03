@@ -48,7 +48,7 @@ class MovieResultsInteractor: ResultsInteractorInterface {
     }
     
     // Convert plain model object to presentable abstractions
-    private func presentableInstance(object: Transportable) -> Transportable {
+    func presentableInstance(object: Transportable) -> Transportable {
         let movie = object as! Movie
         let thumbnailURL = TmdbAPI.tmdbImageURL(forSize: .thumb, path: movie.posterPath)
         let fullSizeURL = TmdbAPI.tmdbImageURL(forSize: .full, path: movie.posterPath)

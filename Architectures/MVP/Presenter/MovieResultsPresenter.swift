@@ -35,7 +35,7 @@ class MovieResultsPresenter: ResultsViewPresenter {
     required init(view: ResultsView) {
         self.view = view
     }
-    // Testing purposes
+    // Cannot Mock because of movies private access control
     convenience init(view: ResultsView, testableMovies: [Movie]) {
         self.init(view: view)
         movies = testableMovies

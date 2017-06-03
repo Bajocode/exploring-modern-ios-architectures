@@ -17,6 +17,7 @@ import Foundation
 protocol ResultsInteractorInterface {
     func fetchNewObjects()
     func createCollectionConfiguration() -> CollectionViewConfigurable
+    func presentableInstance(object: Transportable) -> Transportable
 }
 protocol ResultsInteractorOutput: class {
     func receive(presentableObjects: [Transportable])
