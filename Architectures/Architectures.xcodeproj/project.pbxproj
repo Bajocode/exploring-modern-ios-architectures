@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22032DB91EE30EDC00736D36 /* MovieViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22032DB81EE30EDC00736D36 /* MovieViewModelTests.swift */; };
 		220973871EDC2CCB00F3CB20 /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220973851EDC2CA800F3CB20 /* SharedExtensions.swift */; };
 		220973881EDC2CCC00F3CB20 /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220973851EDC2CA800F3CB20 /* SharedExtensions.swift */; };
 		2209738A1EDC33D700F3CB20 /* CollectionViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22824BD41ED8A363005C759E /* CollectionViewConfigurable.swift */; };
@@ -148,6 +149,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22032DB81EE30EDC00736D36 /* MovieViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieViewModelTests.swift; path = ViewModel/MovieViewModelTests.swift; sourceTree = "<group>"; };
 		220973851EDC2CA800F3CB20 /* SharedExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExtensions.swift; sourceTree = "<group>"; };
 		2209738F1EDC38F600F3CB20 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsViewController.swift; path = View/ResultsViewController.swift; sourceTree = "<group>"; };
 		220973911EDC3A2C00F3CB20 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Actor.swift; path = Model/Actor.swift; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 		22E4579E1EE19D12007C6610 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				22032DB81EE30EDC00736D36 /* MovieViewModelTests.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1177,6 +1180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E457A01EE19E95007C6610 /* MovieTests.swift in Sources */,
+				22032DB91EE30EDC00736D36 /* MovieViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2195,6 +2199,7 @@
 				22E4579C1EE19CE3007C6610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E457AC1EE1A03A007C6610 /* Build configuration list for PBXNativeTarget "MVPTests" */ = {
 			isa = XCConfigurationList;
@@ -2203,6 +2208,7 @@
 				22E457AE1EE1A03A007C6610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E457BD1EE1A0FB007C6610 /* Build configuration list for PBXNativeTarget "VIPERTests" */ = {
 			isa = XCConfigurationList;
@@ -2211,6 +2217,7 @@
 				22E457BF1EE1A0FB007C6610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
