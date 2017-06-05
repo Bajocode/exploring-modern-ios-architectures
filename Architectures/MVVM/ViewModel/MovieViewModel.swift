@@ -34,25 +34,27 @@ class MovieViewModel: ViewModel {
     
     
     // MARK: - Binds
+
     
     typealias modelUpdateClosure = () -> Void
     typealias showDetailClosure = (URL, String) -> Void
     
     // Bind model updates and collectionview reload
     private var modelUpdate: modelUpdateClosure?
-    func bindViewReload(with modelUpdate: @escaping modelUpdateClosure) {
+    func bindViewReload(with modelUpdate: @escaping () -> Void) {
         self.modelUpdate = modelUpdate
     }
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .movie) { (result) in
             switch result {
-            case let .success(parsables):
-                self.movies = parsables as! [Movie]
+            case let .success(transportables):
+                self.movies = transportables as! [Movie]
             case let .failure(error):
                 print(error)
             }
         }
     }
+
     
     // Bind collectionviewDidTap and detailVC presentation
     private var showDetail: showDetailClosure?

@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     
     
     // MARK: - Properties
+   
     
     var imageURL: URL!
     

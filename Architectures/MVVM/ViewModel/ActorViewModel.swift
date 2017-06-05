@@ -37,8 +37,8 @@ class ActorViewModel: ViewModel {
     func fetchNewModelObjects() {
         DataManager.shared.fetchNewTmdbObjects(withType: .actor) { (result) in
             switch result {
-            case let .success(parsables):
-                self.actors = parsables as! [Actor]
+            case let .success(transportables):
+                self.actors = transportables as! [Actor]
             case let .failure(error):
                 print(error)
             }
