@@ -56,9 +56,9 @@ class MovieViewModel: ViewModel {
     }
 
     
-    // Bind collectionviewDidTap and detailVC presentation
+    // Bind collectionViewDidTap and detlaiVC presentation
     private var showDetail: showDetailClosure?
-    func bindPresentation(with showDetail: @escaping showDetailClosure) {
+    func bindPresentation(with showDetail: @escaping (URL, String) -> Void) {
         self.showDetail = showDetail
     }
     func showDetail(at indexPath: IndexPath) {

@@ -62,10 +62,6 @@ final class DataManager {
 
 // MARK: - Data related helper types
 
-enum ModelType {
-    case movie
-    case actor
-}
 enum DataResult {
     case success([Transportable])
     case failure(Error)

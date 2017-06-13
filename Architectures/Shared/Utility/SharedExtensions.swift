@@ -51,9 +51,15 @@ extension UICollectionViewFlowLayout {
         self.init()
         // Define values
         let spacing = CGFloat(abstraction.interItemSpacing ?? 0)
-        let bottomInset = CGFloat(abstraction.bottomInset ?? 0)
+        var bottomInset = CGFloat()
         let widthDivisor = CGFloat(abstraction.widthDivisor)
         let heightDivisor = CGFloat(abstraction.heightDivisor)
+        // iOS11 auto creates bottominset
+        if #available(iOS 11.0, *) {
+            bottomInset = 0
+        } else {
+            bottomInset = CGFloat(abstraction.bottomInset ?? 0)
+        }
         
         // Calculate itemSize
         let fullWspace = (widthDivisor + 1) * spacing

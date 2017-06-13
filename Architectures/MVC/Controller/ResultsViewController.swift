@@ -93,6 +93,13 @@ extension ResultsViewController: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let spacing: CGFloat = modelType == .movie ? 1 : 8
-        return UIEdgeInsets(top: spacing, left: spacing, bottom: tabBarController?.tabBar.bounds.height ?? 49, right: spacing)
+        // iOS11 auto adds bottom inset
+        var bottomInset = CGFloat()
+        if #available(iOS 11.0, *) {
+            bottomInset = 0
+        } else {
+            bottomInset = tabBarController?.tabBar.bounds.height ?? 49
+        }
+        return UIEdgeInsets(top: spacing, left: spacing, bottom: bottomInset, right: spacing)
     }
 }

@@ -80,6 +80,11 @@ struct TmdbAPI {
 
 // MARK: - Tmdb related helper types
 
+enum ModelType {
+    case movie
+    case actor
+}
+
 public enum TmdbImageSize: String {
     case full = "original"
     case thumb = "w300"
