@@ -15,6 +15,7 @@ protocol ResultsViewPresenter: CollectionViewConfigurable {
     
     var objectsCount: Int { get }
     
+    
     // MARK: - Initializers
     
     init(view: ResultsView)

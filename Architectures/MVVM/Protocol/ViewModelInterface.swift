@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewModel: class, CollectionViewConfigurable {
+protocol ViewModelInterface: class, CollectionViewConfigurable {
     
     
     // MARK: - Properties

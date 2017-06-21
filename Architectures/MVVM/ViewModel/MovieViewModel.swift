@@ -12,7 +12,7 @@
 import Foundation
 
 
-class MovieViewModel: ViewModel {
+class MovieViewModel: ViewModelInterface {
     
     
     // MARK: - Properties
