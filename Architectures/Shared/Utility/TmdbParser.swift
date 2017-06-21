@@ -77,7 +77,6 @@ struct TmdbParser {
         }
         return Actor(name: name, profilePath: profilePath, actorID: actorID)
     }
-    
 }
 
 

@@ -18,7 +18,7 @@ struct TmdbAPI {
     
     private static let baseURLString = "https://api.themoviedb.org/3"
     private static let baseImageURLString = "https://image.tmdb.org/t/p"
-    public static var apiKey: String? { // Return key if provided in plist
+    public static var apiKey: String? { 
         guard
             let path = Bundle.main.path(forResource: "tmdbAPIKey", ofType: "plist"),
             let plistDict = NSDictionary(contentsOfFile: path),
@@ -63,9 +63,7 @@ struct TmdbAPI {
         let urlWithMethod = baseURLString + method.rawValue
         var components = URLComponents(string: urlWithMethod)!
         var queryItems = [URLQueryItem]()
-        // Base param required for all Tmdb requests
         queryItems.append(URLQueryItem(name: "api_key", value: apiKey))
-        // Optional extra params for specific requests
         if let extraParams = extraParameters {
             for (key,value) in extraParams {
                 let item = URLQueryItem(name: key, value: value)

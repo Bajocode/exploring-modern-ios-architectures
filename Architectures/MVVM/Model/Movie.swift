@@ -10,6 +10,7 @@ import Foundation
 
 struct Movie: Transportable {
     
+    
     // MARK: - Properties
     
     let title: String

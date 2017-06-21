@@ -14,7 +14,6 @@ extension UIImageView {
     public func downloadImage(from url: URL, completion: (() -> Void)? = nil) {
         // Remove "/" because docs dir sees as folders
         let cacheKey = url.path.components(separatedBy: "/").dropFirst(3).joined(separator: "")
-        // Return early if found in local cache or docs dir
         if let image = DataManager.shared.imageStore.image(forKey: cacheKey) {
             DispatchQueue.main.async {
                 self.image = image
@@ -23,10 +22,9 @@ extension UIImageView {
             return
         }
         // Nothing in cache / docs? Fetch new
-        // ImageView could be nil, use [weak self] capture list
         URLSession.shared.dataTask(with: url, completionHandler: { [weak self] (data, response, error) in
             print("Image from network fetch")
-            guard let httpURLResponse = response as? HTTPURLResponse,  httpURLResponse.statusCode == 200,
+            guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let data = data, error == nil,
                 let image = UIImage(data: data) else {
                     completion?()
@@ -54,7 +52,7 @@ extension UICollectionViewFlowLayout {
         var bottomInset = CGFloat()
         let widthDivisor = CGFloat(abstraction.widthDivisor)
         let heightDivisor = CGFloat(abstraction.heightDivisor)
-        // iOS11 auto creates bottominset
+        // iOS11 no top layout guide
         if #available(iOS 11.0, *) {
             bottomInset = 0
         } else {
@@ -67,8 +65,6 @@ extension UICollectionViewFlowLayout {
         let width = (bounds.width - fullWspace) / widthDivisor
         let height = (bounds.height - fullHspace) / heightDivisor
         self.itemSize = CGSize(width: width, height: height)
-        
-        // Configure insets
         sectionInset = UIEdgeInsets(
             top: spacing,
             left: spacing,
