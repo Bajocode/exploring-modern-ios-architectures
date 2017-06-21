@@ -27,10 +27,9 @@ final class DataManager {
     
     // MARK: - Methods
     
-    // Fetch now playing movies and dispatch on main
+    // Fetch now playing movies (local if no key provided) and dispatch on main
     public func fetchNewTmdbObjects(withType type: ModelType, completion: @escaping (DataResult) -> Void) {
         if TmdbAPI.apiKey == nil {
-            // No key provided, use local JSON
             var localData: Data?, localError: Error?
             do {
                 localData = try Data(contentsOf: TmdbAPI.localURL(withType: type), options:[])
@@ -40,10 +39,9 @@ final class DataManager {
                 completion(result)
             }
         } else {
-            // Key provided, fetch new movies
             let request = URLRequest(url: TmdbAPI.remoteURL(withType: type))
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                let result = self.processRequest(data: data, error: error, type: type)
+                let result = self.processRequest(data: data, error: error, response: response, type: type)
                 DispatchQueue.main.async {
                     completion(result)
                 }
@@ -51,9 +49,20 @@ final class DataManager {
             task.resume()
         }
     }
-    private func processRequest(data: Data?, error: Error?, type: ModelType) -> DataResult {
-        guard let jsonData = data else {
-            return .failure(error!)
+    
+    // Process the request both for local and remote
+    private func processRequest(data: Data?, error: Error?, response: URLResponse? = nil, type: ModelType) -> DataResult {
+        if let serverResponse = response {
+            guard
+                let httpResponse = serverResponse as? HTTPURLResponse,
+                httpResponse.statusCode == 200 else {
+                    return .failure(NSError(domain: "\(serverResponse)", code: 0, userInfo: nil))
+            }
+        }
+        guard
+            let jsonData = data,
+            error == nil else {
+                return .failure(error!)
         }
         return TmdbParser.parsedResult(withJSONData: jsonData, type: type)
     }
