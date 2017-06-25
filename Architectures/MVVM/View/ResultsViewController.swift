@@ -11,12 +11,12 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+final class ResultsViewController: UIViewController {
 
     
     // MARK: - Properties
     
-    var viewModel: ViewModel!
+    var viewModel: ViewModelInterface!
     private lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout(abstraction: self.viewModel, bounds: self.view.bounds))
         cv.clipsToBounds = true
@@ -75,7 +75,6 @@ extension ResultsViewController: UICollectionViewDelegate {
         viewModel.bindPresentation { [weak self] (url, title) in
             self?.showDetail(with: url, navigationTitle: title)
         }
-        // Invoke
         viewModel.showDetail(at: indexPath)
     }
 }

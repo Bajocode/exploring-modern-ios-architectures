@@ -31,25 +31,10 @@ struct TmdbParser {
     
     // Caller of individual object parsers based on object type
     private static func parsedObjects(withJSONArray array: [[String: Any]], type: ModelType) -> [Transportable] {
-        // Parse individual movies
-        var parsedObjects = [Transportable]()
-        for jsonObject in array {
-            switch type {
-            case .movie:
-                if let movie = parsedMovie(forMovieJSON: jsonObject) {
-                    parsedObjects.append(movie)
-                }
-            case .actor: 
-                if let actor = parsedActor(forActorJSON: jsonObject) {
-                    parsedObjects.append(actor)
-                }
-            }
+        switch type {
+            case .movie: return array.flatMap { parsedMovie(forMovieJSON: $0) }
+            case .actor: return array.flatMap { parsedActor(forActorJSON: $0) }
         }
-        // If not able to parse movies, perhaps because JSON format changed
-        if !array.isEmpty && parsedObjects.isEmpty {
-            print("!jsonObjectsArray.isEmpty && parsedMovies.isEmpty")
-        }
-        return parsedObjects
     }
     
     // Parse individual movie dictionaries, extracted from json response

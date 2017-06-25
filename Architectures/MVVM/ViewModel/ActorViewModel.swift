@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ActorViewModel: ViewModelInterface {
+final class ActorViewModel: ViewModelInterface {
     
     
     // MARK: - Properties

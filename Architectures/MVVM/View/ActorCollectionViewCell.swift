@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActorCollectionViewCell: UICollectionViewCell, CellConfigurable {
+final class ActorCollectionViewCell: UICollectionViewCell, CellConfigurable {
     
     
     // MARK: - Properties
